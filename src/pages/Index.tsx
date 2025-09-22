@@ -1,17 +1,31 @@
-import React from 'react';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import LocationSection from '@/components/LocationSection';
+import SitePlanSection from '@/components/SitePlanSection';
+import EnhancedHomeCollection from '@/components/EnhancedHomeCollection';
+import CommunityRenderings from '@/components/CommunityRenderings';
+import FeaturesSection from '@/components/FeaturesSection';
+import FAQSection from '@/components/FAQSection';
+import ContactSection from '@/components/ContactSection';
+import UnionVillageFooter from '@/components/UnionVillageFooter';
 
 const Index = () => {
-  console.log('Index component rendering...');
+  console.log('Index page loading...');
   
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Crown of Caledon</h1>
-        <p className="text-lg text-gray-600">Website is loading...</p>
-        <div className="mt-8 p-4 bg-blue-100 rounded-lg">
-          <p className="text-sm text-blue-800">If you can see this, React is working.</p>
-        </div>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <HeroSection />
+      <AboutSection />
+      <LocationSection />
+      <SitePlanSection />
+      <EnhancedHomeCollection />
+      <CommunityRenderings />
+      <FeaturesSection />
+      <FAQSection />
+      <ContactSection />
+      <UnionVillageFooter />
     </div>
   );
 };
