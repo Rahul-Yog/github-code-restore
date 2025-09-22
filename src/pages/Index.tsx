@@ -1,7 +1,7 @@
 import React from 'react';
 import CrownNavigation from '@/components/crown/CrownNavigation';
 import CrownHeroSection from '@/components/crown/CrownHeroSection';
-import OverviewSection from '@/components/OverviewSection';
+import CrownOverviewSection from '@/components/crown/CrownOverviewSection';
 import CrownLocationSection from '@/components/crown/CrownLocationSection';
 import CrownHomeCollection from '@/components/crown/CrownHomeCollection';
 import CrownAmenities from '@/components/crown/CrownAmenities';
@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <CrownNavigation />
       <CrownHeroSection />
-      <OverviewSection />
+      <CrownOverviewSection />
       <CrownLocationSection />
       <CrownHomeCollection />
       <CrownAmenities />
