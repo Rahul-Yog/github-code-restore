@@ -17,15 +17,42 @@ export type Database = {
       "Crown Of Caledon Leads": {
         Row: {
           created_at: string
+          email: string | null
+          first_name: string | null
+          form_type: string | null
           id: number
+          interested_in: string | null
+          last_name: string | null
+          message: string | null
+          phone: string | null
+          source: string | null
+          timeline: string | null
         }
         Insert: {
           created_at?: string
+          email?: string | null
+          first_name?: string | null
+          form_type?: string | null
           id?: number
+          interested_in?: string | null
+          last_name?: string | null
+          message?: string | null
+          phone?: string | null
+          source?: string | null
+          timeline?: string | null
         }
         Update: {
           created_at?: string
+          email?: string | null
+          first_name?: string | null
+          form_type?: string | null
           id?: number
+          interested_in?: string | null
+          last_name?: string | null
+          message?: string | null
+          phone?: string | null
+          source?: string | null
+          timeline?: string | null
         }
         Relationships: []
       }

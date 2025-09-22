@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const CrownLeadForm = () => {
   const [formData, setFormData] = useState({
@@ -26,8 +27,21 @@ const CrownLeadForm = () => {
     setLoading(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { error } = await supabase
+        .from('Crown Of Caledon Leads')
+        .insert({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone || null,
+          message: formData.message || null,
+          form_type: 'lead_form',
+          source: 'website'
+        });
+
+      if (error) {
+        throw error;
+      }
       
       toast({
         title: "Thank you for your interest!",
@@ -42,6 +56,7 @@ const CrownLeadForm = () => {
         message: ''
       });
     } catch (error) {
+      console.error('Error submitting lead:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",

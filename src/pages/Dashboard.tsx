@@ -9,7 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { ArrowLeft, Users, Mail, Phone, Calendar, MessageSquare } from 'lucide-react';
 
 interface Lead {
-  id: string;
+  id: number;
   first_name: string;
   last_name: string;
   email: string;
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const fetchLeads = async () => {
     try {
       const { data, error } = await supabase
-        .from('leads')
+        .from('Crown Of Caledon Leads')
         .select('*')
         .order('created_at', { ascending: false });
 
