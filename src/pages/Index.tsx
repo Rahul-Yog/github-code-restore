@@ -10,6 +10,8 @@ import CrownLeadForm from '@/components/crown/CrownLeadForm';
 import CrownFooter from '@/components/crown/CrownFooter';
 
 const Index = () => {
+  console.log('Index component rendering...');
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <CrownNavigation />

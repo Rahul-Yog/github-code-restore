@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 
 const CrownNavigation = () => {
+  console.log('CrownNavigation component rendering...');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {

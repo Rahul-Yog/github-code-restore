@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound";
 import { useState } from "react";
 
 const App = () => {
+  console.log('App component rendering...');
+  
   const [queryClient] = useState(() => new QueryClient({
     defaultOptions: {
       queries: {
