@@ -1,25 +1,22 @@
-import CrownNavigation from '@/components/crown/CrownNavigation';
-import CrownHeroSection from '@/components/crown/CrownHeroSection';
-import CrownOverviewSection from '@/components/crown/CrownOverviewSection';
-import CrownLocationSection from '@/components/crown/CrownLocationSection';
-import CrownHomeCollection from '@/components/crown/CrownHomeCollection';
-import CrownAmenities from '@/components/crown/CrownAmenities';
-import CrownFAQSection from '@/components/crown/CrownFAQSection';
-import CrownLeadForm from '@/components/crown/CrownLeadForm';
-import CrownFooter from '@/components/crown/CrownFooter';
+import React from 'react';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import FeaturesSection from '@/components/FeaturesSection';
+import LocationSection from '@/components/LocationSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <CrownNavigation />
-      <CrownHeroSection />
-      <CrownOverviewSection />
-      <CrownLocationSection />
-      <CrownHomeCollection />
-      <CrownAmenities />
-      <CrownFAQSection />
-      <CrownLeadForm />
-      <CrownFooter />
+      <Navigation />
+      <HeroSection />
+      <AboutSection />
+      <FeaturesSection />
+      <LocationSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
