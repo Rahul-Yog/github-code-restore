@@ -1,34 +1,30 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 const CrownOverviewSection = () => {
   return (
-    <section className="section-spacing bg-background-muted">
+    <section className="section-spacing bg-background">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-display font-bold text-primary mb-4">
-            Your Crown Awaits
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover luxury living in Caledon with our collection of premium homes designed for modern families.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="luxury-card text-center">
-            <h3 className="text-2xl font-display font-semibold text-primary mb-4">Townhomes</h3>
-            <p className="text-muted-foreground">Starting from $730K</p>
-          </Card>
-          
-          <Card className="luxury-card text-center">
-            <h3 className="text-2xl font-display font-semibold text-primary mb-4">Estate Homes</h3>
-            <p className="text-muted-foreground">Premium designs available</p>
-          </Card>
-          
-          <Card className="luxury-card text-center">
-            <h3 className="text-2xl font-display font-semibold text-primary mb-4">Luxury Living</h3>
-            <p className="text-muted-foreground">Modern amenities included</p>
-          </Card>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="bg-muted rounded-lg shadow-lg p-8">
+              <div className="aspect-[4/3] bg-background rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground">Home Image Placeholder</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-display font-bold text-primary mb-6">
+              Discover Crown of Caledon – Your Gateway to the Best of Caledon and Brampton
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              <strong>Crown of Caledon</strong> is a great new real estate opportunity located conveniently on the Caledon and Brampton border. This upcoming community is designed with families, professionals and investors in mind who want the best of both worlds, being close to urban amenities while enjoying nature.
+            </p>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg">
+              Request Info
+            </Button>
+          </div>
         </div>
       </div>
     </section>

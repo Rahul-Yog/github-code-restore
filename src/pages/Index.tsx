@@ -10,7 +10,7 @@ import CrownFooter from '@/components/crown/CrownFooter';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5">
+    <div className="min-h-screen bg-background">
       <CrownNavigation />
       <CrownHeroSection />
       <CrownOverviewSection />

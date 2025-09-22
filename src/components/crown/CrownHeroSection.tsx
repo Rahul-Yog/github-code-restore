@@ -3,21 +3,29 @@ import { Button } from '@/components/ui/button';
 
 const CrownHeroSection = () => {
   return (
-    <section className="hero-gradient text-primary-foreground py-24">
-      <div className="container-custom text-center">
-        <h1 className="text-5xl lg:text-6xl font-display font-bold mb-6">
-          Crown of Caledon
-        </h1>
-        <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto">
-          Luxury townhomes and estate homes starting from $730K in beautiful Caledon
-        </p>
-        <div className="space-x-4">
-          <Button className="cta-primary">
-            View Homes
-          </Button>
-          <Button variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-            Schedule Tour
-          </Button>
+    <section className="bg-muted py-24">
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-lg font-medium text-muted-foreground mb-2">Where Caledon Meets Brampton</h2>
+            <h1 className="text-4xl lg:text-5xl font-display font-bold text-primary mb-4">
+              FREEHOLD TOWNHOMES<br />
+              38' & 60' SINGLES
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 max-w-md">
+              Crown of Caledon is a great new real estate opportunity located conveniently on the Caledon and Brampton border.
+            </p>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg">
+              Request Info
+            </Button>
+          </div>
+          <div className="relative">
+            <div className="bg-background rounded-lg shadow-lg p-8">
+              <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground">Home Image Placeholder</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

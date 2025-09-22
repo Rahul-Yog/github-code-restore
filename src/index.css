@@ -8,60 +8,60 @@
 
 @layer base {
   :root {
-    /* Luxury Real Estate Color Palette */
+    /* Crown of Caledon Professional Color Palette */
     --background: 0 0% 100%;
-    --foreground: 215 28% 17%;
+    --foreground: 220 20% 15%;
 
-    /* Primary Brand Colors */
-    --primary: 215 28% 17%; /* Deep Navy */
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 215 25% 25%;
-    --primary-lighter: 215 20% 35%;
+    /* Primary Brand Colors - Professional Navy */
+    --primary: 220 40% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 220 35% 35%;
+    --primary-lighter: 220 30% 45%;
 
-    /* Luxury Accent Colors */
-    --luxury-gold: 43 87% 51%; /* Sophisticated Gold */
-    --luxury-gold-light: 43 87% 61%;
-    --luxury-gold-dark: 43 87% 41%;
+    /* Professional Accent Colors */
+    --luxury-gold: 30 80% 55%;
+    --luxury-gold-light: 30 80% 65%;
+    --luxury-gold-dark: 30 80% 45%;
 
     /* Trust Building Colors */
     --trust-blue: 215 84% 58%;
     --trust-green: 120 65% 40%;
 
     /* Background Variations */
-    --background-muted: 220 14% 96%;
-    --background-elevated: 0 0% 98%;
-    --background-overlay: 215 28% 17% / 0.95;
+    --background-muted: 210 15% 97%;
+    --background-elevated: 210 20% 98%;
+    --background-overlay: 220 40% 25% / 0.95;
 
     /* Card and Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-    --card-elevated: 0 0% 98%;
+    --card-foreground: 220 20% 15%;
+    --card-elevated: 210 20% 98%;
 
     /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --popover-foreground: 220 20% 15%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 215 28% 17%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 220 20% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 15% 97%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 43 87% 51%;
-    --accent-foreground: 215 28% 17%;
+    --accent: 30 80% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     /* Form Elements */
     --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 43 87% 51%;
+    --input: 220 13% 95%;
+    --ring: 220 40% 25%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 28% 17%), hsl(215 25% 25%));
-    --gradient-luxury: linear-gradient(135deg, hsl(43 87% 51%), hsl(43 87% 61%));
-    --gradient-overlay: linear-gradient(180deg, hsl(215 28% 17% / 0.8), hsl(215 28% 17% / 0.95));
+    /* Gradients - Clean and Professional */
+    --gradient-hero: linear-gradient(135deg, hsl(210 15% 97%), hsl(210 20% 95%));
+    --gradient-luxury: linear-gradient(135deg, hsl(220 40% 25%), hsl(220 35% 35%));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 100% / 0.9), hsl(210 15% 97% / 0.95));
 
     /* Shadows */
     --shadow-luxury: 0 25px 50px -12px hsl(215 28% 17% / 0.25);
