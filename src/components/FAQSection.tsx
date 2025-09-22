@@ -9,28 +9,28 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What types of homes are available?",
-      answer: "Union Village offers a variety of home types including detached homes, townhomes, and semi-detached homes ranging from 1,600 to 3,200 square feet."
+      question: "What types of homes are available at Crown of Caledon?",
+      answer: "Crown of Caledon offers freehold townhomes and 38' & 60' family singles by award-winning Fieldgate Homes, ranging from 1,800 to 3,500 square feet."
     },
     {
-      question: "What is the expected move-in timeline?",
-      answer: "Move-in dates vary by home type and location within the community. Typical construction timelines range from 12-18 months from contract signing."
+      question: "When will Crown of Caledon be available?",
+      answer: "Crown of Caledon is coming soon to the gateway of Caledon. Pre-registration is now available for priority access to floor plans and pricing."
     },
     {
-      question: "Are there any community amenities?",
-      answer: "Yes! Union Village features a community center, central park, playground, walking trails, and beautifully landscaped common areas."
+      question: "What community amenities will be available?",
+      answer: "The master-planned community will feature winding crescent streets, beautiful greenspaces, water features, walking distance to retail, and a proposed transit hub."
     },
     {
-      question: "What is included in the home purchase?",
-      answer: "All homes include premium finishes, modern appliances, hardwood flooring, and energy-efficient features. Specific inclusions vary by home model."
+      question: "What is included with Fieldgate Homes?",
+      answer: "Fieldgate Homes are known for premium finishes, modern appliances, energy-efficient features, and superior craftsmanship. Specific inclusions vary by home model."
     },
     {
       question: "Is financing assistance available?",
       answer: "We work with preferred lenders to help secure competitive financing options. Our sales team can connect you with mortgage specialists."
     },
     {
-      question: "What are the maintenance fees?",
-      answer: "Townhomes and some semi-detached homes have modest maintenance fees for common area upkeep. Detached homes typically have no monthly fees."
+      question: "What makes Crown of Caledon special?",
+      answer: "Located at the gateway of Caledon with direct access to Highway 410, the community offers natural beauty, modern convenience, and long-term investment potential."
     }
   ];
 
@@ -42,7 +42,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Get answers to common questions about Union Village Homes
+            Get answers to common questions about Crown of Caledon
           </p>
         </div>
 

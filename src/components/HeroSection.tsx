@@ -26,48 +26,48 @@ const HeroSection = () => {
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
             <MapPin className="w-4 h-4 mr-1" />
-            16th & Kennedy
+            Caledon Gateway
           </Badge>
           <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
             <DollarSign className="w-4 h-4 mr-1" />
-            $1.4M+
+            From $900K+
           </Badge>
           <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
             <Clock className="w-4 h-4 mr-1" />
-            2026
+            Coming Soon
           </Badge>
           <Badge variant="secondary" className="bg-accent/90 text-primary border-accent">
-            Phase 2
+            Pre-Registration
           </Badge>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4">
           Welcome to<br />
-          <span className="text-accent">Union Village</span>
+          <span className="text-accent">Crown of Caledon</span>
         </h1>
         
         <p className="text-xl md:text-2xl mb-6 text-white/90">
-          Premium Unionville Houses For Sale
+          Luxury Homes in Caledon
         </p>
         
         <p className="text-lg mb-8 max-w-3xl mx-auto text-white/80 leading-relaxed">
-          Discover luxury Unionville homes for sale in Markham's most sought-after master-planned community. 
-          Where modern design meets small-town charm, crafted by award-winning developers.
+          Discover exceptional new homes in Caledon's newest master-planned community. 
+          Where natural beauty meets modern luxury, crafted by award-winning Fieldgate Homes.
         </p>
 
         {/* Developer Info */}
         <div className="mb-8">
           <p className="text-white/70 mb-2">Developed by</p>
           <p className="text-accent font-semibold text-lg">
-            The Minto Group • Metropia
+            Fieldgate Homes
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8">
-            Get Exclusive Floor Plans
+            Register for Updates
           </Button>
           <Button size="lg" variant="outline" className="text-white border-white/50 hover:bg-white/10">
             Explore Community

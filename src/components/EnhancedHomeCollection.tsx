@@ -5,28 +5,28 @@ import { Button } from '@/components/ui/button';
 const EnhancedHomeCollection = () => {
   const homeTypes = [
     {
-      name: "The Executive",
+      name: "60' Family Singles",
       type: "Detached Homes",
-      size: "2,500 - 3,200 sq ft",
+      size: "2,800 - 3,500 sq ft",
       bedrooms: "4-5 Bedrooms",
-      price: "From $1.2M",
+      price: "From $1.4M",
       features: ["Double Car Garage", "Premium Finishes", "Open Concept", "Master Ensuite"]
     },
     {
-      name: "The Professional",
-      type: "Townhomes",
-      size: "1,800 - 2,400 sq ft", 
+      name: "38' Family Singles",
+      type: "Detached Homes",
+      size: "2,200 - 2,800 sq ft", 
       bedrooms: "3-4 Bedrooms",
-      price: "From $850K",
-      features: ["Attached Garage", "Modern Kitchen", "Finished Basement", "Private Yard"]
+      price: "From $1.1M",
+      features: ["Double Car Garage", "Modern Kitchen", "Finished Basement", "Private Yard"]
     },
     {
-      name: "The Urban",
-      type: "Semi-Detached",
-      size: "1,600 - 2,000 sq ft",
+      name: "Freehold Townhomes",
+      type: "Townhomes",
+      size: "1,800 - 2,400 sq ft",
       bedrooms: "3-4 Bedrooms", 
-      price: "From $750K",
-      features: ["Single Car Garage", "Contemporary Design", "Walk-in Closets", "Hardwood Floors"]
+      price: "From $900K",
+      features: ["Attached Garage", "Contemporary Design", "Walk-in Closets", "Premium Finishes"]
     }
   ];
 
@@ -35,11 +35,11 @@ const EnhancedHomeCollection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-            Our Home Collection
+            Crown of Caledon Home Collection
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Choose from our carefully curated selection of home designs, each crafted 
-            to meet the diverse needs of modern families.
+            Discover exceptional freehold townhomes and family singles by award-winning Fieldgate Homes, 
+            each designed to maximize comfort and luxury in Caledon's newest master-planned community.
           </p>
         </div>
 

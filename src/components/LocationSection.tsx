@@ -6,57 +6,57 @@ const LocationSection = () => {
   const amenities = [
     {
       icon: Train,
-      title: "GO Transit Access",
-      description: "Quick access to GO Transit for easy commuting to downtown Toronto",
-      distance: "5 min drive"
+      title: "Proposed Transit Hub",
+      description: "Direct access to proposed transit hub with connections to Highway 410",
+      distance: "Walking distance"
     },
     {
       icon: ShoppingBag,
-      title: "CF Markville Mall",
-      description: "Major shopping destination with 140+ stores and services",
-      distance: "8 min drive"
+      title: "Bramalea City Centre",
+      description: "Major shopping destination with 300+ stores and services",
+      distance: "10 min drive"
     },
     {
       icon: GraduationCap,
       title: "Top-Rated Schools",
-      description: "Access to highly-rated public and private schools in the area",
+      description: "Access to highly-rated schools in both Caledon and Brampton",
       distance: "Walking distance"
     },
     {
       icon: Hospital,
-      title: "Markham Stouffville Hospital",
+      title: "Brampton Civic Hospital",
       description: "Full-service hospital with emergency and specialized care",
-      distance: "12 min drive"
+      distance: "15 min drive"
     },
     {
       icon: TreePine,
-      title: "Unionville Main Street",
-      description: "Historic charm with boutique shops, cafes, and restaurants",
-      distance: "3 min drive"
+      title: "Community Retail",
+      description: "Walking distance to retail within the community",
+      distance: "Walking distance"
     },
     {
       icon: Plane,
       title: "Pearson Airport",
       description: "Easy access to Canada's largest international airport",
-      distance: "35 min drive"
+      distance: "25 min drive"
     }
   ];
 
   const neighborhoods = [
     {
-      name: "Unionville",
-      description: "Historic village charm with tree-lined streets and heritage buildings",
-      highlights: ["Main Street Heritage Conservation District", "Unionville Library", "Toogood Pond"]
+      name: "Caledon Village",
+      description: "Historic charm with small-town atmosphere and natural beauty",
+      highlights: ["Caledon Village Historic District", "Local cafes and shops", "Heritage buildings"]
     },
     {
-      name: "Markham Centre",
-      description: "Modern urban hub with business districts and entertainment",
-      highlights: ["Markham Civic Centre", "Pan Am Centre", "Downtown Markham"]
+      name: "Brampton",
+      description: "Dynamic urban center with diverse amenities and entertainment",
+      highlights: ["Brampton City Hall", "Rose Theatre", "Downtown Brampton"]
     },
     {
-      name: "Cornell",
-      description: "Master-planned community with modern amenities and green spaces",
-      highlights: ["Cornell Community Centre", "New parks and trails", "Shopping plazas"]
+      name: "Bolton",
+      description: "Growing community with natural landscapes and recreational facilities",
+      highlights: ["Humber Valley Heritage Trail", "McMichael Canadian Art Collection", "Conservation areas"]
     }
   ];
 
@@ -66,29 +66,29 @@ const LocationSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">
-            Unionville Location & Neighbourhood
+            Caledon Location & Neighbourhood
           </h2>
           <div className="w-24 h-1 luxury-gradient mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Located at the prestigious intersection of 16th Avenue and Kennedy Road, 
-            our Unionville houses for sale offer the perfect balance of small-town charm and metropolitan convenience.
+            Located at the gateway of Caledon, Crown of Caledon offers the perfect balance 
+            of natural beauty and urban convenience with easy access to Brampton and the GTA.
           </p>
         </div>
 
         {/* Location Highlight */}
         <div className="mb-16">
-          <Card className="luxury-card bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
-            <div className="p-8 text-center">
-              <MapPin className="h-16 w-16 text-accent mx-auto mb-6" />
-              <h3 className="text-3xl font-display font-bold text-primary mb-4">
-                16th Avenue & Kennedy Road
-              </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                This prestigious address places you at the heart of Markham's most sought-after area, 
-                where Unionville's historic charm meets modern urban amenities.
-              </p>
-            </div>
-          </Card>
+            <Card className="luxury-card bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+              <div className="p-8 text-center">
+                <MapPin className="h-16 w-16 text-accent mx-auto mb-6" />
+                <h3 className="text-3xl font-display font-bold text-primary mb-4">
+                  Gateway of Caledon
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  This prestigious location places you at the heart of Caledon's newest development, 
+                  where natural beauty meets modern convenience with direct access to Highway 410.
+                </p>
+              </div>
+            </Card>
         </div>
 
         {/* Neighbourhood Map */}
@@ -99,7 +99,7 @@ const LocationSection = () => {
           <Card className="luxury-card overflow-hidden max-w-4xl mx-auto">
             <img 
               src={neighbourhoodMap} 
-              alt="Union Village Neighbourhood Map - 16th Avenue & Kennedy Road Markham | Unionville Homes For Sale Location" 
+              alt="Crown of Caledon Neighbourhood Map - Gateway of Caledon | Caledon Homes For Sale Location" 
               className="w-full h-auto"
             />
           </Card>
@@ -177,9 +177,9 @@ const LocationSection = () => {
                 Exceptional Transit Connectivity
               </h4>
               <p className="text-muted-foreground leading-relaxed">
-                With GO Transit, Highway 407, and major arterial roads nearby, Union Village 
+                With proposed transit hub, Highway 410, and major arterial roads nearby, Crown of Caledon 
                 offers unparalleled access to the Greater Toronto Area while maintaining 
-                the peaceful suburban lifestyle you desire.
+                the peaceful, natural lifestyle you desire.
               </p>
             </div>
           </Card>

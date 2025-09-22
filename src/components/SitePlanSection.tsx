@@ -60,8 +60,8 @@ const SitePlanSection = () => {
           </h2>
           <div className="w-24 h-1 luxury-gradient mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the thoughtful layout of Union Village, where every detail has been 
-            carefully planned to create a harmonious community that celebrates both 
+            Discover the thoughtful layout of Crown of Caledon, where every detail has been 
+            carefully planned to create a harmonious community that celebrates both
             nature and modern living.
           </p>
         </div>
@@ -72,7 +72,7 @@ const SitePlanSection = () => {
             <div className="relative">
               <img 
                 src={sitePlanImage} 
-                alt="Union Village Master Site Plan - Luxury Community Layout | Unionville Houses For Sale in Markham"
+                alt="Crown of Caledon Master Site Plan - Luxury Community Layout | Caledon Homes For Sale"
                 className="w-full h-auto"
               />
               <div className="absolute top-4 right-4">

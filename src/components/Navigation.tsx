@@ -13,9 +13,9 @@ const Navigation = () => {
 
   const navItems = [
     { label: 'New Homes Overview', href: '#overview' },
-    { label: 'Markham Location', href: '#location' },
+    { label: 'Caledon Location', href: '#location' },
     { label: 'Community Site Plan', href: '#site-plan' },
-    { label: 'Unionville Houses For Sale', href: '#home-collection' },
+    { label: 'Crown of Caledon Homes', href: '#home-collection' },
     { label: 'Contact Agent', href: '#contact' },
   ];
 
@@ -35,7 +35,7 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <img 
               src={unionVillageLogo} 
-              alt="Union Village - Unionville Houses For Sale | Luxury New Homes in Markham" 
+              alt="Crown of Caledon - Luxury New Homes in Caledon by Fieldgate Homes" 
               className="h-12 w-auto"
             />
           </div>
@@ -70,7 +70,7 @@ const Navigation = () => {
               onClick={() => scrollToSection('#contact')}
               className="luxury-gradient text-primary font-semibold hover:scale-105 transition-transform duration-200"
             >
-              Get Floor Plans
+              Register for Updates
             </Button>
           </div>
 
@@ -114,7 +114,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection('#contact')}
                   className="luxury-gradient text-primary font-semibold w-full"
                 >
-                  Get Floor Plans
+                  Register for Updates
                 </Button>
               </div>
             </div>

@@ -61,7 +61,7 @@ const CommunityRenderings = () => {
           </h2>
           <div className="w-24 h-1 luxury-gradient mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the vision of Union Village through these stunning architectural renderings, 
+            Discover the vision of Crown of Caledon through these stunning architectural renderings, 
             showcasing the community's design excellence and natural beauty throughout the seasons.
           </p>
         </div>
@@ -76,7 +76,7 @@ const CommunityRenderings = () => {
                     <div className="relative">
                         <img
                           src={rendering.image}
-                          alt={`${rendering.title} - Luxury Union Village Community Rendering | Unionville Homes For Sale`}
+                          alt={`${rendering.title} - Luxury Crown of Caledon Community Rendering | Caledon Homes For Sale`}
                           className="w-full h-[600px] object-cover"
                         />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
@@ -109,8 +109,8 @@ const CommunityRenderings = () => {
                 Ready to See More?
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Get exclusive updates on Union Village's progress and be the first to know about 
-                availability, pricing, and construction milestones for this exceptional community in Markham.
+                Get exclusive updates on Crown of Caledon's progress and be the first to know about 
+                availability, pricing, and construction milestones for this exceptional community in Caledon.
               </p>
               <Button 
                 onClick={scrollToContact}
