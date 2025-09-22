@@ -1,31 +1,29 @@
-import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import LocationSection from '@/components/LocationSection';
-import SitePlanSection from '@/components/SitePlanSection';
-import EnhancedHomeCollection from '@/components/EnhancedHomeCollection';
-import CommunityRenderings from '@/components/CommunityRenderings';
-import FeaturesSection from '@/components/FeaturesSection';
-import FAQSection from '@/components/FAQSection';
-import ContactSection from '@/components/ContactSection';
-import UnionVillageFooter from '@/components/UnionVillageFooter';
+import CrownNavigation from '@/components/crown/CrownNavigation';
+import CrownHeroSection from '@/components/crown/CrownHeroSection';
+import CrownOverviewSection from '@/components/crown/CrownOverviewSection';
+import CrownLocationSection from '@/components/crown/CrownLocationSection';
+import CrownHomeCollection from '@/components/crown/CrownHomeCollection';
+import CrownAmenities from '@/components/crown/CrownAmenities';
+import CrownFAQSection from '@/components/crown/CrownFAQSection';
+import CrownLeadForm from '@/components/crown/CrownLeadForm';
+import CrownFooter from '@/components/crown/CrownFooter';
 
 const Index = () => {
-  console.log('Index page loading...');
+  console.log('Crown of Caledon page loading...');
   
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <LocationSection />
-      <SitePlanSection />
-      <EnhancedHomeCollection />
-      <CommunityRenderings />
-      <FeaturesSection />
-      <FAQSection />
-      <ContactSection />
-      <UnionVillageFooter />
+      <CrownNavigation />
+      <CrownHeroSection />
+      <CrownOverviewSection />
+      <CrownLocationSection />
+      <div id="homes">
+        <CrownHomeCollection />
+      </div>
+      <CrownAmenities />
+      <CrownFAQSection />
+      <CrownLeadForm />
+      <CrownFooter />
     </div>
   );
 };
