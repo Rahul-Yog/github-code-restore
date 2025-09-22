@@ -1,22 +1,27 @@
-import React from 'react';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import FeaturesSection from '@/components/FeaturesSection';
+import HeroSectionWithModal from '@/components/HeroSectionWithModal';
+import OverviewSection from '@/components/OverviewSection';
 import LocationSection from '@/components/LocationSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
+import EnhancedHomeCollection from '@/components/EnhancedHomeCollection';
+import CommunityRenderings from '@/components/CommunityRenderings';
+import SitePlanSectionWithModal from '@/components/SitePlanSectionWithModal';
+import FAQSection from '@/components/FAQSection';
+import UnionVillageLeadForm from '@/components/UnionVillageLeadForm';
+import UnionVillageFooter from '@/components/UnionVillageFooter';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <FeaturesSection />
+      <HeroSectionWithModal />
+      <OverviewSection />
       <LocationSection />
-      <ContactSection />
-      <Footer />
+      <EnhancedHomeCollection />
+      <CommunityRenderings />
+      <SitePlanSectionWithModal />
+      <FAQSection />
+      <UnionVillageLeadForm />
+      <UnionVillageFooter />
     </div>
   );
 };
