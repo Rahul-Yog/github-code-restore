@@ -76,6 +76,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email notification
     try {
+      console.log("Starting email sending process...");
+      const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'info@crownofcaledon.com';
+      console.log("Admin email:", adminEmail);
+      
       const emailSubject = `New Lead: ${leadData.first_name} ${leadData.last_name}`;
       const emailContent = `
         <h2>New Lead Submission</h2>
@@ -95,8 +99,6 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       `;
 
-      const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'info@crownofcaledon.com';
-      
       const emailResponse = await resend.emails.send({
         from: "Crown of Caledon <onboarding@resend.dev>",
         to: [adminEmail],
@@ -107,6 +109,7 @@ const handler = async (req: Request): Promise<Response> => {
       console.log("Email sent successfully:", emailResponse);
     } catch (emailError) {
       console.error("Email sending failed (non-critical):", emailError);
+      console.error("Error details:", JSON.stringify(emailError, null, 2));
       // Don't fail the entire request if email fails
     }
 
