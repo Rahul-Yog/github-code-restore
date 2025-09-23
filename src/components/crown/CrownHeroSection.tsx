@@ -31,33 +31,33 @@ const CrownHeroSection = () => {
         <div className="relative z-10 container-custom text-center text-white">
           <div className="max-w-4xl mx-auto animate-fade-in">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-5xl mx-auto px-4">
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full shadow-xl border border-white/10">
+            <div className="flex flex-wrap justify-center gap-2 mb-16 max-w-5xl mx-auto px-4 pt-6">
+              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-3 rounded-full shadow-xl border border-white/10">
                 <MapPin className="text-luxury-gold w-4 h-4 flex-shrink-0" />
                 <span className="font-semibold text-white whitespace-nowrap text-sm">Hurontario & Mayfield</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full shadow-xl border border-white/10">
+              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-3 rounded-full shadow-xl border border-white/10">
                 <DollarSign className="text-luxury-gold w-4 h-4 flex-shrink-0" />
                 <span className="font-semibold text-white whitespace-nowrap text-sm">From $730K</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full shadow-xl border border-white/10">
+              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-3 rounded-full shadow-xl border border-white/10">
                 <Clock className="text-luxury-gold w-4 h-4 flex-shrink-0" />
                 <span className="font-semibold text-white whitespace-nowrap text-sm">2026 Move-in</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full shadow-xl border border-white/10">
-                <div className="w-5 h-5 bg-luxury-gold rounded-full flex items-center justify-center text-sm font-bold text-primary flex-shrink-0">4</div>
+              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-3 rounded-full shadow-xl border border-white/10">
+                <Building2 className="text-luxury-gold w-4 h-4 flex-shrink-0" />
                 <span className="font-semibold text-white whitespace-nowrap text-sm">Near Hwy 410</span>
               </div>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-5 leading-tight">
               New Homes in Caledon | 
               <span className="block text-gradient">Crown of Caledon</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl mb-6 text-white/90 max-w-3xl mx-auto leading-relaxed">
               Discover premium freehold townhomes and stunning 38' detached homes in Caledon near Brampton. 
               Where luxury living meets unbeatable value - offering the 
               <span className="text-luxury-gold font-semibold"> best pricing for new construction homes in Caledon</span>.

@@ -82,8 +82,8 @@ const ContactModal = ({ isOpen, onClose, formType }: ContactModalProps) => {
 
     if (!formData.emailConsent && !formData.phoneConsent) {
       toast({
-        title: "Consent Required",
-        description: "Please provide consent for us to contact you.",
+        title: "Contact Option Required",
+        description: "Please select at least one way for us to contact you (email or phone).",
         variant: "destructive",
       });
       return;
@@ -347,7 +347,7 @@ const ContactModal = ({ isOpen, onClose, formType }: ContactModalProps) => {
 
           {/* Consent Checkboxes */}
           <div className="space-y-3 bg-muted/50 p-4 rounded-lg">
-            <p className="text-sm font-medium text-primary mb-3">How would you like us to contact you?</p>
+            <p className="text-sm font-medium text-primary mb-3">How would you like us to contact you? (Select at least one) *</p>
             
             <div className="flex items-start gap-2">
               <Checkbox 

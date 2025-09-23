@@ -37,29 +37,35 @@ const CrownSitePlanSection = () => {
               </div>
             </div>
 
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  View Full Site Plan
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-6xl max-h-[90vh] overflow-auto">
-                <DialogHeader>
-                  <DialogTitle>Crown of Caledon Master Site Plan</DialogTitle>
-                </DialogHeader>
-                <div className="w-full">
-                  <img 
-                    src={crownNeighborhoodMap} 
-                    alt="Crown of Caledon Master Site Plan - City Townhomes, Freehold Townhomes, and 38' Detached Homes Layout"
-                    className="w-full h-auto rounded-lg border"
-                  />
-                  <p className="text-sm text-muted-foreground mt-4 text-center">
-                    This is a preliminary site plan subject to governmental approval. 
-                    Dimensions & specifications are subject to change without notice.
-                  </p>
-                </div>
-              </DialogContent>
-            </Dialog>
+            <div className="space-y-4">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
+                    View Full Site Plan
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-6xl max-h-[90vh] overflow-auto">
+                  <DialogHeader>
+                    <DialogTitle>Crown of Caledon Master Site Plan</DialogTitle>
+                  </DialogHeader>
+                  <div className="w-full">
+                    <img 
+                      src={crownNeighborhoodMap} 
+                      alt="Crown of Caledon Master Site Plan - City Townhomes, Freehold Townhomes, and 38' Detached Homes Layout"
+                      className="w-full h-auto rounded-lg border"
+                    />
+                    <p className="text-sm text-muted-foreground mt-4 text-center">
+                      This is a preliminary site plan subject to governmental approval. 
+                      Dimensions & specifications are subject to change without notice.
+                    </p>
+                  </div>
+                </DialogContent>
+              </Dialog>
+              
+              <Button size="lg" className="luxury-gradient text-primary font-semibold w-full hover:scale-105 transition-transform duration-200">
+                Get Detailed Site Plan
+              </Button>
+            </div>
           </div>
 
           <Dialog>
