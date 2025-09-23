@@ -21,7 +21,7 @@ const CrownNavigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="/src/assets/crown-logo.png" 
+              src="/src/assets/crown-logo-updated.png" 
               alt="Crown of Caledon - New Homes in Caledon by Fieldgate Homes" 
               className="h-10 w-auto"
             />
@@ -60,12 +60,10 @@ const CrownNavigation = () => {
           {/* Call Button */}
           <div className="hidden md:block">
             <Button 
-              variant="outline" 
               size="sm"
-              className="flex items-center gap-2"
+              className="bg-luxury-gold text-primary font-semibold hover:bg-luxury-gold/90"
               onClick={() => scrollToSection('contact')}
             >
-              <Phone className="h-4 w-4" />
               Get Floor Plans
             </Button>
           </div>
@@ -116,12 +114,10 @@ const CrownNavigation = () => {
             </button>
             <div className="px-3 py-2">
               <Button 
-                variant="outline" 
                 size="sm" 
-                className="w-full flex items-center justify-center gap-2"
+                className="w-full bg-luxury-gold text-primary font-semibold hover:bg-luxury-gold/90"
                 onClick={() => scrollToSection('contact')}
               >
-                <Phone className="h-4 w-4" />
                 Get Floor Plans
               </Button>
             </div>

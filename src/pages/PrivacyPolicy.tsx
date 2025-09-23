@@ -115,20 +115,6 @@ const PrivacyPolicy = () => {
                   </ul>
                 </section>
 
-                <section>
-                  <h2 className="text-2xl font-display font-semibold text-primary mb-4">
-                    Contact Information
-                  </h2>
-                  <p className="mb-4">
-                    If you have any questions about this privacy policy or our data practices, please contact us:
-                  </p>
-                  <div className="bg-muted/30 p-4 rounded-lg">
-                    <p><strong>Crown of Caledon Sales Team</strong></p>
-                    <p>New Home Sales</p>
-                    <p>Fieldgate Homes</p>
-                    <p>Email: info@crownofcaledon.com</p>
-                  </div>
-                </section>
 
                 <section>
                   <h2 className="text-2xl font-display font-semibold text-primary mb-4">

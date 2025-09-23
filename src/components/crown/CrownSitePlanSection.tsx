@@ -62,13 +62,41 @@ const CrownSitePlanSection = () => {
             </Dialog>
           </div>
 
-          <div className="relative">
+          <div className="relative group">
             <div className="aspect-square rounded-lg overflow-hidden border border-border">
               <img 
                 src={crownNeighborhoodMap} 
                 alt="Crown of Caledon Site Plan Preview - Caledon Community Layout"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button 
+                      size="lg"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-luxury-gold text-primary font-semibold hover:bg-luxury-gold/90"
+                    >
+                      Get Detailed Site Plan
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl max-h-[90vh] overflow-auto">
+                    <DialogHeader>
+                      <DialogTitle>Crown of Caledon Master Site Plan</DialogTitle>
+                    </DialogHeader>
+                    <div className="w-full">
+                      <img 
+                        src={crownNeighborhoodMap} 
+                        alt="Crown of Caledon Master Site Plan - City Townhomes, Freehold Townhomes, and 38' Detached Homes Layout"
+                        className="w-full h-auto rounded-lg border"
+                      />
+                      <p className="text-sm text-muted-foreground mt-4 text-center">
+                        This is a preliminary site plan subject to governmental approval. 
+                        Dimensions & specifications are subject to change without notice.
+                      </p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
             </div>
           </div>
         </div>
