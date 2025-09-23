@@ -22,7 +22,7 @@ const CrownNavigation = () => {
           <div className="flex-shrink-0">
             <img 
               src="/src/assets/crown-logo.png" 
-              alt="Crown of Caledon" 
+              alt="Crown of Caledon - New Homes in Caledon by Fieldgate Homes" 
               className="h-10 w-auto"
             />
           </div>
@@ -34,31 +34,31 @@ const CrownNavigation = () => {
                 onClick={() => scrollToSection('overview')}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
-                Overview
+                New Homes Caledon
               </button>
               <button 
                 onClick={() => scrollToSection('location')}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
-                Location
+                Caledon Location
               </button>
               <button 
                 onClick={() => scrollToSection('homes')}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
-                Homes
+                Caledon Homes for Sale
               </button>
               <button 
                 onClick={() => scrollToSection('amenities')}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
-                Amenities
+                Community Amenities
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
-                Contact
+                Caledon Real Estate Agent
               </button>
             </div>
           </div>
@@ -99,31 +99,31 @@ const CrownNavigation = () => {
               onClick={() => scrollToSection('overview')}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
             >
-              Overview
+              New Homes Caledon
             </button>
             <button
               onClick={() => scrollToSection('location')}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
             >
-              Location
+              Caledon Location
             </button>
             <button
               onClick={() => scrollToSection('homes')}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
             >
-              Homes
+              Caledon Homes for Sale
             </button>
             <button
               onClick={() => scrollToSection('amenities')}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
             >
-              Amenities
+              Community Amenities
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
             >
-              Contact
+              Caledon Real Estate Agent
             </button>
             <div className="px-3 py-2">
               <Button variant="outline" size="sm" className="w-full flex items-center justify-center gap-2">

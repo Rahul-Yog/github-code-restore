@@ -31,44 +31,44 @@ const CrownHeroSection = () => {
         <div className="relative z-10 container-custom text-center text-white">
           <div className="max-w-4xl mx-auto animate-fade-in">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-3 md:gap-6 mb-8 text-[9px] sm:text-xs md:text-sm px-2">
-              <div className="flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded-full min-w-0 shadow-lg">
-                <MapPin size={10} className="text-luxury-gold sm:w-4 sm:h-4 md:w-4 md:h-4 flex-shrink-0" />
-                <span className="truncate font-medium text-white">Hurontario & Mayfield</span>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 text-xs sm:text-sm md:text-base px-2">
+              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
+                <MapPin className="text-luxury-gold w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="font-medium text-white whitespace-nowrap">Hurontario & Mayfield</span>
               </div>
-              <div className="flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded-full min-w-0 shadow-lg">
-                <DollarSign size={10} className="text-luxury-gold sm:w-4 sm:h-4 md:w-4 md:h-4 flex-shrink-0" />
-                <span className="truncate font-medium text-white">From $730K</span>
+              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
+                <DollarSign className="text-luxury-gold w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="font-medium text-white whitespace-nowrap">From $730K</span>
               </div>
-              <div className="flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded-full min-w-0 shadow-lg">
-                <Clock size={10} className="text-luxury-gold sm:w-4 sm:h-4 md:w-4 md:h-4 flex-shrink-0" />
-                <span className="truncate font-medium text-white">2026 Move-in</span>
+              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
+                <Clock className="text-luxury-gold w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="font-medium text-white whitespace-nowrap">2026 Move-in</span>
               </div>
-              <div className="flex items-center gap-1 bg-white/15 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded-full min-w-0 shadow-lg">
-                <span className="w-2.5 h-2.5 sm:w-4 sm:h-4 bg-luxury-gold rounded-full flex items-center justify-center text-[7px] sm:text-xs font-bold text-primary flex-shrink-0">4</span>
-                <span className="truncate font-medium text-white">Near Hwy 410</span>
+              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
+                <div className="w-5 h-5 bg-luxury-gold rounded-full flex items-center justify-center text-xs font-bold text-primary flex-shrink-0">4</div>
+                <span className="font-medium text-white whitespace-nowrap">Near Hwy 410</span>
               </div>
             </div>
 
             {/* Main Headline */}
             <h1 className="hero-title font-display font-bold mb-6 leading-tight">
-              Welcome to
+              New Homes in Caledon | 
               <span className="block text-gradient">Crown of Caledon</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Discover premium freehold townhomes and stunning 38' detached homes on the vibrant 
-              border of Brampton. Where luxury living meets unbeatable value - offering the 
-              <span className="text-luxury-gold font-semibold"> best pricing in today's market</span>.
+              Discover premium freehold townhomes and stunning 38' detached homes in Caledon near Brampton. 
+              Where luxury living meets unbeatable value - offering the 
+              <span className="text-luxury-gold font-semibold"> best pricing for new construction homes in Caledon</span>.
             </p>
 
             {/* Home Types */}
             <div className="flex flex-wrap justify-center items-center gap-4 mb-8 text-white/80">
               <span className="text-sm">Featuring:</span>
               <div className="flex flex-wrap justify-center gap-3 text-sm">
-                <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">Rear Lane Townhomes</span>
-                <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">2-Story Townhomes</span>
+                <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">City Townhomes</span>
+                <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">Freehold Townhomes</span>
                 <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">38' Single Detached</span>
               </div>
             </div>
