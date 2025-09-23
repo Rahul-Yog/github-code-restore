@@ -123,11 +123,10 @@ const PrivacyPolicy = () => {
                     If you have any questions about this privacy policy or our data practices, please contact us:
                   </p>
                   <div className="bg-muted/30 p-4 rounded-lg">
-                    <p><strong>Rahul Jindal</strong></p>
-                    <p>Real Estate Sales Representative</p>
-                    <p>RE/MAX Skyway Realty Inc. Brokerage</p>
-                    <p>Phone: 416-903-8026</p>
-                    <p>Email: info@rahuljindal.ca</p>
+                    <p><strong>Crown of Caledon Sales Team</strong></p>
+                    <p>New Home Sales</p>
+                    <p>Fieldgate Homes</p>
+                    <p>Email: info@crownofcaledon.com</p>
                   </div>
                 </section>
 

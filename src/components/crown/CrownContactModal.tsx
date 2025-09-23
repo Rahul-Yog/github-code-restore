@@ -82,8 +82,8 @@ const CrownContactModal = ({ isOpen, onClose, formType }: CrownContactModalProps
 
     if (!formData.emailConsent && !formData.phoneConsent) {
       toast({
-        title: "Consent Required",
-        description: "Please provide consent for us to contact you.",
+        title: "Contact method required",
+        description: "Please select at least one contact option (email or phone).",
         variant: "destructive",
       });
       return;
@@ -263,13 +263,11 @@ const CrownContactModal = ({ isOpen, onClose, formType }: CrownContactModalProps
                 <SelectTrigger>
                   <SelectValue placeholder="Select home type" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="the-sterling">The Sterling (1,602 sq ft)</SelectItem>
-                  <SelectItem value="the-regalia">The Regalia (1,602-1,620 sq ft)</SelectItem>
-                  <SelectItem value="the-sceptre">The Sceptre (1,602 sq ft)</SelectItem>
-                  <SelectItem value="the-jewel">The Jewel (1,602 sq ft)</SelectItem>
-                  <SelectItem value="not-sure">Not Sure Yet</SelectItem>
-                </SelectContent>
+                 <SelectContent>
+                   <SelectItem value="city-townhomes">City Townhomes</SelectItem>
+                   <SelectItem value="freehold-townhomes">Freehold Townhomes</SelectItem>
+                   <SelectItem value="38-singles">38' Detached</SelectItem>
+                 </SelectContent>
               </Select>
             </div>
 

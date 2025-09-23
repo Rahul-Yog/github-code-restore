@@ -31,22 +31,22 @@ const CrownHeroSection = () => {
         <div className="relative z-10 container-custom text-center text-white">
           <div className="max-w-4xl mx-auto animate-fade-in">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 text-xs sm:text-sm md:text-base px-2">
-              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
-                <MapPin className="text-luxury-gold w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="font-medium text-white whitespace-nowrap">Hurontario & Mayfield</span>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-8 text-sm sm:text-base md:text-lg px-2">
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 rounded-full shadow-xl min-w-fit border border-white/10">
+                <MapPin className="text-luxury-gold w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                <span className="font-semibold text-white whitespace-nowrap">Hurontario & Mayfield</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
-                <DollarSign className="text-luxury-gold w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="font-medium text-white whitespace-nowrap">From $730K</span>
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 rounded-full shadow-xl min-w-fit border border-white/10">
+                <DollarSign className="text-luxury-gold w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                <span className="font-semibold text-white whitespace-nowrap">From $730K</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
-                <Clock className="text-luxury-gold w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="font-medium text-white whitespace-nowrap">2026 Move-in</span>
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 rounded-full shadow-xl min-w-fit border border-white/10">
+                <Clock className="text-luxury-gold w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                <span className="font-semibold text-white whitespace-nowrap">2026 Move-in</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-full shadow-lg min-w-fit">
-                <div className="w-5 h-5 bg-luxury-gold rounded-full flex items-center justify-center text-xs font-bold text-primary flex-shrink-0">4</div>
-                <span className="font-medium text-white whitespace-nowrap">Near Hwy 410</span>
+              <div className="flex items-center gap-3 bg-white/20 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 rounded-full shadow-xl min-w-fit border border-white/10">
+                <div className="w-6 h-6 bg-luxury-gold rounded-full flex items-center justify-center text-sm font-bold text-primary flex-shrink-0">4</div>
+                <span className="font-semibold text-white whitespace-nowrap">Near Hwy 410</span>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ const CrownHeroSection = () => {
                 size="lg"
                 className="luxury-gradient text-primary font-semibold px-8 py-4 text-lg hover:scale-105 transition-transform duration-200 shadow-luxury"
               >
-                Get Crown Floor Plans
+                Get Exclusive Floor Plans
               </Button>
               <Button 
                 onClick={() => scrollToSection('#overview')}

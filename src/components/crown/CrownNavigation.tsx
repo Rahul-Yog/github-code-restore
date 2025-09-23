@@ -54,12 +54,6 @@ const CrownNavigation = () => {
               >
                 Community Amenities
               </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
-              >
-                Caledon Real Estate Agent
-              </button>
             </div>
           </div>
 
@@ -69,9 +63,10 @@ const CrownNavigation = () => {
               variant="outline" 
               size="sm"
               className="flex items-center gap-2"
+              onClick={() => scrollToSection('contact')}
             >
               <Phone className="h-4 w-4" />
-              Call Now
+              Get Floor Plans
             </Button>
           </div>
 
@@ -119,16 +114,15 @@ const CrownNavigation = () => {
             >
               Community Amenities
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
-            >
-              Caledon Real Estate Agent
-            </button>
             <div className="px-3 py-2">
-              <Button variant="outline" size="sm" className="w-full flex items-center justify-center gap-2">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full flex items-center justify-center gap-2"
+                onClick={() => scrollToSection('contact')}
+              >
                 <Phone className="h-4 w-4" />
-                Call Now
+                Get Floor Plans
               </Button>
             </div>
           </div>

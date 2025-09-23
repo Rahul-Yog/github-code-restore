@@ -52,7 +52,7 @@ const CrownLeadForm = () => {
     if (!formData.newsletter && !formData.phoneConsent) {
       toast({
         title: "Contact method required",
-        description: "Please allow us to contact you via email or phone.",
+        description: "Please select at least one contact option (email or phone).",
         variant: "destructive",
       });
       return;
@@ -248,12 +248,11 @@ const CrownLeadForm = () => {
                       <SelectTrigger>
                         <SelectValue placeholder="Select home type" />
                       </SelectTrigger>
-                       <SelectContent>
-                         <SelectItem value="rear-lane-townhomes">Rear Lane Townhomes - Double Car Garage (Freehold / 4 Car Parking)</SelectItem>
-                         <SelectItem value="2-story-townhomes">2 Story Townhomes - Freehold (2 Car Parking)</SelectItem>
-                         <SelectItem value="38-singles">38' Singles Detached Homes</SelectItem>
-                         <SelectItem value="not-sure">Not Sure Yet</SelectItem>
-                       </SelectContent>
+                         <SelectContent>
+                          <SelectItem value="city-townhomes">City Townhomes</SelectItem>
+                          <SelectItem value="freehold-townhomes">Freehold Townhomes</SelectItem>
+                          <SelectItem value="38-singles">38' Detached</SelectItem>
+                        </SelectContent>
                     </Select>
                   </div>
 
