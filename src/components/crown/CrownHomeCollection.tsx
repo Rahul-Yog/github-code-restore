@@ -67,6 +67,12 @@ import regalElevC from '@/assets/regal-elev-c.png';
 import throneElevB from '@/assets/throne-elev-b.png';
 import throneElevC from '@/assets/throne-elev-c.png';
 
+// Import new third carousel luxury estate home images
+import dominionElevC2 from '@/assets/dominion-elev-c-2.png';
+import grandElev from '@/assets/grand-elev.png';
+import majestyElev from '@/assets/majesty-elev.png';
+import royalElev from '@/assets/royal-elev.png';
+
 const CrownHomeCollection = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedCollection, setSelectedCollection] = useState<string>('');
@@ -133,19 +139,19 @@ const CrownHomeCollection = () => {
   const detachedCollections = [
     {
       id: 'premium-estate',
-      title: 'Luxury Estate Homes',
-      subtitle: 'Premium Estate Collection',
-      description: 'Exclusive luxury estate homes with sophisticated architectural elevations and premium positioning on larger lots.',
+      title: 'Crown Luxury Estate Collection',
+      subtitle: 'Ultra-Premium Estate Homes',
+      description: 'Exclusive luxury estate homes featuring Grand, Majesty, Royal, and Premium Dominion architectural designs on premier lots.',
       category: 'detached',
       tier: 'luxury',
-      elevations: 3,
-      images: [luxuryEstate1ElevA, luxuryEstate1ElevB, luxuryEstate1ElevC],
-      features: ['5-6 Bedrooms', '4-5 Bathrooms', '2-3 Car Garage', '3,200+ sq ft'],
-      priceRange: 'Starting from $1.35M',
-      badge: 'Available Now',
+      elevations: 4,
+      images: [grandElev, majestyElev, royalElev, dominionElevC2],
+      features: ['5-6 Bedrooms', '4-5 Bathrooms', '3 Car Garage', '3,500+ sq ft'],
+      priceRange: 'Starting from $1.65M',
+      badge: 'Luxury Estate',
       available: true,
       featured: true,
-      units: 'Limited Estate Lots'
+      units: 'Exclusive estate lots'
     },
     {
       id: 'compact-home-2',
