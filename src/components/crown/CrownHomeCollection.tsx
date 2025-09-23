@@ -44,6 +44,17 @@ import luxuryEstate1ElevA from '@/assets/luxury-estate-1-elev-a.png';
 import luxuryEstate1ElevB from '@/assets/luxury-estate-1-elev-b.png';
 import luxuryEstate1ElevC from '@/assets/luxury-estate-1-elev-c.png';
 
+// Import new first carousel detached home images
+import jubileeElevC from '@/assets/jubilee-elev-c.png';
+import monarchElevA from '@/assets/monarch-elev-a.png';
+import monarchElevB from '@/assets/monarch-elev-b.png';
+import tiaraElevA from '@/assets/tiara-elev-a.png';
+import tiaraElevB from '@/assets/tiara-elev-b.png';
+import tiaraElevC from '@/assets/tiara-elev-c.png';
+import traditionElevA from '@/assets/tradition-elev-a.png';
+import traditionElevB from '@/assets/tradition-elev-b.png';
+import traditionElevC from '@/assets/tradition-elev-c.png';
+
 const CrownHomeCollection = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedCollection, setSelectedCollection] = useState<string>('');
@@ -126,18 +137,18 @@ const CrownHomeCollection = () => {
     },
     {
       id: 'compact-home-2',
-      title: 'Modern Compact Homes',
-      subtitle: 'Compact Living Collection',
-      description: 'Elegant detached homes with sophisticated elevation options featuring modern design.',
+      title: 'Crown Signature Collection',
+      subtitle: 'Featured Detached Homes',
+      description: 'Premium detached homes showcasing multiple architectural styles including Jubilee, Monarch, Tiara, and Tradition models.',
       category: 'detached',
       tier: 'starter',
-      elevations: 2,
-      images: [compactHome2ElevA, compactHome2ElevB],
-      features: ['3-4 Bedrooms', '2.5-3 Bathrooms', '2 Car Garage', '1,400-1,600 sq ft'],
-      priceRange: 'Starting from $730K',
-      badge: 'Available Now',
+      elevations: 9,
+      images: [jubileeElevC, monarchElevA, monarchElevB, tiaraElevA, tiaraElevB, tiaraElevC, traditionElevA, traditionElevB, traditionElevC],
+      features: ['3-5 Bedrooms', '2.5-4 Bathrooms', '2 Car Garage', '1,800-2,400 sq ft'],
+      priceRange: 'Starting from $899K',
+      badge: 'New Collection',
       available: true,
-      units: '8 lots remaining'
+      units: 'Multiple designs available'
     },
     {
       id: 'compact-home-1',
