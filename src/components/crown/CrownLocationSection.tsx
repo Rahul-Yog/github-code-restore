@@ -1,7 +1,7 @@
 import { MapPin, Clock, Car, GraduationCap, ShoppingCart, TreePine, Home, Train } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import neighborhoodMap from '@/assets/crown-neighborhood-map.jpg';
+import neighborhoodMap from '@/assets/crown-neighborhood-site-plan.png';
 
 const CrownLocationSection = () => {
   const keyDistances = [

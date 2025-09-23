@@ -95,9 +95,11 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       `;
 
+      const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'info@crownofcaledon.com';
+      
       const emailResponse = await resend.emails.send({
-        from: "Crown of Caledon <noreply@resend.dev>",
-        to: ["admin@example.com"], // Replace with actual admin email
+        from: "Crown of Caledon <onboarding@resend.dev>",
+        to: [adminEmail],
         subject: emailSubject,
         html: emailContent,
       });
