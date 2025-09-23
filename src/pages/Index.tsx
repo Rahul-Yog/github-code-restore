@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CrownNavigation from '@/components/crown/CrownNavigation';
 import CrownHeroSection from '@/components/crown/CrownHeroSection';
 import CrownOverviewSection from '@/components/crown/CrownOverviewSection';
@@ -8,11 +8,19 @@ import CrownAmenities from '@/components/crown/CrownAmenities';
 import CrownFAQSection from '@/components/crown/CrownFAQSection';
 import CrownLeadForm from '@/components/crown/CrownLeadForm';
 import CrownFooter from '@/components/crown/CrownFooter';
+import { SocialMediaDownload } from '@/components/SocialMediaDownload';
 
 const Index = () => {
   console.log('Crown of Caledon page loading...');
+  const [showSocialDownload, setShowSocialDownload] = useState(false);
   
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('download') === 'social') {
+      setShowSocialDownload(true);
+    }
+    
+    if (showSocialDownload) return;
     // SEO optimization based on audit recommendations
     document.title = 'New Homes Caledon | Crown of Caledon Freehold Townhomes & Detached Homes | Fieldgate Homes';
     
@@ -95,7 +103,11 @@ const Index = () => {
         }
       }
     });
-  }, []);
+  }, [showSocialDownload]);
+  
+  if (showSocialDownload) {
+    return <SocialMediaDownload />;
+  }
   
   return (
     <div className="min-h-screen bg-background">
