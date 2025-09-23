@@ -13,28 +13,37 @@ const Index = () => {
   console.log('Crown of Caledon page loading...');
   
   useEffect(() => {
-    // Set SEO meta tags
-    document.title = 'New Homes in Caledon | Crown of Caledon | Fieldgate Homes';
+    // SEO optimization based on audit recommendations
+    document.title = 'New Homes Caledon | Crown of Caledon Freehold Townhomes & Detached Homes | Fieldgate Homes';
     
-    // Create or update meta description
+    // Enhanced meta description for better keyword targeting
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Discover Crown of Caledon - premium new homes in Caledon featuring freehold townhomes and 38\' detached homes near Brampton. From $730K by Fieldgate Homes.');
+    metaDescription.setAttribute('content', 'New homes in Caledon at Crown of Caledon. Premium freehold townhomes and 38\' detached homes starting from $730K. Move-in ready homes by award-winning Fieldgate Homes near Brampton.');
     
-    // Create or update keywords meta tag
+    // Optimized keywords based on SEO audit
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'new homes Caledon, Caledon homes for sale, freehold townhomes Caledon, detached homes Caledon, Fieldgate Homes, Crown of Caledon, new construction Caledon');
+    metaKeywords.setAttribute('content', 'new homes Caledon, Caledon homes for sale, new construction Caledon, freehold townhomes Caledon, detached homes Caledon, Crown of Caledon, Fieldgate Homes, homes near Brampton');
     
-    // Create or update viewport meta tag
+    // Robots meta tag for proper indexation
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.setAttribute('name', 'robots');
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.setAttribute('content', 'index, follow');
+    
+    // Enhanced viewport
     let metaViewport = document.querySelector('meta[name="viewport"]');
     if (!metaViewport) {
       metaViewport = document.createElement('meta');
@@ -43,7 +52,7 @@ const Index = () => {
     }
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
     
-    // Add canonical URL
+    // Canonical URL
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
       linkCanonical = document.createElement('link');
@@ -51,29 +60,70 @@ const Index = () => {
       document.head.appendChild(linkCanonical);
     }
     linkCanonical.setAttribute('href', window.location.origin + window.location.pathname);
+    
+    // Add structured data for local business
+    let structuredData = document.querySelector('script[type="application/ld+json"]');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Crown of Caledon by Fieldgate Homes",
+      "description": "New homes in Caledon featuring premium freehold townhomes and detached homes",
+      "url": window.location.origin,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Caledon",
+        "addressRegion": "Ontario",
+        "addressCountry": "CA"
+      },
+      "areaServed": ["Caledon", "Brampton", "Greater Toronto Area"],
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "New Homes in Caledon",
+          "description": "Freehold townhomes and detached homes"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "730000",
+          "priceCurrency": "CAD"
+        }
+      }
+    });
   }, []);
   
   return (
     <div className="min-h-screen bg-background">
-      <CrownNavigation />
-      <CrownHeroSection />
-      <section id="overview">
-        <CrownOverviewSection />
-      </section>
-      <section id="location">
-        <CrownLocationSection />
-      </section>
-      <section id="homes">
-        <CrownHomeCollection />
-      </section>
-      <section id="amenities">
-        <CrownAmenities />
-      </section>
-      <CrownFAQSection />
-      <section id="contact">
-        <CrownLeadForm />
-      </section>
-      <CrownFooter />
+      <header>
+        <CrownNavigation />
+      </header>
+      <main>
+        <CrownHeroSection />
+        <section id="overview" aria-label="Overview of Crown of Caledon">
+          <CrownOverviewSection />
+        </section>
+        <section id="location" aria-label="Location and Community">
+          <CrownLocationSection />
+        </section>
+        <section id="homes" aria-label="Home Collection">
+          <CrownHomeCollection />
+        </section>
+        <section id="amenities" aria-label="Community Amenities">
+          <CrownAmenities />
+        </section>
+        <CrownFAQSection />
+        <section id="contact" aria-label="Contact Information">
+          <CrownLeadForm />
+        </section>
+      </main>
+      <footer>
+        <CrownFooter />
+      </footer>
     </div>
   );
 };

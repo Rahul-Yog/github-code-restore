@@ -41,14 +41,14 @@ const CrownOverviewSection = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Crown of <span className="text-accent">Caledon</span>
+            Premium New Homes in <span className="text-accent">Caledon</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto rounded-full"></div>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            Introducing Crown of Caledon, where luxury meets comfort in one of the GTA's most prestigious locations. 
-            This exclusive development features premium freehold townhomes and spacious detached homes, 
-            all crafted with unmatched quality and attention to detail by Fieldgate Homes. 
-            Experience the perfect blend of modern design and natural beauty in Caledon's thriving community.
+            Crown of Caledon brings luxury and comfort to one of the GTA's best locations. 
+            Our new development features premium freehold townhomes and spacious detached homes. 
+            Built with quality and attention to detail by award-winning Fieldgate Homes. 
+            Enjoy modern design and natural beauty in Caledon's growing community.
           </p>
         </div>
 
@@ -58,22 +58,20 @@ const CrownOverviewSection = () => {
           <div className="space-y-6">
             <div className="prose prose-lg">
               <p className="text-muted-foreground leading-relaxed">
-                Crown of Caledon represents the pinnacle of modern living, offering an exclusive collection of 
-                freehold townhomes and detached homes in one of Ontario's most desirable communities. Located at the 
-                prestigious intersection of Hurontario Street and Mayfield Road, this development seamlessly blends 
-                luxury with the natural beauty of Caledon.
+                Crown of Caledon offers the best in modern living. We have premium freehold townhomes and detached homes 
+                in one of Ontario's top communities. Located at Hurontario Street and Mayfield Road, this development 
+                combines luxury with Caledon's natural beauty.
               </p>
               
               <p className="text-muted-foreground leading-relaxed">
-                Each home is thoughtfully designed with premium finishes, spacious layouts, and modern amenities that 
-                cater to today's discerning homeowners. From elegant architectural details to gourmet kitchens with 
-                premium appliances, every element reflects our commitment to quality and sophisticated living.
+                Each home features premium finishes, spacious layouts, and modern amenities. You'll love the elegant 
+                details and gourmet kitchens with quality appliances. Every element shows our commitment to quality 
+                and comfortable living.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                The community offers an ideal balance of rural charm and urban convenience, with access to pristine 
-                natural spaces, top-rated schools, and recreational facilities, while maintaining excellent 
-                connectivity throughout the Greater Toronto Area.
+                The community balances country charm with city convenience. Enjoy pristine nature, excellent schools, 
+                and great facilities. Plus, easy access throughout the Greater Toronto Area makes commuting simple.
               </p>
             </div>
           </div>

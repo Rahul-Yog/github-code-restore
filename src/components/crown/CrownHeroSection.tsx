@@ -50,17 +50,15 @@ const CrownHeroSection = () => {
               </div>
             </div>
 
-            {/* Main Headline */}
+            {/* Main H1 SEO Optimized */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-5 leading-tight">
-              New Homes in Caledon | 
-              <span className="block text-gradient">Crown of Caledon</span>
+              New Homes Caledon: <span className="block text-gradient">Crown of Caledon Freehold Townhomes</span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Improved Readability Subheadline */}
             <p className="text-lg md:text-xl mb-6 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Discover premium freehold townhomes and stunning 38' detached homes in Caledon near Brampton. 
-              Where luxury living meets unbeatable value - offering the 
-              <span className="text-luxury-gold font-semibold"> best pricing for new construction homes in Caledon</span>.
+              Looking for new homes in Caledon? Crown of Caledon offers premium freehold townhomes and 38' detached homes near Brampton. 
+              Move-in ready by 2026 with <span className="text-luxury-gold font-semibold">best pricing starting from $730K</span>.
             </p>
 
             {/* Home Types */}
