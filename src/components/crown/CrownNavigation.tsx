@@ -61,7 +61,7 @@ const CrownNavigation = () => {
           <div className="hidden md:block">
             <Button 
               size="sm"
-              className="bg-luxury-gold text-primary font-semibold hover:bg-luxury-gold/90"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300"
               onClick={() => scrollToSection('contact')}
             >
               Get Floor Plans
@@ -115,7 +115,7 @@ const CrownNavigation = () => {
             <div className="px-3 py-2">
               <Button 
                 size="sm" 
-                className="w-full bg-luxury-gold text-primary font-semibold hover:bg-luxury-gold/90"
+                className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300"
                 onClick={() => scrollToSection('contact')}
               >
                 Get Floor Plans

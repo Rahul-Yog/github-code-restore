@@ -62,19 +62,19 @@ const CrownSitePlanSection = () => {
             </Dialog>
           </div>
 
-          <div className="relative group">
+          <div className="relative group cursor-pointer">
             <div className="aspect-square rounded-lg overflow-hidden border border-border">
               <img 
                 src={crownNeighborhoodMap} 
                 alt="Crown of Caledon Site Plan Preview - Caledon Community Layout"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center z-10">
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button 
                       size="lg"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-luxury-gold text-primary font-semibold hover:bg-luxury-gold/90"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 shadow-lg"
                     >
                       Get Detailed Site Plan
                     </Button>

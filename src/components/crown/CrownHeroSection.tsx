@@ -31,22 +31,22 @@ const CrownHeroSection = () => {
         <div className="relative z-10 container-custom text-center text-white">
           <div className="max-w-4xl mx-auto animate-fade-in">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8 text-xs sm:text-sm px-2 max-w-4xl mx-auto">
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-full shadow-xl min-w-fit border border-white/10">
-                <MapPin className="text-luxury-gold w-4 h-4 flex-shrink-0" />
-                <span className="font-semibold text-white whitespace-nowrap">Hurontario & Mayfield</span>
+            <div className="flex flex-wrap justify-center gap-1 mb-8 text-xs px-2 max-w-5xl mx-auto overflow-hidden">
+              <div className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-full shadow-xl border border-white/10">
+                <MapPin className="text-luxury-gold w-3 h-3 flex-shrink-0" />
+                <span className="font-semibold text-white whitespace-nowrap text-xs">Hurontario & Mayfield</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-full shadow-xl min-w-fit border border-white/10">
-                <DollarSign className="text-luxury-gold w-4 h-4 flex-shrink-0" />
-                <span className="font-semibold text-white whitespace-nowrap">From $730K</span>
+              <div className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-full shadow-xl border border-white/10">
+                <DollarSign className="text-luxury-gold w-3 h-3 flex-shrink-0" />
+                <span className="font-semibold text-white whitespace-nowrap text-xs">From $730K</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-full shadow-xl min-w-fit border border-white/10">
-                <Clock className="text-luxury-gold w-4 h-4 flex-shrink-0" />
-                <span className="font-semibold text-white whitespace-nowrap">2026 Move-in</span>
+              <div className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-full shadow-xl border border-white/10">
+                <Clock className="text-luxury-gold w-3 h-3 flex-shrink-0" />
+                <span className="font-semibold text-white whitespace-nowrap text-xs">2026 Move-in</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-2 rounded-full shadow-xl min-w-fit border border-white/10">
-                <div className="w-5 h-5 bg-luxury-gold rounded-full flex items-center justify-center text-xs font-bold text-primary flex-shrink-0">4</div>
-                <span className="font-semibold text-white whitespace-nowrap">Near Hwy 410</span>
+              <div className="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-full shadow-xl border border-white/10">
+                <div className="w-4 h-4 bg-luxury-gold rounded-full flex items-center justify-center text-xs font-bold text-primary flex-shrink-0">4</div>
+                <span className="font-semibold text-white whitespace-nowrap text-xs">Near Hwy 410</span>
               </div>
             </div>
 
