@@ -55,6 +55,18 @@ import traditionElevA from '@/assets/tradition-elev-a.png';
 import traditionElevB from '@/assets/tradition-elev-b.png';
 import traditionElevC from '@/assets/tradition-elev-c.png';
 
+// Import new second carousel executive home images
+import castleElevA from '@/assets/castle-elev-a.png';
+import castleElevC from '@/assets/castle-elev-c.png';
+import dominionElevA from '@/assets/dominion-elev-a.png';
+import dominionElevB from '@/assets/dominion-elev-b.png';
+import dominionElevC from '@/assets/dominion-elev-c.png';
+import regalElevA from '@/assets/regal-elev-a.png';
+import regalElevB from '@/assets/regal-elev-b.png';
+import regalElevC from '@/assets/regal-elev-c.png';
+import throneElevB from '@/assets/throne-elev-b.png';
+import throneElevC from '@/assets/throne-elev-c.png';
+
 const CrownHomeCollection = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedCollection, setSelectedCollection] = useState<string>('');
@@ -197,18 +209,18 @@ const CrownHomeCollection = () => {
     },
     {
       id: 'family-home-1',
-      title: 'Modern Executive Homes',
-      subtitle: 'Executive Homes Collection',
-      description: 'Sophisticated executive homes with contemporary architectural elevations and luxury finishes.',
+      title: 'Crown Executive Collection',
+      subtitle: 'Premium Executive Homes',
+      description: 'Sophisticated executive homes featuring Castle, Dominion, Regal, and Throne architectural designs with luxury finishes.',
       category: 'detached',
       tier: 'premium',
-      elevations: 3,
-      images: [estateHome2ElevA, estateHome2ElevB, estateHome2ElevC],
-      features: ['4-5 Bedrooms', '3.5-4 Bathrooms', '2 Car Garage', '2,200-2,600 sq ft'],
-      priceRange: 'Starting from $950K',
-      badge: 'Executive Style',
+      elevations: 10,
+      images: [castleElevA, castleElevC, dominionElevA, dominionElevB, dominionElevC, regalElevA, regalElevB, regalElevC, throneElevB, throneElevC],
+      features: ['4-5 Bedrooms', '3.5-4 Bathrooms', '2-3 Car Garage', '2,400-2,800 sq ft'],
+      priceRange: 'Starting from $1.15M',
+      badge: 'Executive Collection',
       available: true,
-      units: 'Multiple lots available'
+      units: 'Premium lots available'
     },
     {
       id: 'family-home-2',
