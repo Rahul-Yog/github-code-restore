@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import crownLogo from "@/assets/crown-logo-updated-v2.png";
 
 const CrownNavigation = () => {
   console.log('CrownNavigation component rendering...');
@@ -21,8 +22,8 @@ const CrownNavigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="/src/assets/crown-logo-updated.png" 
-              alt="Crown of Caledon - New Homes in Caledon by Fieldgate Homes" 
+              src={crownLogo} 
+              alt="Crown of Caledon" 
               className="h-10 w-auto"
             />
           </div>
