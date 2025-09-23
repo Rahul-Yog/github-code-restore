@@ -22,11 +22,17 @@ export type Database = {
           form_type: string | null
           id: number
           interested_in: string | null
+          is_realtor: boolean | null
           last_name: string | null
           message: string | null
+          newsletter_consent: boolean | null
           phone: string | null
+          phone_consent: boolean | null
+          price_range: string | null
+          privacy_consent: boolean | null
           source: string | null
           timeline: string | null
+          user_agent: string | null
         }
         Insert: {
           created_at?: string
@@ -35,11 +41,17 @@ export type Database = {
           form_type?: string | null
           id?: number
           interested_in?: string | null
+          is_realtor?: boolean | null
           last_name?: string | null
           message?: string | null
+          newsletter_consent?: boolean | null
           phone?: string | null
+          phone_consent?: boolean | null
+          price_range?: string | null
+          privacy_consent?: boolean | null
           source?: string | null
           timeline?: string | null
+          user_agent?: string | null
         }
         Update: {
           created_at?: string
@@ -48,11 +60,17 @@ export type Database = {
           form_type?: string | null
           id?: number
           interested_in?: string | null
+          is_realtor?: boolean | null
           last_name?: string | null
           message?: string | null
+          newsletter_consent?: boolean | null
           phone?: string | null
+          phone_consent?: boolean | null
+          price_range?: string | null
+          privacy_consent?: boolean | null
           source?: string | null
           timeline?: string | null
+          user_agent?: string | null
         }
         Relationships: []
       }
