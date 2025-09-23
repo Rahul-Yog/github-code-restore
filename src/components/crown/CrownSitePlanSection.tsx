@@ -72,12 +72,9 @@ const CrownSitePlanSection = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                    <Button 
-                      size="lg"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 shadow-lg pointer-events-none"
-                    >
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 shadow-lg px-6 py-3 rounded-lg text-lg">
                       Get Detailed Site Plan
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </div>
