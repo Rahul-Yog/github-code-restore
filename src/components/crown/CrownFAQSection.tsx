@@ -14,7 +14,7 @@ const CrownFAQSection = () => {
     },
     {
       question: "What is the starting price for homes at Crown of Caledon?",
-      answer: "Luxury homes at Crown of Caledon start from $2 million. Each home features exceptional craftsmanship, premium finishes, and thoughtful design elements that reflect the highest standards of luxury living."
+      answer: "City Townhomes at Crown of Caledon start from $730k. Each home features exceptional craftsmanship, premium finishes, and thoughtful design elements that reflect the highest standards of luxury living."
     },
     {
       question: "Who is the developer of Crown of Caledon?",
