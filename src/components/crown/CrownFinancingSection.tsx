@@ -18,27 +18,27 @@ const CrownFinancingSection = () => {
   const incentives = [
     {
       icon: Gift,
-      title: "Early Registration Benefits",
-      description: "Exclusive upgrade opportunities for early registrants",
+      title: "Early Registration",
+      description: "Priority access and information for early registrants",
       value: "Available"
     },
     {
       icon: CreditCard,
-      title: "Flexible Payment Plans",
-      description: "Extended deposit payment schedules may be available",
+      title: "Payment Options",
+      description: "Various payment structures may be available",
       value: "Inquire"
     },
     {
       icon: Calculator,
-      title: "Mortgage Assistance",
-      description: "Pre-approval assistance and financing guidance",
-      value: "Support"
+      title: "Financing Information",
+      description: "General guidance on mortgage and financing options",
+      value: "Resources"
     },
     {
       icon: Shield,
-      title: "Price Information",
-      description: "Speak with our team about current pricing and terms",
-      value: "Contact Us"
+      title: "Purchase Details",
+      description: "Speak with sales team about terms and conditions",
+      value: "Contact"
     }
   ];
 
@@ -93,7 +93,7 @@ const CrownFinancingSection = () => {
           {/* Left Column - Incentives */}
           <div>
             <h3 className="text-3xl font-bold text-foreground mb-8">
-              Exclusive <span className="text-accent">Buyer Incentives</span>
+              General <span className="text-accent">Information</span>
             </h3>
             
             <div className="space-y-6">
@@ -160,18 +160,18 @@ const CrownFinancingSection = () => {
             <Card className="p-6 bg-primary/5 border-primary/20">
               <div className="text-center space-y-4">
                 <h4 className="text-xl font-bold text-foreground">
-                  Mortgage Pre-Approval Assistance
+                  Financing Resources
                 </h4>
                 <p className="text-muted-foreground text-sm">
-                  Our preferred mortgage partners offer competitive rates and pre-approval services 
-                  to help you understand your buying power and secure the best financing options.
+                  Various financing options and mortgage products are available through financial institutions. 
+                  Consult with mortgage professionals to explore suitable financing solutions.
                 </p>
                 <Button 
                   onClick={() => setIsModalOpen(true)}
                   className="w-full"
                   variant="outline"
                 >
-                  Get Financing Information
+                  Get Information
                 </Button>
               </div>
             </Card>
