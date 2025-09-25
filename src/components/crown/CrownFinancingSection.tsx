@@ -8,26 +8,11 @@ const CrownFinancingSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const depositStructure = [
-    {
-      timeline: "On Signing",
-      amount: "$••,•••",
-      description: "Initial deposit to secure your home"
-    },
-    {
-      timeline: "30 Days Later",
-      amount: "$••,•••", 
-      description: "Second deposit installment"
-    },
-    {
-      timeline: "120 Days Later",
-      amount: "$••,•••",
-      description: "Third deposit installment"
-    },
-    {
-      timeline: "270 Days Later",
-      amount: "$••,•••",
-      description: "Final deposit installment"
-    }
+    { timeline: "w/offer", amount: "$20,000" },
+    { timeline: "30 days", amount: "$20,000" },
+    { timeline: "60 days", amount: "$15,000" },
+    { timeline: "120 days", amount: "$15,000" },
+    { timeline: "180 days", amount: "$15,000" }
   ];
 
   const incentives = [
@@ -75,21 +60,23 @@ const CrownFinancingSection = () => {
         {/* Deposit Structure */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            Deposit Structure: <span className="text-accent">Contact for Details</span>
+            Deposit Structure: Total <span className="text-accent">$85,000</span>
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {depositStructure.map((item, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-accent">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="h-6 w-6 text-accent" />
+          <Card className="p-8 max-w-2xl mx-auto">
+            <div className="space-y-4">
+              {depositStructure.map((item, index) => (
+                <div key={index} className="flex justify-between items-center py-2 border-b border-border last:border-b-0">
+                  <span className="font-medium text-foreground">{item.timeline}</span>
+                  <span className="font-bold text-accent">{item.amount}</span>
                 </div>
-                <div className="text-2xl font-bold text-primary mb-2">{item.amount}</div>
-                <h4 className="font-semibold text-foreground mb-2">{item.timeline}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </Card>
-            ))}
-          </div>
+              ))}
+              <div className="flex justify-between items-center py-3 mt-4 pt-4 border-t-2 border-accent/20">
+                <span className="font-bold text-lg text-foreground">Total</span>
+                <span className="font-bold text-xl text-accent">$85,000</span>
+              </div>
+            </div>
+          </Card>
           
           <div className="text-center mt-8">
             <p className="text-muted-foreground mb-4">
