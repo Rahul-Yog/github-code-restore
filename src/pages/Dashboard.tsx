@@ -46,11 +46,21 @@ const Dashboard = () => {
 
       if (error) {
         console.error('Error fetching leads:', error);
-        toast({
-          title: "Error",
-          description: "Failed to load leads. Please try again.",
-          variant: "destructive",
-        });
+        
+        // Check if it's a permission error
+        if (error.code === 'PGRST116' || error.message?.includes('permission denied')) {
+          toast({
+            title: "Access Denied",
+            description: "You don't have permission to view leads. Please contact an administrator.",
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Error",
+            description: "Failed to load leads. Please try again.",
+            variant: "destructive",
+          });
+        }
         return;
       }
 

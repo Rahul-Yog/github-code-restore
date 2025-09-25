@@ -6,6 +6,16 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { z } from 'zod';
+
+// Input validation schema
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
+  lastName: z.string().trim().min(1, "Last name is required").max(50, "Last name must be less than 50 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone number must be less than 20 characters"),
+  message: z.string().trim().max(1000, "Message must be less than 1000 characters")
+});
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -30,17 +40,27 @@ const ContactSection = () => {
     setLoading(true);
 
     try {
-      const { error } = await supabase
-        .from('Crown Of Caledon Leads')
-        .insert({
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone: formData.phone || null,
-          message: formData.message || null,
+      // Validate input data
+      const validatedData = contactSchema.parse(formData);
+      
+      // Use secure edge function for lead submission
+      const { data, error } = await supabase.functions.invoke('submit-lead', {
+        body: {
+          first_name: validatedData.firstName,
+          last_name: validatedData.lastName,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          message: validatedData.message || null,
           form_type: 'contact_form',
-          source: 'website'
-        });
+          source: 'website',
+          interested_in: 'General Inquiry',
+          timeline: 'Not specified',
+          is_realtor: false,
+          newsletter_consent: true,
+          phone_consent: false,
+          privacy_consent: true
+        }
+      });
 
       if (error) {
         throw error;
@@ -60,13 +80,23 @@ const ContactSection = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Error submitting contact form:', error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-        duration: 5000,
-      });
+      if (error instanceof z.ZodError) {
+        const firstError = error.issues[0];
+        toast({
+          title: "Invalid Input",
+          description: firstError.message,
+          variant: "destructive",
+          duration: 5000,
+        });
+      } else {
+        console.error('Error submitting contact form:', error);
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+          duration: 5000,
+        });
+      }
     } finally {
       setLoading(false);
     }
