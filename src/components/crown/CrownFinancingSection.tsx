@@ -8,39 +8,13 @@ const CrownFinancingSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const depositStructure = [
-    { timeline: "w/offer", amount: "$20,000" },
-    { timeline: "30 days", amount: "$20,000" },
-    { timeline: "60 days", amount: "$15,000" },
-    { timeline: "120 days", amount: "$15,000" },
-    { timeline: "180 days", amount: "$15,000" }
+    { timeline: "w/offer" },
+    { timeline: "30 days" },
+    { timeline: "60 days" },
+    { timeline: "120 days" },
+    { timeline: "180 days" }
   ];
 
-  const incentives = [
-    {
-      icon: Gift,
-      title: "Early Registration",
-      description: "Priority access and information for early registrants",
-      value: "Available"
-    },
-    {
-      icon: CreditCard,
-      title: "Payment Options",
-      description: "Various payment structures may be available",
-      value: "Inquire"
-    },
-    {
-      icon: Calculator,
-      title: "Financing Information",
-      description: "General guidance on mortgage and financing options",
-      value: "Resources"
-    },
-    {
-      icon: Shield,
-      title: "Purchase Details",
-      description: "Speak with sales team about terms and conditions",
-      value: "Contact"
-    }
-  ];
 
   return (
     <section className="py-20 bg-background">
@@ -48,133 +22,97 @@ const CrownFinancingSection = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Flexible <span className="text-accent">Financing Options</span>
+            Flexible <span className="text-accent">Deposit Structure</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto rounded-full"></div>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            We make homeownership achievable with flexible payment plans, extended deposit schedules, 
-            and exclusive incentives for qualified buyers.
+            We understand that every buyer's financial situation is unique. Our flexible deposit structure 
+            is designed to accommodate various needs and timelines, making homeownership more accessible.
           </p>
         </div>
 
         {/* Deposit Structure */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            Deposit Structure: Total <span className="text-accent">$85,000</span>
+          <h3 className="text-3xl font-bold text-foreground text-center mb-8">
+            Standard <span className="text-accent">Payment Schedule</span>
           </h3>
           
-          <Card className="p-8 max-w-2xl mx-auto">
-            <div className="space-y-4">
-              {depositStructure.map((item, index) => (
-                <div key={index} className="flex justify-between items-center py-2 border-b border-border last:border-b-0">
-                  <span className="font-medium text-foreground">{item.timeline}</span>
-                  <span className="font-bold text-accent">{item.amount}</span>
-                </div>
-              ))}
-              <div className="flex justify-between items-center py-3 mt-4 pt-4 border-t-2 border-accent/20">
-                <span className="font-bold text-lg text-foreground">Total</span>
-                <span className="font-bold text-xl text-accent">$85,000</span>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <Card className="p-8">
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-semibold text-foreground mb-4">Typical Payment Timeline</h4>
+                <p className="text-muted-foreground">
+                  Our standard deposit structure follows industry-standard timelines, but we understand that 
+                  flexibility is important. We work with buyers to accommodate various financial situations.
+                </p>
               </div>
+              
+              <div className="grid grid-cols-5 gap-4 mb-6">
+                {depositStructure.map((item, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Calendar className="h-8 w-8 text-accent" />
+                    </div>
+                    <div className="font-medium text-foreground">{item.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="p-6 bg-gradient-to-br from-accent/5 to-primary/5 border-accent/20">
+                <h4 className="text-lg font-semibold text-foreground mb-4">Flexible Options Available</h4>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Extended payment timelines for qualified buyers</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Customized deposit structures based on individual needs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Multiple payment methods accepted</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional consultation on payment planning</span>
+                  </li>
+                </ul>
+              </Card>
+              
+              <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
+                <h4 className="text-lg font-semibold text-foreground mb-4">Why Choose Flexible Deposits?</h4>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Better cash flow management during construction</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Time to secure optimal mortgage rates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Opportunity to save additional funds for closing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Peace of mind with structured payments</span>
+                  </li>
+                </ul>
+              </Card>
             </div>
-          </Card>
+          </div>
           
           <div className="text-center mt-8">
             <p className="text-muted-foreground mb-4">
-              Balance due on closing: <span className="font-semibold text-foreground">Remainder as per purchase agreement</span>
+              <span className="font-semibold text-foreground">Deposit amounts and specific terms</span> vary based on home type, purchase price, and individual circumstances.
             </p>
             <p className="text-sm text-muted-foreground">
-              *Deposit structure may vary based on home type and purchase price. Speak to our sales team for specific details.
+              Contact our sales team to discuss personalized deposit structure options that work best for your situation.
             </p>
-          </div>
-        </div>
-
-        {/* Incentives Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left Column - Incentives */}
-          <div>
-            <h3 className="text-3xl font-bold text-foreground mb-8">
-              General <span className="text-accent">Information</span>
-            </h3>
-            
-            <div className="space-y-6">
-              {incentives.map((item, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <item.icon className="h-6 w-6 text-accent" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-semibold text-foreground">{item.title}</h4>
-                        <span className="text-sm font-bold text-accent">{item.value}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column - Financing Benefits */}
-          <div className="space-y-6">
-            <Card className="p-8 bg-gradient-to-br from-accent/5 to-primary/5 border-accent/20">
-              <div className="text-center space-y-6">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                  <DollarSign className="h-8 w-8 text-accent" />
-                </div>
-                
-                <h3 className="text-2xl font-bold text-foreground">
-                  Pre-Construction Advantages
-                </h3>
-                
-                <div className="space-y-4 text-left">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground">
-                      <span className="font-semibold">Today's Prices:</span> Lock in current pricing before market appreciation
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground">
-                      <span className="font-semibold">Extended Timeline:</span> More time to save and arrange financing
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground">
-                      <span className="font-semibold">Customization:</span> Choose finishes and upgrades during construction
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground">
-                      <span className="font-semibold">New Home Warranty:</span> Full Tarion warranty on your brand new home
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-primary/5 border-primary/20">
-              <div className="text-center space-y-4">
-                <h4 className="text-xl font-bold text-foreground">
-                  Financing Resources
-                </h4>
-                <p className="text-muted-foreground text-sm">
-                  Various financing options and mortgage products are available through financial institutions. 
-                  Consult with mortgage professionals to explore suitable financing solutions.
-                </p>
-                <Button 
-                  onClick={() => setIsModalOpen(true)}
-                  className="w-full"
-                  variant="outline"
-                >
-                  Get Information
-                </Button>
-              </div>
-            </Card>
           </div>
         </div>
 
@@ -182,11 +120,11 @@ const CrownFinancingSection = () => {
         <Card className="p-8 bg-gradient-to-r from-accent/10 via-primary/10 to-secondary/10 border-accent/20">
           <div className="text-center space-y-6">
             <h3 className="text-2xl font-bold text-foreground">
-              Ready to Secure Your New Home?
+              Ready to Learn More About Our Flexible Options?
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Speak with our sales team to discuss financing options, deposit structures, 
-              and current incentives available for Crown of Caledon homes.
+              Every buyer's situation is unique. Our sales team can work with you to create a deposit structure 
+              and payment plan that fits your financial needs and timeline.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -194,7 +132,7 @@ const CrownFinancingSection = () => {
                 size="lg"
                 className="luxury-gradient text-primary font-semibold px-8"
               >
-                Schedule Consultation
+                Discuss Payment Options
               </Button>
               <Button 
                 variant="outline"
@@ -207,7 +145,7 @@ const CrownFinancingSection = () => {
                   }
                 }}
               >
-                Get Floor Plans & Pricing
+                Get More Information
               </Button>
             </div>
           </div>
@@ -217,7 +155,7 @@ const CrownFinancingSection = () => {
       <ContactModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)}
-        formType="financing"
+        formType="general"
       />
     </section>
   );
