@@ -1,0 +1,239 @@
+import { DollarSign, Calendar, Gift, CreditCard, Calculator, Shield } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import ContactModal from './CrownContactModal';
+
+const CrownFinancingSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const depositStructure = [
+    {
+      timeline: "On Signing",
+      amount: "$25,000",
+      description: "Initial deposit to secure your home"
+    },
+    {
+      timeline: "30 Days Later",
+      amount: "$25,000", 
+      description: "Second deposit installment"
+    },
+    {
+      timeline: "120 Days Later",
+      amount: "$25,000",
+      description: "Third deposit installment"
+    },
+    {
+      timeline: "270 Days Later",
+      amount: "$25,000",
+      description: "Final deposit installment"
+    }
+  ];
+
+  const incentives = [
+    {
+      icon: Gift,
+      title: "Early Bird Bonus",
+      description: "Up to $15,000 in upgrade credits for early registrants",
+      value: "Up to $15K"
+    },
+    {
+      icon: CreditCard,
+      title: "Flexible Payment Plans",
+      description: "Extended deposit payment schedules available",
+      value: "Flexible"
+    },
+    {
+      icon: Calculator,
+      title: "Mortgage Assistance",
+      description: "Pre-approval assistance and rate protection programs",
+      value: "Available"
+    },
+    {
+      icon: Shield,
+      title: "Price Protection",
+      description: "Your purchase price is locked in until closing",
+      value: "Guaranteed"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-background">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Flexible <span className="text-accent">Financing Options</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto rounded-full"></div>
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            We make homeownership achievable with flexible payment plans, extended deposit schedules, 
+            and exclusive incentives for qualified buyers.
+          </p>
+        </div>
+
+        {/* Deposit Structure */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-foreground text-center mb-12">
+            Deposit Structure: Total <span className="text-accent">$100,000</span>
+          </h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {depositStructure.map((item, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-accent">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Calendar className="h-6 w-6 text-accent" />
+                </div>
+                <div className="text-2xl font-bold text-primary mb-2">{item.amount}</div>
+                <h4 className="font-semibold text-foreground mb-2">{item.timeline}</h4>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground mb-4">
+              Balance due on closing: <span className="font-semibold text-foreground">Remainder as per purchase agreement</span>
+            </p>
+            <p className="text-sm text-muted-foreground">
+              *Deposit structure may vary based on home type and purchase price. Speak to our sales team for specific details.
+            </p>
+          </div>
+        </div>
+
+        {/* Incentives Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Column - Incentives */}
+          <div>
+            <h3 className="text-3xl font-bold text-foreground mb-8">
+              Exclusive <span className="text-accent">Buyer Incentives</span>
+            </h3>
+            
+            <div className="space-y-6">
+              {incentives.map((item, index) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <item.icon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-2">
+                        <h4 className="font-semibold text-foreground">{item.title}</h4>
+                        <span className="text-sm font-bold text-accent">{item.value}</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Financing Benefits */}
+          <div className="space-y-6">
+            <Card className="p-8 bg-gradient-to-br from-accent/5 to-primary/5 border-accent/20">
+              <div className="text-center space-y-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
+                  <DollarSign className="h-8 w-8 text-accent" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-foreground">
+                  Pre-Construction Advantages
+                </h3>
+                
+                <div className="space-y-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">
+                      <span className="font-semibold">Today's Prices:</span> Lock in current pricing before market appreciation
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">
+                      <span className="font-semibold">Extended Timeline:</span> More time to save and arrange financing
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">
+                      <span className="font-semibold">Customization:</span> Choose finishes and upgrades during construction
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">
+                      <span className="font-semibold">New Home Warranty:</span> Full Tarion warranty on your brand new home
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-primary/5 border-primary/20">
+              <div className="text-center space-y-4">
+                <h4 className="text-xl font-bold text-foreground">
+                  Mortgage Pre-Approval Assistance
+                </h4>
+                <p className="text-muted-foreground text-sm">
+                  Our preferred mortgage partners offer competitive rates and pre-approval services 
+                  to help you understand your buying power and secure the best financing options.
+                </p>
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full"
+                  variant="outline"
+                >
+                  Get Financing Information
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <Card className="p-8 bg-gradient-to-r from-accent/10 via-primary/10 to-secondary/10 border-accent/20">
+          <div className="text-center space-y-6">
+            <h3 className="text-2xl font-bold text-foreground">
+              Ready to Secure Your New Home?
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Speak with our sales team to discuss financing options, deposit structures, 
+              and current incentives available for Crown of Caledon homes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                size="lg"
+                className="luxury-gradient text-primary font-semibold px-8"
+              >
+                Schedule Consultation
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg"
+                className="px-8"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Get Floor Plans & Pricing
+              </Button>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        formType="financing"
+      />
+    </section>
+  );
+};
+
+export default CrownFinancingSection;

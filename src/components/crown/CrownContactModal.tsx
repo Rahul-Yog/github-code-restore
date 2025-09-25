@@ -14,7 +14,7 @@ import { Mail, Phone, User, MessageSquare, Clock, Home } from 'lucide-react';
 interface CrownContactModalProps {
   isOpen: boolean;
   onClose: () => void;
-  formType: 'floorplans' | 'siteplan' | 'tour' | 'general';
+  formType: 'floorplans' | 'siteplan' | 'tour' | 'general' | 'financing';
 }
 
 const CrownContactModal = ({ isOpen, onClose, formType }: CrownContactModalProps) => {
@@ -42,6 +42,7 @@ const CrownContactModal = ({ isOpen, onClose, formType }: CrownContactModalProps
       case 'floorplans': return 'Get Exclusive Crown of Caledon Floor Plans';
       case 'siteplan': return 'Download Crown of Caledon Site Plan';
       case 'tour': return 'Schedule a Crown of Caledon Tour';
+      case 'financing': return 'Get Financing Information & Consultation';
       default: return 'Contact Crown of Caledon Sales Team';
     }
   };
@@ -51,6 +52,7 @@ const CrownContactModal = ({ isOpen, onClose, formType }: CrownContactModalProps
       case 'floorplans': return 'Get detailed floor plans and pricing information for Crown of Caledon homes starting from $730K.';
       case 'siteplan': return 'Download the complete site plan to see all available lots and community layout in Caledon.';
       case 'tour': return 'Schedule a private tour of our model homes and community amenities at Crown of Caledon.';
+      case 'financing': return 'Speak with our sales team about financing options, deposit structures, and current incentives available for Crown of Caledon homes.';
       default: return 'Get in touch with our Crown of Caledon sales team for any questions about this premium community.';
     }
   };

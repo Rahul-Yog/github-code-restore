@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 import CrownNavigation from '@/components/crown/CrownNavigation';
 import CrownHeroSection from '@/components/crown/CrownHeroSection';
 import CrownOverviewSection from '@/components/crown/CrownOverviewSection';
+import CrownInvestmentSection from '@/components/crown/CrownInvestmentSection';
 import CrownLocationSection from '@/components/crown/CrownLocationSection';
 import CrownHomeCollection from '@/components/crown/CrownHomeCollection';
+import CrownFinancingSection from '@/components/crown/CrownFinancingSection';
 import CrownAmenities from '@/components/crown/CrownAmenities';
+import CrownSocialProof from '@/components/crown/CrownSocialProof';
 import CrownFAQSection from '@/components/crown/CrownFAQSection';
 import CrownLeadForm from '@/components/crown/CrownLeadForm';
 import CrownFooter from '@/components/crown/CrownFooter';
@@ -119,14 +122,23 @@ const Index = () => {
         <section id="overview" aria-label="Overview of Crown of Caledon">
           <CrownOverviewSection />
         </section>
+        <section id="investment" aria-label="Investment Opportunity">
+          <CrownInvestmentSection />
+        </section>
         <section id="location" aria-label="Location and Community">
           <CrownLocationSection />
         </section>
         <section id="homes" aria-label="Home Collection">
           <CrownHomeCollection />
         </section>
+        <section id="financing" aria-label="Financing Options">
+          <CrownFinancingSection />
+        </section>
         <section id="amenities" aria-label="Community Amenities">
           <CrownAmenities />
+        </section>
+        <section id="testimonials" aria-label="Buyer Testimonials">
+          <CrownSocialProof />
         </section>
         <CrownFAQSection />
         <section id="contact" aria-label="Contact Information">
