@@ -82,54 +82,6 @@ const CrownSocialProof = () => {
           ))}
         </div>
 
-        {/* Header */}
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            What Our <span className="text-accent">Buyers</span> Are Saying
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto rounded-full"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Join hundreds of families who have chosen Crown of Caledon for their new home. 
-            See what they love most about our community and quality.
-          </p>
-        </div>
-
-        {/* Testimonials */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
-              <div className="space-y-4">
-                {/* Rating */}
-                <div className="flex items-center gap-2">
-                  <div className="flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  {testimonial.verified && (
-                    <Badge variant="secondary" className="text-xs">
-                      Verified Buyer
-                    </Badge>
-                  )}
-                </div>
-
-                {/* Quote */}
-                <div className="relative">
-                  <Quote className="w-8 h-8 text-accent/20 absolute -top-2 -left-1" />
-                  <p className="text-muted-foreground italic pl-6">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-
-                {/* Author */}
-                <div className="border-t pt-4">
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
 
         {/* Urgency Message */}
         <Card className="p-8 bg-gradient-to-r from-accent/5 via-primary/5 to-secondary/5 border-accent/20">
@@ -142,9 +94,8 @@ const CrownSocialProof = () => {
             </div>
             
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              With only <span className="font-semibold text-accent">{availableUnits} units remaining</span> and 
-              growing demand from buyers like you, Crown of Caledon homes are selling fast. 
-              Don't miss your chance to secure the best lot selections and early bird pricing.
+              With growing interest from buyers like you, Crown of Caledon is generating significant attention. 
+              Register today to secure priority access to lot selections and current pricing information.
             </p>
             
             <div className="grid md:grid-cols-3 gap-4 mt-6 text-sm">

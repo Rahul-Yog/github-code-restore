@@ -10,22 +10,22 @@ const CrownFinancingSection = () => {
   const depositStructure = [
     {
       timeline: "On Signing",
-      amount: "$25,000",
+      amount: "$••,•••",
       description: "Initial deposit to secure your home"
     },
     {
       timeline: "30 Days Later",
-      amount: "$25,000", 
+      amount: "$••,•••", 
       description: "Second deposit installment"
     },
     {
       timeline: "120 Days Later",
-      amount: "$25,000",
+      amount: "$••,•••",
       description: "Third deposit installment"
     },
     {
       timeline: "270 Days Later",
-      amount: "$25,000",
+      amount: "$••,•••",
       description: "Final deposit installment"
     }
   ];
@@ -33,27 +33,27 @@ const CrownFinancingSection = () => {
   const incentives = [
     {
       icon: Gift,
-      title: "Early Bird Bonus",
-      description: "Up to $15,000 in upgrade credits for early registrants",
-      value: "Up to $15K"
+      title: "Early Registration Benefits",
+      description: "Exclusive upgrade opportunities for early registrants",
+      value: "Available"
     },
     {
       icon: CreditCard,
       title: "Flexible Payment Plans",
-      description: "Extended deposit payment schedules available",
-      value: "Flexible"
+      description: "Extended deposit payment schedules may be available",
+      value: "Inquire"
     },
     {
       icon: Calculator,
       title: "Mortgage Assistance",
-      description: "Pre-approval assistance and rate protection programs",
-      value: "Available"
+      description: "Pre-approval assistance and financing guidance",
+      value: "Support"
     },
     {
       icon: Shield,
-      title: "Price Protection",
-      description: "Your purchase price is locked in until closing",
-      value: "Guaranteed"
+      title: "Price Information",
+      description: "Speak with our team about current pricing and terms",
+      value: "Contact Us"
     }
   ];
 
@@ -75,7 +75,7 @@ const CrownFinancingSection = () => {
         {/* Deposit Structure */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            Deposit Structure: Total <span className="text-accent">$100,000</span>
+            Deposit Structure: <span className="text-accent">Contact for Details</span>
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
