@@ -7,44 +7,44 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://crownofcaledon.ca/#overview</loc>
-    <lastmod>2025-09-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://crownofcaledon.ca/#investment</loc>
-    <lastmod>2025-09-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://crownofcaledon.ca/#location</loc>
-    <lastmod>2025-09-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://crownofcaledon.ca/#homes</loc>
-    <lastmod>2025-09-25</lastmod>
+    <loc>https://crownofcaledon.ca/#new-homes-caledon</loc>
+    <lastmod>2025-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crownofcaledon.ca/#financing</loc>
-    <lastmod>2025-09-25</lastmod>
+    <loc>https://crownofcaledon.ca/#caledon-location</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://crownofcaledon.ca/#caledon-homes-for-sale</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://crownofcaledon.ca/#floor-plans</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://crownofcaledon.ca/#home-financing</loc>
+    <lastmod>2025-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://crownofcaledon.ca/#amenities</loc>
-    <lastmod>2025-09-25</lastmod>
+    <loc>https://crownofcaledon.ca/#community-amenities</loc>
+    <lastmod>2025-09-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://crownofcaledon.ca/#testimonials</loc>
-    <lastmod>2025-09-25</lastmod>
+    <loc>https://crownofcaledon.ca/#customer-reviews</loc>
+    <lastmod>2025-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

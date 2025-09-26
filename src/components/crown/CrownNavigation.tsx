@@ -31,30 +31,38 @@ const CrownNavigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('overview')}
+              <a 
+                href="#new-homes-caledon"
+                onClick={(e) => { e.preventDefault(); scrollToSection('overview'); }}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+                title="New Homes in Caledon - Crown Development Overview"
               >
                 New Homes Caledon
-              </button>
-              <button 
-                onClick={() => scrollToSection('location')}
+              </a>
+              <a 
+                href="#caledon-location"
+                onClick={(e) => { e.preventDefault(); scrollToSection('location'); }}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+                title="Caledon Location and Neighbourhood Information"
               >
                 Caledon Location
-              </button>
-              <button 
-                onClick={() => scrollToSection('homes')}
+              </a>
+              <a 
+                href="#caledon-homes-for-sale"
+                onClick={(e) => { e.preventDefault(); scrollToSection('homes'); }}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+                title="Caledon Homes for Sale - Floor Plans and Pricing"
               >
                 Caledon Homes for Sale
-              </button>
-              <button 
-                onClick={() => scrollToSection('amenities')}
+              </a>
+              <a 
+                href="#community-amenities"
+                onClick={(e) => { e.preventDefault(); scrollToSection('amenities'); }}
                 className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+                title="Community Amenities and Features"
               >
                 Community Amenities
-              </button>
+              </a>
             </div>
           </div>
 
@@ -64,8 +72,11 @@ const CrownNavigation = () => {
               size="sm"
               className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300"
               onClick={() => scrollToSection('contact')}
+              asChild
             >
-              Get Floor Plans
+              <a href="#floor-plans" title="Get Exclusive Floor Plans for Crown of Caledon Homes">
+                Get Floor Plans
+              </a>
             </Button>
           </div>
 
@@ -89,30 +100,38 @@ const CrownNavigation = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
-            <button
-              onClick={() => scrollToSection('overview')}
+            <a
+              href="#new-homes-caledon"
+              onClick={(e) => { e.preventDefault(); scrollToSection('overview'); }}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
+              title="New Homes in Caledon - Crown Development Overview"
             >
               New Homes Caledon
-            </button>
-            <button
-              onClick={() => scrollToSection('location')}
+            </a>
+            <a
+              href="#caledon-location"
+              onClick={(e) => { e.preventDefault(); scrollToSection('location'); }}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
+              title="Caledon Location and Neighbourhood Information"
             >
               Caledon Location
-            </button>
-            <button
-              onClick={() => scrollToSection('homes')}
+            </a>
+            <a
+              href="#caledon-homes-for-sale"
+              onClick={(e) => { e.preventDefault(); scrollToSection('homes'); }}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
+              title="Caledon Homes for Sale - Floor Plans and Pricing"
             >
               Caledon Homes for Sale
-            </button>
-            <button
-              onClick={() => scrollToSection('amenities')}
+            </a>
+            <a
+              href="#community-amenities"
+              onClick={(e) => { e.preventDefault(); scrollToSection('amenities'); }}
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left"
+              title="Community Amenities and Features"
             >
               Community Amenities
-            </button>
+            </a>
             <div className="px-3 py-2">
               <Button 
                 size="sm" 
