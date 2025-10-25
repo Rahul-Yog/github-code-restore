@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import stoneroseLogo from "@/assets/stonerose-logo-black.png";
 
 const StoneRoseNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,8 +20,9 @@ const StoneRoseNavigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-primary">Stonerose</h1>
-            <p className="text-xs text-muted-foreground">by Treasure Hill</p>
+            <a href="/niagara-falls-homes-near-hospital" className="flex items-center">
+              <img src={stoneroseLogo} alt="Stonerose by Treasure Hill" className="h-12 w-auto" />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -42,6 +44,12 @@ const StoneRoseNavigation = () => {
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Location
+            </button>
+            <button
+              onClick={() => scrollToSection("site-plan")}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Site Plan
             </button>
             <button
               onClick={() => scrollToSection("homes")}
@@ -97,6 +105,12 @@ const StoneRoseNavigation = () => {
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md"
             >
               Location
+            </button>
+            <button
+              onClick={() => scrollToSection("site-plan")}
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md"
+            >
+              Site Plan
             </button>
             <button
               onClick={() => scrollToSection("homes")}

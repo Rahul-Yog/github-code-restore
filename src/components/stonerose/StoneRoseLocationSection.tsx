@@ -1,5 +1,6 @@
 import { MapPin, Navigation, School, ShoppingBag, Coffee, Trees } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import aerialImage from "@/assets/stonerose-aerial.jpg";
 
 const StoneRoseLocationSection = () => {
   const proximityPoints = [
@@ -57,18 +58,20 @@ const StoneRoseLocationSection = () => {
             </p>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Aerial Location Map */}
           <Card className="mb-12 overflow-hidden border-2">
             <CardContent className="p-0">
-              <div className="relative h-96 bg-accent/50 flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <MapPin className="w-16 h-16 text-primary mx-auto" />
-                  <p className="text-lg font-semibold text-foreground">Interactive Location Map</p>
-                  <p className="text-sm text-muted-foreground">
-                    Montrose Road, Niagara Falls, ON
+              <div className="relative h-[500px]">
+                <img
+                  src={aerialImage}
+                  alt="Stonerose Location - Aerial View showing proximity to Niagara Falls, Hospital, and Highway QEW"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm p-3 rounded-lg">
+                  <p className="text-sm font-semibold text-foreground">
+                    📍 Montrose Road, Niagara Falls, ON
                   </p>
                 </div>
-                {/* In production, replace with actual interactive map */}
               </div>
             </CardContent>
           </Card>

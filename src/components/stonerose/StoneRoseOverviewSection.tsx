@@ -1,5 +1,6 @@
 import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import streetscapeImage from "@/assets/stonerose-streetscape.jpg";
 
 const StoneRoseOverviewSection = () => {
   const features = [
@@ -66,6 +67,20 @@ const StoneRoseOverviewSection = () => {
                 </Card>
               );
             })}
+          </div>
+
+          {/* Streetscape Image */}
+          <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl mb-12">
+            <img
+              src={streetscapeImage}
+              alt="Stonerose Townhomes - Modern Streetscape View"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+            <div className="absolute bottom-8 left-8 text-white">
+              <p className="text-sm font-semibold mb-1">Artist's Rendering</p>
+              <h3 className="text-3xl font-bold">Your New Home Awaits</h3>
+            </div>
           </div>
 
           {/* Why Now Section */}

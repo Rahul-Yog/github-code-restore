@@ -5,6 +5,7 @@ import StoneRoseHeroSection from "@/components/stonerose/StoneRoseHeroSection";
 import StoneRoseOverviewSection from "@/components/stonerose/StoneRoseOverviewSection";
 import StoneRoseHealthcareSection from "@/components/stonerose/StoneRoseHealthcareSection";
 import StoneRoseLocationSection from "@/components/stonerose/StoneRoseLocationSection";
+import StoneRoseSitePlanSection from "@/components/stonerose/StoneRoseSitePlanSection";
 import StoneRoseHomeCollection from "@/components/stonerose/StoneRoseHomeCollection";
 import StoneRoseRelocationGuide from "@/components/stonerose/StoneRoseRelocationGuide";
 import StoneRoseFAQSection from "@/components/stonerose/StoneRoseFAQSection";
@@ -183,6 +184,7 @@ const StoneRoseIndex = () => {
         <StoneRoseOverviewSection />
         <StoneRoseHealthcareSection />
         <StoneRoseLocationSection />
+        <StoneRoseSitePlanSection />
         <StoneRoseHomeCollection />
         <StoneRoseRelocationGuide />
         <StoneRoseFAQSection />
