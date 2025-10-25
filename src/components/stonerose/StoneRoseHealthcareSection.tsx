@@ -115,11 +115,12 @@ const StoneRoseHealthcareSection = () => {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <p className="text-lg text-foreground italic mb-4">
-                    "Moving to Niagara for my nursing position was the best decision. Stonerose gave me 
-                    the perfect home close to work, and I'm saving significantly compared to living in the GTA."
+                    "I'm securing my home at Stonerose now, ahead of my position at the new South Niagara Hospital. 
+                    The 11-minute commute will be perfect, and I'm locking in pre-construction pricing before the hospital 
+                    opens in 2028 and the market appreciates."
                   </p>
                   <p className="text-sm font-semibold text-primary">
-                    — Healthcare Professional, Registered Nurse
+                    — Future Resident, Healthcare Professional
                   </p>
                 </div>
               </div>

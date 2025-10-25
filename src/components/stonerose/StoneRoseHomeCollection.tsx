@@ -5,42 +5,48 @@ import { Button } from "@/components/ui/button";
 const StoneRoseHomeCollection = () => {
   const homes = [
     {
-      name: "The Heritage",
-      type: "Townhome",
-      sqft: "1,850",
-      bedrooms: "3",
-      price: "From $520,000",
+      name: "The Rothwell R2",
+      type: "Interior Townhome",
+      sqft: "1,750",
+      bedrooms: "Up to 5",
+      price: "$569,900",
       features: [
-        "Open-concept main floor",
-        "Modern kitchen with island",
-        "Primary suite with ensuite",
-        "Finished basement potential"
+        "Kitchen appliance package (plus washer & dryer)",
+        "Quartz countertops throughout",
+        "9 ft. smooth ceilings on main floor",
+        "Napoleon Electric Fireplace",
+        "Air Conditioning included",
+        "2-car garage"
       ]
     },
     {
-      name: "The Legacy",
-      type: "Townhome",
-      sqft: "2,100",
-      bedrooms: "3+1",
-      price: "From $560,000",
-      features: [
-        "Spacious family room",
-        "Upgraded finishes",
-        "Walk-out to backyard",
-        "Double-car garage"
-      ]
-    },
-    {
-      name: "The Estate",
+      name: "The Rothwell R2",
       type: "End Unit Townhome",
-      sqft: "2,350",
-      bedrooms: "4",
-      price: "From $595,000",
+      sqft: "1,800",
+      bedrooms: "Up to 5",
+      price: "$589,900",
       features: [
-        "Corner lot with extra windows",
-        "Luxury master retreat",
-        "Gourmet kitchen",
-        "Premium lot location"
+        "Extra windows with end unit location",
+        "Kitchen appliance package (plus washer & dryer)",
+        "Quartz countertops throughout",
+        "9 ft. smooth ceilings on main floor",
+        "Napoleon Electric Fireplace",
+        "2-car garage"
+      ]
+    },
+    {
+      name: "The Rothwell R2",
+      type: "Corner Unit Townhome",
+      sqft: "1,800",
+      bedrooms: "Up to 5",
+      price: "$599,900",
+      features: [
+        "Premium corner lot location",
+        "Kitchen appliance package (plus washer & dryer)",
+        "Quartz countertops throughout",
+        "9 ft. smooth ceilings on main floor",
+        "Napoleon Electric Fireplace",
+        "2-car garage"
       ]
     }
   ];
@@ -138,20 +144,24 @@ const StoneRoseHomeCollection = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Flexible Deposit Options
+                    Flexible Deposit Structure
                   </h3>
-                  <div className="space-y-3 text-muted-foreground">
+                  <div className="space-y-2 text-muted-foreground">
                     <p>
-                      <strong className="text-foreground">5% on Signing:</strong> Initial deposit to secure your home
+                      <strong className="text-foreground">$10,000</strong> upon signing
                     </p>
                     <p>
-                      <strong className="text-foreground">5% at 30 Days:</strong> Second deposit milestone
+                      <strong className="text-foreground">$5,000</strong> every 30 days for 10 payments
                     </p>
-                    <p>
-                      <strong className="text-foreground">5% at 180 Days:</strong> Third deposit milestone
+                    <div className="pl-4 pt-2 text-sm space-y-1">
+                      <p>• At 30, 60, 90, 120, 150 days</p>
+                      <p>• At 180, 210, 240, 270, 300 days</p>
+                    </div>
+                    <p className="pt-3 text-lg">
+                      <strong className="text-foreground">Total Deposit: $60,000</strong>
                     </p>
-                    <p>
-                      <strong className="text-foreground">5% at 365 Days:</strong> Final deposit before occupancy
+                    <p className="pt-2 text-sm">
+                      <strong className="text-primary">Bonus:</strong> Zero Development Charges
                     </p>
                   </div>
                 </div>
@@ -161,16 +171,19 @@ const StoneRoseHomeCollection = () => {
                   </h3>
                   <div className="space-y-3 text-muted-foreground">
                     <p>
-                      ✓ Lock in today's pricing before market appreciation
+                      ✓ Lock in pre-construction pricing before hospital opens
                     </p>
                     <p>
-                      ✓ Time to save for closing costs during construction
+                      ✓ Spread $60K deposit over 300 days (10 months)
                     </p>
                     <p>
-                      ✓ Potential for equity growth before occupancy
+                      ✓ POTL fee waived for 2 years (save $2,160)
                     </p>
                     <p>
-                      ✓ Customize selections and finishes
+                      ✓ Potential for equity growth before 2027 occupancy
+                    </p>
+                    <p>
+                      ✓ Choose from 3 designer curated packages
                     </p>
                   </div>
                 </div>
