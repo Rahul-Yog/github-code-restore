@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.57.4';
 import { Resend } from "npm:resend@2.0.0";
+import md5 from "npm:md5@2.3.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 const MAILCHIMP_API_KEY = Deno.env.get("MAILCHIMP_API_KEY");
@@ -170,32 +171,32 @@ async function addToMailchimp(leadData: LeadData) {
     return;
   }
 
-  const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`;
+  // Generate MD5 hash of email for subscriber hash
+  const subscriberHash = md5(leadData.email.toLowerCase());
+
+  const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}`;
   
+  // Use only standard merge fields (FNAME, LNAME, PHONE)
+  // Custom merge fields need to be pre-created in Mailchimp audience settings
   const memberData = {
     email_address: leadData.email,
-    status: leadData.newsletter_consent ? "subscribed" : "transactional",
+    status_if_new: leadData.newsletter_consent ? "subscribed" : "transactional",
     merge_fields: {
       FNAME: leadData.first_name,
       LNAME: leadData.last_name,
-      PHONE: leadData.phone,
-      INTEREST: leadData.interested_in || "",
-      PRICE: leadData.price_range || "",
-      TIMELINE: leadData.timeline || "",
-      FORMTYPE: leadData.form_type || "",
-      SOURCE: leadData.source || "",
+      PHONE: leadData.phone || "",
     },
-    tags: [
-      leadData.form_type || "lead_form",
-      leadData.is_realtor ? "realtor" : "buyer",
-      leadData.source || "website"
-    ],
   };
 
-  console.log("Syncing to Mailchimp:", { email: leadData.email, status: memberData.status });
+  console.log("Syncing to Mailchimp:", { 
+    email: leadData.email, 
+    status: memberData.status_if_new,
+    hash: subscriberHash 
+  });
 
+  // Use PUT method which creates or updates
   const response = await fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
@@ -205,37 +206,33 @@ async function addToMailchimp(leadData: LeadData) {
 
   if (!response.ok) {
     const errorText = await response.text();
-    // If member already exists, update them instead
-    if (response.status === 400 && errorText.includes("Member Exists")) {
-      console.log("Member exists, updating instead");
-      const subscriberHash = await crypto.subtle.digest(
-        "MD5",
-        new TextEncoder().encode(leadData.email.toLowerCase())
-      );
-      const hashHex = Array.from(new Uint8Array(subscriberHash))
-        .map(b => b.toString(16).padStart(2, '0'))
-        .join('');
-      
-      const updateUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${hashHex}`;
-      const updateResponse = await fetch(updateUrl, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
-        },
-        body: JSON.stringify(memberData),
-      });
-      
-      if (!updateResponse.ok) {
-        throw new Error(`Failed to update Mailchimp member: ${await updateResponse.text()}`);
-      }
-      console.log("Mailchimp member updated successfully");
-      return;
-    }
-    throw new Error(`Failed to add to Mailchimp: ${errorText}`);
+    console.error("Mailchimp error:", errorText);
+    throw new Error(`Failed to sync to Mailchimp: ${errorText}`);
   }
 
-  console.log("Successfully added to Mailchimp");
+  const result = await response.json();
+  console.log("Successfully synced to Mailchimp:", result.status);
+
+  // Add tags in a separate call
+  if (leadData.form_type || leadData.source) {
+    const tags = [];
+    if (leadData.form_type) tags.push(leadData.form_type);
+    if (leadData.source) tags.push(leadData.source);
+    if (leadData.is_realtor) tags.push("realtor");
+    
+    const tagsUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}/tags`;
+    await fetch(tagsUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
+      },
+      body: JSON.stringify({
+        tags: tags.map(name => ({ name, status: "active" }))
+      }),
+    });
+    console.log("Added tags:", tags);
+  }
 }
 
 serve(handler);
