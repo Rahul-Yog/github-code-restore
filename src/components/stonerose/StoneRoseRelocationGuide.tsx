@@ -29,17 +29,19 @@ const StoneRoseRelocationGuide = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from("Crown Of Caledon Leads")
-        .insert({
+      const { data, error } = await supabase.functions.invoke('submit-lead', {
+        body: {
           first_name: formData.firstName,
           last_name: formData.lastName,
           email: formData.email,
           phone: formData.phone || null,
           form_type: "stonerose_relocation_guide",
           source: "stonerose_website",
-          interested_in: "Stonerose - Healthcare Relocation Guide"
-        });
+          interested_in: "Stonerose - Healthcare Relocation Guide",
+          newsletter_consent: false,
+          phone_consent: false
+        }
+      });
 
       if (error) throw error;
 

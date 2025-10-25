@@ -60,9 +60,8 @@ const StoneRoseLeadForm = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from("Crown Of Caledon Leads")
-        .insert({
+      const { data, error } = await supabase.functions.invoke('submit-lead', {
+        body: {
           first_name: formData.firstName,
           last_name: formData.lastName,
           email: formData.email,
@@ -76,7 +75,8 @@ const StoneRoseLeadForm = () => {
             : `Stonerose - ${formData.currentLocation}`,
           newsletter_consent: formData.newsletterConsent,
           phone_consent: formData.newsletterConsent
-        });
+        }
+      });
 
       if (error) throw error;
 
