@@ -114,60 +114,67 @@ const StoneRoseAmenitiesMap = () => {
   const initializeMap = (token: string) => {
     if (!mapContainer.current || !token) return;
 
-    mapboxgl.accessToken = token;
+    try {
+      mapboxgl.accessToken = token;
 
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: PROPERTY_LOCATION,
-      zoom: 12,
-      pitch: 45
-    });
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: PROPERTY_LOCATION,
+        zoom: 12,
+        pitch: 45
+      });
 
-    // Add navigation controls
-    map.current.addControl(
-      new mapboxgl.NavigationControl({
-        visualizePitch: true,
-      }),
-      'top-right'
-    );
+      // Add navigation controls
+      map.current.addControl(
+        new mapboxgl.NavigationControl({
+          visualizePitch: true,
+        }),
+        'top-right'
+      );
 
-    // Add markers with popups
-    amenities.forEach((amenity) => {
-      const el = document.createElement('div');
-      el.className = 'marker';
-      el.style.width = '40px';
-      el.style.height = '40px';
-      el.style.borderRadius = '50%';
-      el.style.backgroundColor = categoryColors[amenity.category as keyof typeof categoryColors];
-      el.style.display = 'flex';
-      el.style.alignItems = 'center';
-      el.style.justifyContent = 'center';
-      el.style.fontSize = '20px';
-      el.style.cursor = 'pointer';
-      el.style.border = '3px solid white';
-      el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-      el.innerHTML = amenity.icon;
+      // Wait for map to load before adding markers
+      map.current.on('load', () => {
+        // Add markers with popups
+        amenities.forEach((amenity) => {
+          const el = document.createElement('div');
+          el.className = 'marker';
+          el.style.width = '40px';
+          el.style.height = '40px';
+          el.style.borderRadius = '50%';
+          el.style.backgroundColor = categoryColors[amenity.category as keyof typeof categoryColors];
+          el.style.display = 'flex';
+          el.style.alignItems = 'center';
+          el.style.justifyContent = 'center';
+          el.style.fontSize = '20px';
+          el.style.cursor = 'pointer';
+          el.style.border = '3px solid white';
+          el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+          el.innerHTML = amenity.icon;
 
-      const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
-        .setHTML(`
-          <div style="padding: 8px; max-width: 250px;">
-            ${amenity.image ? `<img src="${amenity.image}" alt="${amenity.name}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />` : ''}
-            <h3 style="font-size: 14px; font-weight: bold; margin: 0 0 4px 0; color: #1a1a1a;">${amenity.name}</h3>
-            <p style="font-size: 12px; margin: 0 0 4px 0; color: #666;">${amenity.description}</p>
-            ${amenity.distance ? `<p style="font-size: 12px; font-weight: 600; margin: 0; color: ${categoryColors[amenity.category as keyof typeof categoryColors]};">${amenity.distance}</p>` : ''}
-          </div>
-        `);
+          const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
+            .setHTML(`
+              <div style="padding: 8px; max-width: 250px;">
+                ${amenity.image ? `<img src="${amenity.image}" alt="${amenity.name}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />` : ''}
+                <h3 style="font-size: 14px; font-weight: bold; margin: 0 0 4px 0; color: #1a1a1a;">${amenity.name}</h3>
+                <p style="font-size: 12px; margin: 0 0 4px 0; color: #666;">${amenity.description}</p>
+                ${amenity.distance ? `<p style="font-size: 12px; font-weight: 600; margin: 0; color: ${categoryColors[amenity.category as keyof typeof categoryColors]};">${amenity.distance}</p>` : ''}
+              </div>
+            `);
 
-      new mapboxgl.Marker(el)
-        .setLngLat(amenity.coordinates as [number, number])
-        .setPopup(popup)
-        .addTo(map.current!);
+          new mapboxgl.Marker(el)
+            .setLngLat(amenity.coordinates as [number, number])
+            .setPopup(popup)
+            .addTo(map.current!);
 
-      // Show popup on hover
-      el.addEventListener('mouseenter', () => popup.addTo(map.current!));
-      el.addEventListener('mouseleave', () => popup.remove());
-    });
+          // Show popup on hover
+          el.addEventListener('mouseenter', () => popup.addTo(map.current!));
+          el.addEventListener('mouseleave', () => popup.remove());
+        });
+      });
+    } catch (error) {
+      console.error('Error initializing map:', error);
+    }
   };
 
   useEffect(() => {
