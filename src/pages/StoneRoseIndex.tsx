@@ -7,6 +7,7 @@ import StoneRoseHealthcareSection from "@/components/stonerose/StoneRoseHealthca
 import StoneRoseLocationSection from "@/components/stonerose/StoneRoseLocationSection";
 import StoneRoseSitePlanSection from "@/components/stonerose/StoneRoseSitePlanSection";
 import StoneRoseHomeCollection from "@/components/stonerose/StoneRoseHomeCollection";
+import StoneRoseAmenitiesSection from "@/components/stonerose/StoneRoseAmenitiesSection";
 import StoneRoseRelocationGuide from "@/components/stonerose/StoneRoseRelocationGuide";
 import StoneRoseFAQSection from "@/components/stonerose/StoneRoseFAQSection";
 import StoneRoseLeadForm from "@/components/stonerose/StoneRoseLeadForm";
@@ -186,6 +187,7 @@ const StoneRoseIndex = () => {
         <StoneRoseLocationSection />
         <StoneRoseSitePlanSection />
         <StoneRoseHomeCollection />
+        <StoneRoseAmenitiesSection />
         <StoneRoseRelocationGuide />
         <StoneRoseFAQSection />
         <StoneRoseLeadForm />
