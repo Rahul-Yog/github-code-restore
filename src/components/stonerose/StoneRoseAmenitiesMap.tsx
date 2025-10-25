@@ -1,9 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 // Property location: 3770 Montrose Rd, Niagara Falls
 const PROPERTY_LOCATION: [number, number] = [-79.0847, 43.0896];
@@ -112,8 +109,7 @@ const categoryColors = {
 const StoneRoseAmenitiesMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [isMapInitialized, setIsMapInitialized] = useState(false);
+  const MAPBOX_TOKEN = 'pk.eyJ1IjoicmFodWxqaW5kYWwiLCJhIjoiY21oNnB3NzF5MGpkZTJsb2F4cHExNmU0aiJ9.bIpRazr2WSjmPPHJA8ZF4Q';
 
   const initializeMap = (token: string) => {
     if (!mapContainer.current || !token) return;
@@ -172,67 +168,15 @@ const StoneRoseAmenitiesMap = () => {
       el.addEventListener('mouseenter', () => popup.addTo(map.current!));
       el.addEventListener('mouseleave', () => popup.remove());
     });
-
-    setIsMapInitialized(true);
   };
 
   useEffect(() => {
-    // Check for token in environment or localStorage
-    const savedToken = localStorage.getItem('mapbox_token');
-    if (savedToken) {
-      setMapboxToken(savedToken);
-      initializeMap(savedToken);
-    }
+    initializeMap(MAPBOX_TOKEN);
 
     return () => {
       map.current?.remove();
     };
   }, []);
-
-  const handleTokenSubmit = () => {
-    if (mapboxToken) {
-      localStorage.setItem('mapbox_token', mapboxToken);
-      initializeMap(mapboxToken);
-    }
-  };
-
-  if (!isMapInitialized) {
-    return (
-      <Card className="w-full">
-        <CardContent className="p-6 space-y-4">
-          <div className="text-center space-y-2">
-            <h3 className="text-lg font-semibold">Interactive Amenities Map</h3>
-            <p className="text-sm text-muted-foreground">
-              Enter your Mapbox public token to view the interactive amenities map
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Get your free token at{" "}
-              <a 
-                href="https://account.mapbox.com/access-tokens/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                mapbox.com/account/access-tokens
-              </a>
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <Input
-              type="text"
-              placeholder="pk.eyJ1..."
-              value={mapboxToken}
-              onChange={(e) => setMapboxToken(e.target.value)}
-              className="flex-1"
-            />
-            <Button onClick={handleTokenSubmit}>
-              Load Map
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
 
   return (
     <div className="relative w-full h-[500px] md:h-[600px] rounded-lg overflow-hidden shadow-xl">
