@@ -35,10 +35,10 @@ const StoneRoseRelocationGuide = () => {
           first_name: formData.firstName,
           last_name: formData.lastName,
           email: formData.email,
-          phone: formData.phone,
+          phone: formData.phone || null,
           form_type: "stonerose_relocation_guide",
           source: "stonerose_website",
-          interested_in: "Healthcare Relocation Guide"
+          interested_in: "Stonerose - Healthcare Relocation Guide"
         });
 
       if (error) throw error;
@@ -205,14 +205,13 @@ const StoneRoseRelocationGuide = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone">Phone Number (Optional)</Label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      required
                       placeholder="(905) 555-1234"
                     />
                   </div>

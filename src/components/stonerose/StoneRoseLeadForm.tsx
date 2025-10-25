@@ -66,16 +66,16 @@ const StoneRoseLeadForm = () => {
           first_name: formData.firstName,
           last_name: formData.lastName,
           email: formData.email,
-          phone: formData.phone,
+          phone: formData.phone || null,
           timeline: formData.timeline,
           message: formData.message,
           form_type: "stonerose_contact",
           source: "stonerose_website",
           interested_in: formData.isHealthcareProfessional 
-            ? `Healthcare Professional from ${formData.currentLocation}` 
-            : formData.currentLocation,
+            ? `Stonerose - Healthcare Professional from ${formData.currentLocation}` 
+            : `Stonerose - ${formData.currentLocation}`,
           newsletter_consent: formData.newsletterConsent,
-          phone_consent: formData.phoneConsent
+          phone_consent: formData.newsletterConsent
         });
 
       if (error) throw error;
@@ -139,8 +139,8 @@ const StoneRoseLeadForm = () => {
                       <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <p className="text-sm font-semibold text-foreground">Phone</p>
-                        <a href="tel:+19055551234" className="text-sm text-primary hover:underline">
-                          (905) 555-1234
+                        <a href="tel:+14169038026" className="text-sm text-primary hover:underline">
+                          416-903-8026
                         </a>
                       </div>
                     </div>
@@ -148,18 +148,19 @@ const StoneRoseLeadForm = () => {
                       <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <p className="text-sm font-semibold text-foreground">Email</p>
-                        <a href="mailto:info@stonerose.com" className="text-sm text-primary hover:underline">
-                          info@stonerose.com
+                        <a href="mailto:info@rahuljindal.ca" className="text-sm text-primary hover:underline">
+                          info@rahuljindal.ca
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-sm font-semibold text-foreground">Location</p>
+                        <p className="text-sm font-semibold text-foreground">Agent</p>
                         <p className="text-sm text-muted-foreground">
-                          Montrose Road<br />
-                          Niagara Falls, ON
+                          Rahul Jindal<br />
+                          Real Estate Salesperson<br />
+                          RE/MAX Skyway Realty Brokerage
                         </p>
                       </div>
                     </div>
@@ -223,14 +224,13 @@ const StoneRoseLeadForm = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">Phone Number (Optional)</Label>
                       <Input
                         id="phone"
                         name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        required
                       />
                     </div>
                   </div>
@@ -319,24 +319,7 @@ const StoneRoseLeadForm = () => {
                         htmlFor="newsletterConsent"
                         className="text-sm font-normal cursor-pointer"
                       >
-                        Yes, I'd like to receive email updates about Stonerose availability 
-                        and healthcare relocation opportunities
-                      </Label>
-                    </div>
-
-                    <div className="flex items-start space-x-2">
-                      <Checkbox
-                        id="phoneConsent"
-                        checked={formData.phoneConsent}
-                        onCheckedChange={(checked) =>
-                          handleCheckboxChange("phoneConsent", checked as boolean)
-                        }
-                      />
-                      <Label
-                        htmlFor="phoneConsent"
-                        className="text-sm font-normal cursor-pointer"
-                      >
-                        I consent to being contacted by phone regarding Stonerose
+                        Yes, I'd like to receive email updates about Stonerose availability and healthcare relocation opportunities. I consent to being contacted by phone regarding Stonerose.
                       </Label>
                     </div>
                   </div>
