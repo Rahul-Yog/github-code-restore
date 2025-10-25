@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
+import StoneRoseIndex from "./pages/StoneRoseIndex";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/crown-of-caledon" element={<Index />} />
+              <Route path="/niagara-falls-homes-near-hospital" element={<StoneRoseIndex />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
