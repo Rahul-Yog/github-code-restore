@@ -7,38 +7,38 @@ const StoneRoseLocationSection = () => {
     {
       icon: MapPin,
       title: "South Niagara Hospital",
-      distance: "8km",
-      description: "Opening 2028 - Your workplace just minutes away"
+      distance: "11min",
+      description: "Opening Summer 2028 - $3.6B state-of-the-art facility"
     },
     {
       icon: Navigation,
-      title: "QEW Access",
-      distance: "5km",
-      description: "Easy highway access for GTA connections"
+      title: "QEW Highway Access",
+      distance: "3min",
+      description: "Direct highway access for GTA connections"
     },
     {
       icon: ShoppingBag,
-      title: "Shopping & Retail",
-      distance: "3km",
-      description: "Major shopping centers and amenities nearby"
+      title: "Outlet Collection Niagara",
+      distance: "10min",
+      description: "Major shopping and retail destination"
     },
     {
       icon: School,
-      title: "Schools",
-      distance: "2km",
-      description: "Quality elementary and secondary schools"
+      title: "Quality Schools",
+      distance: "3.5km",
+      description: "10 schools within radius - public & Catholic"
     },
     {
       icon: Coffee,
-      title: "Dining & Entertainment",
-      distance: "4km",
-      description: "Niagara Falls attractions and restaurants"
+      title: "Niagara Falls Downtown",
+      distance: "8min",
+      description: "Tourist attractions, dining, entertainment"
     },
     {
       icon: Trees,
-      title: "Parks & Recreation",
-      distance: "1km",
-      description: "Green spaces and recreational facilities"
+      title: "Niagara-on-the-Lake",
+      distance: "13min",
+      description: "Historic town, wineries, and heritage sites"
     }
   ];
 
@@ -116,16 +116,16 @@ const StoneRoseLocationSection = () => {
                 </h3>
                 <div className="space-y-3 text-muted-foreground">
                   <p>
-                    <strong className="text-foreground">Day Shifts:</strong> 8-10 minute drive via Montrose Road
+                    <strong className="text-foreground">Day Shifts:</strong> 11-minute drive via Montrose Road to hospital
                   </p>
                   <p>
-                    <strong className="text-foreground">Night Shifts:</strong> Even faster with reduced traffic
+                    <strong className="text-foreground">Night Shifts:</strong> Even faster with reduced traffic, under 10 minutes
                   </p>
                   <p>
-                    <strong className="text-foreground">Public Transit:</strong> Bus routes available for alternative commuting
+                    <strong className="text-foreground">GO Transit:</strong> 10-12 minutes to Niagara Falls GO Station
                   </p>
                   <p>
-                    <strong className="text-foreground">Bike-Friendly:</strong> Safe cycling routes to hospital area
+                    <strong className="text-foreground">Local Transit:</strong> Niagara Region Transit Routes 113, 109, 213, 60/65
                   </p>
                 </div>
               </CardContent>

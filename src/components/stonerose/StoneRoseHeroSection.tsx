@@ -25,10 +25,16 @@ const StoneRoseHeroSection = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 bg-accent/90 backdrop-blur-md text-white px-8 py-4 rounded-full text-base md:text-lg font-bold border-2 border-white/30 shadow-2xl animate-pulse">
-            <Heart className="w-6 h-6 fill-white" />
-            Preferred by Healthcare Professionals
+          {/* Badges */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="inline-flex items-center gap-3 bg-accent/90 backdrop-blur-md text-white px-8 py-4 rounded-full text-base md:text-lg font-bold border-2 border-white/30 shadow-2xl animate-pulse">
+              <Heart className="w-6 h-6 fill-white" />
+              Preferred by Healthcare Professionals
+            </div>
+            <div className="inline-flex items-center gap-3 bg-primary/90 backdrop-blur-md text-white px-8 py-4 rounded-full text-base md:text-lg font-bold border-2 border-white/30 shadow-2xl">
+              <Home className="w-6 h-6" />
+              Phase 1 - 24 Homes
+            </div>
           </div>
 
           {/* Main Headline */}
@@ -39,24 +45,24 @@ const StoneRoseHeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
-            Modern Townhomes from <span className="font-bold text-accent">$500Ks</span> | 
-            8km to South Niagara Hospital | 
-            Perfect for Healthcare Professionals
+            Modern Townhomes Starting Mid <span className="font-bold text-accent">$500Ks</span> | 
+            11 Minutes to South Niagara Hospital | 
+            Up to 5 Bedrooms with 2-Car Garage
           </p>
 
           {/* Key Features */}
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <MapPin className="w-5 h-5 text-accent" />
-              <span>8km to Hospital</span>
+              <span>11 Min to Hospital</span>
             </div>
             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Home className="w-5 h-5 text-accent" />
-              <span>Pre-Construction Pricing</span>
+              <span>3 Min to QEW</span>
             </div>
             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <Heart className="w-5 h-5 text-accent" />
-              <span>Healthcare Relocation Specialist</span>
+              <span>Award-Winning Builder</span>
             </div>
           </div>
 
@@ -82,7 +88,7 @@ const StoneRoseHeroSection = () => {
           {/* Trust Signal */}
           <p className="text-sm text-white/80 pt-4">
             Built by <span className="font-semibold text-white">Treasure Hill Homes</span> | 
-            Opening 2026 | South Niagara Hospital Opening 2028
+            First Occupancy Spring 2027 | South Niagara Hospital Opening Summer 2028
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ const StoneRoseHealthcareSection = () => {
     {
       icon: MapPin,
       title: "Unbeatable Proximity",
-      description: "Just 8km from South Niagara Hospital. Your commute will be under 10 minutes, giving you more time for what matters."
+      description: "Just 11 minutes from $3.6 billion South Niagara Hospital. Your commute will be quick and easy, giving you more time for what matters."
     },
     {
       icon: Clock,
@@ -16,7 +16,7 @@ const StoneRoseHealthcareSection = () => {
     {
       icon: Home,
       title: "Affordable Ownership",
-      description: "Own a modern townhome for significantly less than GTA prices. More space, better quality of life, same career opportunities."
+      description: "Starting mid-$500Ks for up to 5 bedrooms with 2-car garage. Save $200K-$300K compared to similar GTA homes."
     },
     {
       icon: Users,
@@ -82,26 +82,26 @@ const StoneRoseHealthcareSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Card className="text-center border-2">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">8km</div>
+                <div className="text-4xl font-bold text-primary mb-2">11min</div>
                 <div className="text-sm text-muted-foreground">to South Niagara Hospital</div>
               </CardContent>
             </Card>
             <Card className="text-center border-2">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">&lt;10min</div>
-                <div className="text-sm text-muted-foreground">Average Commute Time</div>
+                <div className="text-4xl font-bold text-primary mb-2">$3.6B</div>
+                <div className="text-sm text-muted-foreground">Hospital Investment</div>
               </CardContent>
             </Card>
             <Card className="text-center border-2">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">$500K+</div>
-                <div className="text-sm text-muted-foreground">Starting Price Range</div>
+                <div className="text-4xl font-bold text-primary mb-2">Mid-$500K</div>
+                <div className="text-sm text-muted-foreground">Starting Price</div>
               </CardContent>
             </Card>
             <Card className="text-center border-2">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">2028</div>
-                <div className="text-sm text-muted-foreground">Hospital Opening Year</div>
+                <div className="text-4xl font-bold text-primary mb-2">2027</div>
+                <div className="text-sm text-muted-foreground">First Occupancy</div>
               </CardContent>
             </Card>
           </div>

@@ -110,26 +110,34 @@ const StoneRoseFooter = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                <a
-                  href="tel:+19055551234"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  (905) 555-1234
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+14169009788"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    416-900-9788
+                  </a>
+                  <a
+                    href="tel:+14378752260"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    437-875-2260
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                 <a
-                  href="mailto:info@stonerose.com"
+                  href="mailto:stonerose@treasurehill.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@stonerose.com
+                  stonerose@treasurehill.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                 <span className="text-muted-foreground">
-                  Montrose Road<br />
+                  3770 Montrose Road<br />
                   Niagara Falls, ON
                 </span>
               </li>

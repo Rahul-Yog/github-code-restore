@@ -60,11 +60,11 @@ const StoneRoseSitePlanSection = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-card rounded-lg border">
-                <p className="text-2xl font-bold text-primary">140+</p>
-                <p className="text-sm text-muted-foreground">Modern Townhomes</p>
+                <p className="text-2xl font-bold text-primary">24</p>
+                <p className="text-sm text-muted-foreground">Phase 1 Homes</p>
               </div>
               <div className="p-4 bg-card rounded-lg border">
-                <p className="text-2xl font-bold text-primary">8km</p>
+                <p className="text-2xl font-bold text-primary">11 min</p>
                 <p className="text-sm text-muted-foreground">To Hospital</p>
               </div>
               <div className="p-4 bg-card rounded-lg border">
@@ -72,8 +72,8 @@ const StoneRoseSitePlanSection = () => {
                 <p className="text-sm text-muted-foreground">To Highway QEW</p>
               </div>
               <div className="p-4 bg-card rounded-lg border">
-                <p className="text-2xl font-bold text-primary">2026</p>
-                <p className="text-sm text-muted-foreground">Occupancy</p>
+                <p className="text-2xl font-bold text-primary">2027</p>
+                <p className="text-sm text-muted-foreground">First Occupancy</p>
               </div>
             </div>
 

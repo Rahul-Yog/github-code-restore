@@ -10,7 +10,7 @@ const StoneRoseFAQSection = () => {
   const faqs = [
     {
       question: "How far is Stonerose from South Niagara Hospital?",
-      answer: "Stonerose townhomes are located approximately 8 kilometers from South Niagara Hospital, offering a short and convenient commute of under 10 minutes. This proximity is ideal for healthcare professionals working various shifts."
+      answer: "Stonerose townhomes are located approximately 11 minutes from the $3.6 billion South Niagara Hospital, offering a short and convenient commute. This proximity is ideal for healthcare professionals working various shifts at the state-of-the-art facility opening Summer 2028."
     },
     {
       question: "Are there special mortgage incentives for healthcare workers?",
@@ -18,15 +18,15 @@ const StoneRoseFAQSection = () => {
     },
     {
       question: "What's the commute like for shift workers?",
-      answer: "Stonerose is strategically located just 8km from the new South Niagara Hospital with easy QEW access, making it ideal for healthcare professionals working various shifts. The commute typically takes under 10 minutes, and with reduced traffic during night shifts, it's even faster. The route is well-lit and safe for early morning or late-night commutes."
+      answer: "Stonerose is strategically located just 11 minutes from the $3.6B South Niagara Hospital with 3-minute QEW access, making it ideal for healthcare professionals working various shifts. With reduced traffic during night shifts, commute times are even faster. The route via Montrose Road is well-lit and safe for early morning or late-night commutes."
     },
     {
       question: "Can I move in before the hospital opens?",
-      answer: "Yes! Stonerose offers flexible occupancy dates starting in 2026. With the South Niagara Hospital opening in 2028, you can secure your home now at pre-construction pricing, move in when your home is ready, and be perfectly positioned when the hospital opens. This gives you time to settle into the community before starting your new position."
+      answer: "Yes! First occupancy at Stonerose is Spring 2027, giving you over a year to settle into your new home before the South Niagara Hospital opens in Summer 2028. You can secure your home now at pre-construction pricing, move in when ready, and be perfectly positioned when the hospital opens. Construction commences Summer 2026."
     },
     {
       question: "What deposit structure does Stonerose offer?",
-      answer: "Stonerose offers a flexible deposit structure designed to make homeownership accessible: 5% on signing, 5% at 30 days, 5% at 180 days, and 5% at 365 days, totaling 20% over the course of a year. This structure gives you time to save and plan for your investment."
+      answer: "Stonerose offers an attractive and flexible deposit structure: $10,000 on signing, then $5,000 every 30 days for 10 payments, totaling $60,000 spread over 300 days. This extended payment schedule is designed to make homeownership accessible for healthcare professionals while giving you time to save and plan your investment."
     },
     {
       question: "How does Niagara Falls compare to GTA pricing?",
@@ -42,7 +42,7 @@ const StoneRoseFAQSection = () => {
     },
     {
       question: "What home designs are available?",
-      answer: "Stonerose offers three main floor plans: The Heritage (1,850 sq ft, 3 bed, from $520K), The Legacy (2,100 sq ft, 3+1 bed, from $560K), and The Estate (2,350 sq ft, 4 bed end unit, from $595K). All homes feature modern open-concept designs, quality finishes, and flexible layouts perfect for healthcare professionals and families."
+      answer: "Stonerose Phase 1 features modern townhomes with up to 5 bedrooms and 2-car garages, starting from the mid-$500Ks. Homes include 9ft smooth ceilings on main floor, vinyl flooring, kitchen appliance package plus washer & dryer, air conditioning, and designer-curated packages. The Genius Package features Napoleon electric fireplace and quartz countertops throughout. Bonus: 2-year free POTL fee and $0 development charges!"
     },
     {
       question: "How do I get started?",
@@ -91,12 +91,12 @@ const StoneRoseFAQSection = () => {
               </p>
               <p className="text-sm text-muted-foreground">
                 Contact us anytime at{" "}
-                <a href="tel:+19055551234" className="text-primary hover:underline font-semibold">
-                  (905) 555-1234
+                 <a href="tel:+14169009788" className="text-primary hover:underline font-semibold">
+                  416-900-9788
                 </a>
                 {" "}or{" "}
-                <a href="mailto:info@stonerose.com" className="text-primary hover:underline font-semibold">
-                  info@stonerose.com
+                <a href="mailto:stonerose@treasurehill.com" className="text-primary hover:underline font-semibold">
+                  stonerose@treasurehill.com
                 </a>
               </p>
             </div>

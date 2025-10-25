@@ -38,7 +38,7 @@ const StoneRoseOverviewSection = () => {
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Stonerose offers a unique opportunity to own a modern townhome in one of Niagara's 
-              most strategic locations. With the South Niagara Hospital opening just 8km away in 2028, 
+              most strategic locations. With the $3.6 billion South Niagara Hospital opening just 11 minutes away in Summer 2028, 
               this is the perfect time to secure your home at pre-construction pricing.
             </p>
           </div>
@@ -94,16 +94,19 @@ const StoneRoseOverviewSection = () => {
                   ✓ <strong className="text-foreground">Pre-Construction Pricing:</strong> Secure your home at today's prices before completion
                 </p>
                 <p>
-                  ✓ <strong className="text-foreground">Hospital Proximity:</strong> Just 8km from the new South Niagara Hospital (opening 2028)
+                  ✓ <strong className="text-foreground">Hospital Proximity:</strong> Just 11 minutes from the $3.6B South Niagara Hospital (opening Summer 2028)
                 </p>
                 <p>
-                  ✓ <strong className="text-foreground">GTA Affordability:</strong> Own for significantly less than Mississauga, Brampton, or Oakville
+                  ✓ <strong className="text-foreground">Award-Winning Builder:</strong> Treasure Hill Homes - 20+ years, 100% delivery record, 20,000 homes in pipeline
                 </p>
                 <p>
-                  ✓ <strong className="text-foreground">Flexible Deposits:</strong> Payment plans designed to help healthcare professionals secure their dream home
+                  ✓ <strong className="text-foreground">GTA Affordability:</strong> Save $200K-$300K compared to Mississauga, Brampton, or Oakville
                 </p>
                 <p>
-                  ✓ <strong className="text-foreground">Growing Region:</strong> West Lincoln Memorial Hospital opened 2025, South Niagara Hospital opening 2028
+                  ✓ <strong className="text-foreground">Flexible Deposits:</strong> $60,000 total deposit spread over 300 days with attractive payment plans
+                </p>
+                <p>
+                  ✓ <strong className="text-foreground">Construction Starting:</strong> Summer 2026 with first occupancy Spring 2027
                 </p>
               </div>
             </CardContent>
