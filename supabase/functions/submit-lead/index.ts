@@ -3,6 +3,14 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.57.4';
 import { Resend } from "npm:resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const MAILCHIMP_API_KEY = Deno.env.get("MAILCHIMP_API_KEY");
+const MAILCHIMP_AUDIENCE_ID = Deno.env.get("MAILCHIMP_AUDIENCE_ID");
+
+// Extract datacenter from API key (e.g., us1, us19, etc.)
+const getMailchimpDatacenter = () => {
+  if (!MAILCHIMP_API_KEY) return null;
+  return MAILCHIMP_API_KEY.split('-')[1];
+};
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -73,6 +81,15 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     console.log("Lead saved to database:", data.id);
+
+    // Add to Mailchimp audience
+    if (MAILCHIMP_API_KEY && MAILCHIMP_AUDIENCE_ID) {
+      EdgeRuntime.waitUntil(
+        addToMailchimp(leadData).catch((error) => {
+          console.error("Mailchimp sync failed (non-critical):", error);
+        })
+      );
+    }
 
     // Send email notification
     try {
@@ -145,5 +162,80 @@ const handler = async (req: Request): Promise<Response> => {
     );
   }
 };
+
+async function addToMailchimp(leadData: LeadData) {
+  const datacenter = getMailchimpDatacenter();
+  if (!datacenter || !MAILCHIMP_API_KEY || !MAILCHIMP_AUDIENCE_ID) {
+    console.log("Mailchimp not configured, skipping sync");
+    return;
+  }
+
+  const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`;
+  
+  const memberData = {
+    email_address: leadData.email,
+    status: leadData.newsletter_consent ? "subscribed" : "transactional",
+    merge_fields: {
+      FNAME: leadData.first_name,
+      LNAME: leadData.last_name,
+      PHONE: leadData.phone,
+      INTEREST: leadData.interested_in || "",
+      PRICE: leadData.price_range || "",
+      TIMELINE: leadData.timeline || "",
+      FORMTYPE: leadData.form_type || "",
+      SOURCE: leadData.source || "",
+    },
+    tags: [
+      leadData.form_type || "lead_form",
+      leadData.is_realtor ? "realtor" : "buyer",
+      leadData.source || "website"
+    ],
+  };
+
+  console.log("Syncing to Mailchimp:", { email: leadData.email, status: memberData.status });
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
+    },
+    body: JSON.stringify(memberData),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    // If member already exists, update them instead
+    if (response.status === 400 && errorText.includes("Member Exists")) {
+      console.log("Member exists, updating instead");
+      const subscriberHash = await crypto.subtle.digest(
+        "MD5",
+        new TextEncoder().encode(leadData.email.toLowerCase())
+      );
+      const hashHex = Array.from(new Uint8Array(subscriberHash))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+      
+      const updateUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${hashHex}`;
+      const updateResponse = await fetch(updateUrl, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
+        },
+        body: JSON.stringify(memberData),
+      });
+      
+      if (!updateResponse.ok) {
+        throw new Error(`Failed to update Mailchimp member: ${await updateResponse.text()}`);
+      }
+      console.log("Mailchimp member updated successfully");
+      return;
+    }
+    throw new Error(`Failed to add to Mailchimp: ${errorText}`);
+  }
+
+  console.log("Successfully added to Mailchimp");
+}
 
 serve(handler);
