@@ -1,6 +1,9 @@
 import { Bed, Square, DollarSign } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import townhomeInt from "@/assets/stonerose-townhome-int.jpg";
+import townhomeEnd from "@/assets/stonerose-townhome-end.jpg";
+import townhomeCor from "@/assets/stonerose-townhome-cor.jpg";
 
 const StoneRoseHomeCollection = () => {
   const homes = [
@@ -10,6 +13,7 @@ const StoneRoseHomeCollection = () => {
       sqft: "1,750",
       bedrooms: "Up to 5",
       price: "$569,900",
+      image: townhomeInt,
       features: [
         "Kitchen appliance package (plus washer & dryer)",
         "Quartz countertops throughout",
@@ -25,6 +29,7 @@ const StoneRoseHomeCollection = () => {
       sqft: "1,800",
       bedrooms: "Up to 5",
       price: "$589,900",
+      image: townhomeEnd,
       features: [
         "Extra windows with end unit location",
         "Kitchen appliance package (plus washer & dryer)",
@@ -40,6 +45,7 @@ const StoneRoseHomeCollection = () => {
       sqft: "1,800",
       bedrooms: "Up to 5",
       price: "$599,900",
+      image: townhomeCor,
       features: [
         "Premium corner lot location",
         "Kitchen appliance package (plus washer & dryer)",
@@ -80,12 +86,13 @@ const StoneRoseHomeCollection = () => {
             {homes.map((home, index) => (
               <Card key={index} className="border-2 hover:border-primary transition-all hover:shadow-xl">
                 <CardContent className="p-0">
-                  {/* Image Placeholder */}
-                  <div className="h-64 bg-accent flex items-center justify-center border-b">
-                    <div className="text-center space-y-2">
-                      <Square className="w-12 h-12 text-primary mx-auto" />
-                      <p className="text-sm font-medium text-muted-foreground">Floor Plan Preview</p>
-                    </div>
+                  {/* Townhome Image */}
+                  <div className="h-64 border-b overflow-hidden">
+                    <img 
+                      src={home.image} 
+                      alt={`${home.name} - ${home.type} exterior rendering`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
 
                   {/* Content */}
