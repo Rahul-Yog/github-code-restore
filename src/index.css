@@ -10,16 +10,18 @@
     --background: 0 0% 100%;
     --foreground: 220 20% 15%;
 
-    /* Primary Brand Colors - Deep Navy Blue */
-    --primary: 220 45% 20%;
+    /* Stonerose Primary - Navy Blue (#1E40AF) */
+    --primary: 219 79% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 45% 25%;
-    --primary-lighter: 220 45% 35%;
+    --primary-hover: 219 79% 35%;
+    --primary-light: 219 79% 50%;
+    --primary-lighter: 219 79% 60%;
 
-    /* Luxury Accent Colors */
-    --luxury-gold: 45 90% 55%;
-    --accent: 45 90% 55%;
-    --accent-foreground: 220 45% 20%;
+    /* Stonerose Accent Colors */
+    --accent-gold: 45 73% 52%; /* Gold #D4AF37 */
+    --accent-green: 160 84% 39%; /* Soft Green #10B981 */
+    --accent: 45 73% 52%; /* Primary accent is gold */
+    --accent-foreground: 0 0% 100%;
 
     /* Secondary Colors */
     --secondary: 210 20% 96%;
@@ -36,7 +38,7 @@
     /* Border and Input */
     --border: 220 13% 91%;
     --input: 220 13% 95%;
-    --ring: 220 45% 20%;
+    --ring: 219 79% 40%;
 
     /* Card */
     --card: 0 0% 100%;
@@ -58,25 +60,28 @@
   }
 
   .dark {
-    --background: 220 45% 20%;
+    --background: 219 79% 15%;
     --foreground: 0 0% 98%;
-    --card: 220 40% 25%;
+    --card: 219 79% 20%;
     --card-foreground: 0 0% 98%;
-    --popover: 220 40% 25%;
+    --popover: 219 79% 20%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 220 45% 20%;
-    --secondary: 220 35% 30%;
+    --primary: 219 79% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 219 79% 45%;
+    --accent-gold: 45 73% 62%;
+    --accent-green: 160 84% 49%;
+    --secondary: 219 70% 25%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 220 35% 30%;
-    --muted-foreground: 220 15% 65%;
-    --accent: 0 0% 98%;
-    --accent-foreground: 220 45% 20%;
+    --muted: 219 70% 25%;
+    --muted-foreground: 220 15% 70%;
+    --accent: 45 73% 62%;
+    --accent-foreground: 219 79% 15%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 35% 30%;
-    --input: 220 35% 30%;
-    --ring: 0 0% 98%;
+    --border: 219 70% 25%;
+    --input: 219 70% 25%;
+    --ring: 219 79% 50%;
   }
 }
 
@@ -116,11 +121,15 @@
 
   /* Gradients */
   .luxury-gradient {
-    background: linear-gradient(135deg, hsl(var(--luxury-gold)), hsl(var(--accent)));
+    background: linear-gradient(135deg, hsl(var(--accent-gold)), hsl(var(--accent-green)));
+  }
+
+  .navy-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--luxury-gold)), hsl(var(--accent)));
+    background: linear-gradient(135deg, hsl(var(--accent-gold)), hsl(var(--accent-green)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -128,6 +137,10 @@
 
   .overlay-gradient {
     background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%);
+  }
+
+  .stonerose-hero-gradient {
+    background: linear-gradient(to bottom, rgba(30, 64, 175, 0.8), rgba(30, 64, 175, 0.6), transparent);
   }
 
   /* Cards */
