@@ -26,9 +26,9 @@ const StoneRoseHeroSection = () => {
       <div className="relative z-20 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20">
-            <Heart className="w-4 h-4 fill-primary" />
-            Preferred by Healthcare Heroes
+          <div className="inline-flex items-center gap-3 bg-accent/90 backdrop-blur-md text-white px-8 py-4 rounded-full text-base md:text-lg font-bold border-2 border-white/30 shadow-2xl animate-pulse">
+            <Heart className="w-6 h-6 fill-white" />
+            Preferred by Healthcare Professionals
           </div>
 
           {/* Main Headline */}

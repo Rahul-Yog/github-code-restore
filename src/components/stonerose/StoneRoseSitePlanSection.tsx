@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Download, MapIcon } from "lucide-react";
+import sitePlanImage from "@/assets/stonerose-site-plan-enhanced.png";
 
 const StoneRoseSitePlanSection = () => {
   const handleDownload = () => {
@@ -24,10 +25,10 @@ const StoneRoseSitePlanSection = () => {
           <Dialog>
             <DialogTrigger asChild>
               <div className="relative cursor-pointer group overflow-hidden rounded-lg shadow-xl">
-                <iframe
-                  src="/stonerose-site-plan.pdf"
-                  className="w-full h-[500px] pointer-events-none"
-                  title="Stonerose Site Plan Preview"
+                <img
+                  src={sitePlanImage}
+                  alt="Stonerose Site Plan - Community layout showing townhomes, green spaces, and amenities"
+                  className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <MapIcon className="w-16 h-16 text-white" />
@@ -38,10 +39,10 @@ const StoneRoseSitePlanSection = () => {
               <DialogHeader>
                 <DialogTitle>Stonerose Site Plan</DialogTitle>
               </DialogHeader>
-              <iframe
-                src="/stonerose-site-plan.pdf"
-                className="w-full h-[80vh]"
-                title="Stonerose Site Plan Full View"
+              <img
+                src={sitePlanImage}
+                alt="Stonerose Site Plan Full View"
+                className="w-full h-auto"
               />
             </DialogContent>
           </Dialog>
@@ -88,10 +89,10 @@ const StoneRoseSitePlanSection = () => {
                   <DialogHeader>
                     <DialogTitle>Stonerose Site Plan</DialogTitle>
                   </DialogHeader>
-                  <iframe
-                    src="/stonerose-site-plan.pdf"
-                    className="w-full h-[80vh]"
-                    title="Stonerose Site Plan Full View"
+                  <img
+                    src={sitePlanImage}
+                    alt="Stonerose Site Plan Full View"
+                    className="w-full h-auto"
                   />
                 </DialogContent>
               </Dialog>
