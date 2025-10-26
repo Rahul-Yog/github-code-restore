@@ -140,37 +140,11 @@ const StoneRoseAmenitiesMap = () => {
       return;
     }
 
-    // Validate token by making a test request
-    const validateToken = async () => {
-      try {
-        const response = await fetch(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/test.json?access_token=${MAPBOX_TOKEN}`
-        );
-        
-        if (!response.ok) {
-          console.error('Token validation failed:', response.status, response.statusText);
-          setError(`Invalid Mapbox token. Please check your VITE_MAPBOX_TOKEN. Status: ${response.status}`);
-          setIsLoading(false);
-          return false;
-        }
-        
-        console.log('Token validated successfully');
-        return true;
-      } catch (err) {
-        console.error('Token validation error:', err);
-        setError('Failed to validate Mapbox token. Please check your internet connection.');
-        setIsLoading(false);
-        return false;
-      }
-    };
 
     let retryCount = 0;
     const maxRetries = 20;
 
-    const initMap = async () => {
-      // Validate token first
-      const isValid = await validateToken();
-      if (!isValid) return;
+    const initMap = () => {
 
       if (!mapContainer.current) {
         console.log('Map container not ready');
