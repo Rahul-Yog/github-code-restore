@@ -1,36 +1,55 @@
-import { MapPin, ExternalLink } from "lucide-react";
+import { MapPin, ExternalLink, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const StoneRoseGoogleMap = () => {
   const propertyAddress = "3770 Montrose Rd, Niagara Falls, ON";
   const encodedAddress = encodeURIComponent(propertyAddress);
-  // Using OpenStreetMap - latitude: 43.0896, longitude: -79.0849
   const lat = 43.0896;
   const lon = -79.0849;
-  const zoom = 13;
   
+  // Using static map image from OpenStreetMap
+  const staticMapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${lon-0.05},${lat-0.05},${lon+0.05},${lat+0.05}&layer=mapnik&marker=${lat},${lon}`;
+  const openMapUrl = `https://www.google.com/maps/place/${encodedAddress}`;
   const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
 
   const nearbyAmenities = [
-    { name: "Golf Courses", icon: "⛳", color: "bg-green-500" },
-    { name: "Dining & Shopping", icon: "🍽️", color: "bg-orange-500" },
-    { name: "Healthcare", icon: "🏥", color: "bg-red-500" },
-    { name: "Parks & Recreation", icon: "🌳", color: "bg-emerald-500" },
+    { name: "Golf Courses", icon: "⛳", distance: "2-5 km" },
+    { name: "Dining & Shopping", icon: "🍽️", distance: "1-7 km" },
+    { name: "Healthcare", icon: "🏥", distance: "8 km" },
+    { name: "Parks & Recreation", icon: "🌳", distance: "< 5 km" },
   ];
 
   return (
     <div className="space-y-4">
-      <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden border-2 border-border shadow-lg">
-        <iframe
-          title="Stonerose Location Map"
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${lon-0.05},${lat-0.05},${lon+0.05},${lat+0.05}&layer=mapnik&marker=${lat},${lon}`}
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          className="w-full h-full"
-        />
-      </div>
+      <Card className="border-2 overflow-hidden">
+        <CardContent className="p-0">
+          <div 
+            className="relative w-full h-[400px] md:h-[500px] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center cursor-pointer group"
+            onClick={() => window.open(openMapUrl, '_blank')}
+          >
+            <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/-79.0849,43.0896,12,0/800x600@2x?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw')] bg-cover bg-center opacity-40" />
+            
+            <div className="relative z-10 text-center space-y-4">
+              <div className="w-20 h-20 mx-auto bg-primary rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                <MapPin className="w-10 h-10 text-white" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold text-foreground">
+                  3770 Montrose Rd, Niagara Falls
+                </h3>
+                <p className="text-muted-foreground">
+                  Click to view interactive map
+                </p>
+              </div>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <Navigation className="w-5 h-5 mr-2" />
+                Open in Google Maps
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg border border-border">
         <div className="space-y-2">
@@ -42,10 +61,11 @@ const StoneRoseGoogleMap = () => {
             {nearbyAmenities.map((amenity, index) => (
               <div
                 key={index}
-                className="flex items-center gap-1.5 px-2 py-1 bg-background rounded-md border border-border text-xs"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-background rounded-md border border-border text-sm"
               >
-                <span className="text-base">{amenity.icon}</span>
-                <span>{amenity.name}</span>
+                <span className="text-lg">{amenity.icon}</span>
+                <span className="font-medium">{amenity.name}</span>
+                <span className="text-xs text-muted-foreground">({amenity.distance})</span>
               </div>
             ))}
           </div>
