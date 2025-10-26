@@ -353,7 +353,7 @@ const StoneRoseLeadForm = () => {
                         htmlFor="emailPhoneConsent"
                         className="text-sm font-normal cursor-pointer"
                       >
-                        Yes, I'd like to receive email updates about Stonerose availability and healthcare relocation opportunities. I consent to being contacted by phone regarding Stonerose. *
+                        I consent to be contacted via SMS, phone call, and email regarding this inquiry and future opportunities. *
                       </Label>
                     </div>
                   </div>
