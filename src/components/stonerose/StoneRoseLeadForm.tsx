@@ -57,6 +57,16 @@ const StoneRoseLeadForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!formData.emailPhoneConsent) {
+      toast({
+        title: "Consent Required",
+        description: "Please agree to be contacted before submitting the form.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -337,12 +347,13 @@ const StoneRoseLeadForm = () => {
                         onCheckedChange={(checked) =>
                           handleCheckboxChange("emailPhoneConsent", checked as boolean)
                         }
+                        required
                       />
                       <Label
                         htmlFor="emailPhoneConsent"
                         className="text-sm font-normal cursor-pointer"
                       >
-                        Yes, I'd like to receive email updates about Stonerose availability and healthcare relocation opportunities. I consent to being contacted by phone regarding Stonerose.
+                        Yes, I'd like to receive email updates about Stonerose availability and healthcare relocation opportunities. I consent to being contacted by phone regarding Stonerose. *
                       </Label>
                     </div>
                   </div>
