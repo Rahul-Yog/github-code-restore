@@ -176,9 +176,8 @@ async function addToMailchimp(leadData: LeadData) {
 
   const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}`;
   
-  // Map all form fields to Mailchimp merge fields
-  // Note: Custom merge fields (INTEREST, BUDGET, TIMELINE, MESSAGE, CONSENT fields) 
-  // must be created in your Mailchimp audience settings first
+  // Simplified merge fields - only essential data
+  // Required custom fields in Mailchimp: INTEREST, BUDGET, TIMELINE, CONSENT
   const memberData = {
     email_address: leadData.email,
     status_if_new: leadData.newsletter_consent ? "subscribed" : "transactional",
@@ -189,11 +188,7 @@ async function addToMailchimp(leadData: LeadData) {
       INTEREST: leadData.interested_in || "",
       BUDGET: leadData.price_range || "",
       TIMELINE: leadData.timeline || "",
-      MESSAGE: leadData.message || "",
-      NEWSLETTER: leadData.newsletter_consent ? "Yes" : "No",
-      PHONECNST: leadData.phone_consent ? "Yes" : "No",
-      PRIVACY: leadData.privacy_consent ? "Yes" : "No",
-      REALTOR: leadData.is_realtor ? "Yes" : "No",
+      CONSENT: leadData.newsletter_consent || leadData.phone_consent ? "Yes" : "No",
     },
   };
 
