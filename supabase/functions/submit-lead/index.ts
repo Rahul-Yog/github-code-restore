@@ -176,6 +176,28 @@ async function addToMailchimp(leadData: LeadData) {
 
   const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}`;
   
+  // Map price_range to Mailchimp's expected BUDGET values
+  const mapPriceRangeToMailchimp = (priceRange?: string): string => {
+    if (!priceRange) return "";
+    
+    // Map form values to Mailchimp's allowed BUDGET values
+    const priceMap: { [key: string]: string } = {
+      "$500K - $1M": "Below $1M",
+      "Below $1M": "Below $1M",
+      "$1M - $1.4M": "$1M - $1.4M",
+      "$1.4M - $1.6M": "$1.4M - $1.6M",
+      "$1.6M - $1.8M": "$1.6M - $1.8M",
+      "$1.8 - $2M": "$1.8 - $2M",
+      "$2M - 2.3M": "$2M - 2.3M",
+      "$2.3M - 2.7M": "$2.3M - 2.7M",
+      "Above 2.7M": "Above 2.7M",
+      "$2.7M+": "Above 2.7M",
+      "Above $2.7M": "Above 2.7M"
+    };
+    
+    return priceMap[priceRange] || priceRange;
+  };
+
   // Match Mailchimp merge tags exactly as configured in audience
   const memberData = {
     email_address: leadData.email,
@@ -186,7 +208,7 @@ async function addToMailchimp(leadData: LeadData) {
       PHONE: leadData.phone || "",
       HOMEINT: leadData.interested_in || "",
       REALTOR: leadData.is_realtor ? "Yes" : "No",
-      BUDGET: leadData.price_range || "",
+      BUDGET: mapPriceRangeToMailchimp(leadData.price_range),
       TIMELINE: leadData.timeline || "",
       NEWSLETTER: leadData.newsletter_consent ? "Yes" : "No",
       FORMSRC: leadData.source || "",
