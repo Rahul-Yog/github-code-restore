@@ -141,8 +141,8 @@ const StoneRoseLeadForm = () => {
                       <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <p className="text-sm font-semibold text-foreground">Phone</p>
-                        <a href="tel:+19055181965" className="text-sm text-primary hover:underline">
-                          905-518-1965
+                        <a href="tel:+14169038026" className="text-sm text-primary hover:underline">
+                          416-903-8026
                         </a>
                       </div>
                     </div>
@@ -150,8 +150,8 @@ const StoneRoseLeadForm = () => {
                       <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <p className="text-sm font-semibold text-foreground">Email</p>
-                        <a href="mailto:rahuljindal82@gmail.com" className="text-sm text-primary hover:underline">
-                          rahuljindal82@gmail.com
+                        <a href="mailto:info@rahuljindal.ca" className="text-sm text-primary hover:underline">
+                          info@rahuljindal.ca
                         </a>
                       </div>
                     </div>

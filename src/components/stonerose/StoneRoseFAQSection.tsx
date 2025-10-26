@@ -91,12 +91,12 @@ const StoneRoseFAQSection = () => {
               </p>
               <p className="text-sm text-muted-foreground">
                 Contact us anytime at{" "}
-                 <a href="tel:+14169009788" className="text-primary hover:underline font-semibold">
-                  416-900-9788
+                 <a href="tel:+14169038026" className="text-primary hover:underline font-semibold">
+                  416-903-8026
                 </a>
                 {" "}or{" "}
-                <a href="mailto:stonerose@treasurehill.com" className="text-primary hover:underline font-semibold">
-                  stonerose@treasurehill.com
+                <a href="mailto:info@rahuljindal.ca" className="text-primary hover:underline font-semibold">
+                  info@rahuljindal.ca
                 </a>
               </p>
             </div>
