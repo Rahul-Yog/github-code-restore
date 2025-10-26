@@ -90,7 +90,7 @@ const StoneRoseTimeline = () => {
                 </div>
 
                 {/* Event Card */}
-                <Card className={`mt-32 border-2 ${event.status === 'current' ? 'border-primary shadow-lg' : 'border-border'}`}>
+                <Card className={`mt-40 border-2 ${event.status === 'current' ? 'border-primary shadow-lg' : 'border-border'}`}>
                   <CardContent className="p-4 text-center">
                     <div className="text-sm font-semibold text-primary mb-1">
                       {event.year} {event.quarter}
