@@ -114,7 +114,6 @@ const StoneRoseAmenitiesMap = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Validate Mapbox token
     const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
     
     if (!MAPBOX_TOKEN) {
@@ -123,142 +122,133 @@ const StoneRoseAmenitiesMap = () => {
       return;
     }
 
-    // Ensure we don't reinitialize
     if (mapInitialized.current || !mapContainer.current) {
       return;
     }
 
-    // Validate container has dimensions
-    const containerWidth = mapContainer.current.offsetWidth;
-    const containerHeight = mapContainer.current.offsetHeight;
-    
-    if (containerWidth === 0 || containerHeight === 0) {
-      console.error('Map container has no dimensions');
-      setError('Map container is not properly sized');
-      setIsLoading(false);
-      return;
-    }
+    const initMap = () => {
+      if (!mapContainer.current) return;
 
-    try {
-      mapboxgl.accessToken = MAPBOX_TOKEN;
-      mapInitialized.current = true;
+      const containerWidth = mapContainer.current.offsetWidth;
+      const containerHeight = mapContainer.current.offsetHeight;
+      
+      if (containerWidth === 0 || containerHeight === 0) {
+        setTimeout(initMap, 100);
+        return;
+      }
 
-      console.log('Initializing Mapbox map...');
+      try {
+        mapboxgl.accessToken = MAPBOX_TOKEN;
+        mapInitialized.current = true;
 
-      map.current = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/streets-v12',
-        center: PROPERTY_LOCATION,
-        zoom: 12
-      });
-
-      // Add navigation controls
-      map.current.addControl(
-        new mapboxgl.NavigationControl({
-          visualizePitch: true,
-        }),
-        'top-right'
-      );
-
-      // Handle map load event
-      map.current.on('load', () => {
-        console.log('Map loaded successfully');
-        setIsLoading(false);
-        
-        // Add markers after map is fully loaded
-        amenities.forEach((amenity) => {
-          try {
-            const el = document.createElement('div');
-            el.className = 'marker';
-            el.style.width = '40px';
-            el.style.height = '40px';
-            el.style.borderRadius = '50%';
-            el.style.backgroundColor = categoryColors[amenity.category as keyof typeof categoryColors];
-            el.style.display = 'flex';
-            el.style.alignItems = 'center';
-            el.style.justifyContent = 'center';
-            el.style.fontSize = '20px';
-            el.style.cursor = 'pointer';
-            el.style.border = '3px solid white';
-            el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-            el.textContent = amenity.icon;
-
-            const popupContent = document.createElement('div');
-            popupContent.style.padding = '8px';
-            popupContent.style.maxWidth = '250px';
-            
-            if (amenity.image) {
-              const img = document.createElement('img');
-              img.src = amenity.image;
-              img.alt = amenity.name;
-              img.style.width = '100%';
-              img.style.height = '120px';
-              img.style.objectFit = 'cover';
-              img.style.borderRadius = '4px';
-              img.style.marginBottom = '8px';
-              popupContent.appendChild(img);
-            }
-            
-            const title = document.createElement('h3');
-            title.style.fontSize = '14px';
-            title.style.fontWeight = 'bold';
-            title.style.margin = '0 0 4px 0';
-            title.style.color = '#1a1a1a';
-            title.textContent = amenity.name;
-            popupContent.appendChild(title);
-            
-            const desc = document.createElement('p');
-            desc.style.fontSize = '12px';
-            desc.style.margin = '0 0 4px 0';
-            desc.style.color = '#666';
-            desc.textContent = amenity.description;
-            popupContent.appendChild(desc);
-            
-            if (amenity.distance) {
-              const dist = document.createElement('p');
-              dist.style.fontSize = '12px';
-              dist.style.fontWeight = '600';
-              dist.style.margin = '0';
-              dist.style.color = categoryColors[amenity.category as keyof typeof categoryColors];
-              dist.textContent = amenity.distance;
-              popupContent.appendChild(dist);
-            }
-
-            const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
-              .setDOMContent(popupContent);
-
-            const marker = new mapboxgl.Marker(el)
-              .setLngLat(amenity.coordinates as [number, number])
-              .setPopup(popup)
-              .addTo(map.current!);
-
-            // Show popup on hover
-            el.addEventListener('mouseenter', () => popup.addTo(map.current!));
-            el.addEventListener('mouseleave', () => popup.remove());
-            
-            console.log(`Added marker for ${amenity.name}`);
-          } catch (markerError) {
-            console.error(`Error adding marker for ${amenity.name}:`, markerError);
-          }
+        map.current = new mapboxgl.Map({
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/streets-v12',
+          center: PROPERTY_LOCATION,
+          zoom: 12
         });
-      });
 
-      // Handle map errors
-      map.current.on('error', (e) => {
-        console.error('Mapbox error:', e);
-        setError('Failed to load map. Please check your Mapbox token and internet connection.');
+        map.current.addControl(
+          new mapboxgl.NavigationControl({
+            visualizePitch: true,
+          }),
+          'top-right'
+        );
+
+        map.current.on('load', () => {
+          setIsLoading(false);
+          
+          amenities.forEach((amenity) => {
+            try {
+              const el = document.createElement('div');
+              el.className = 'marker';
+              el.style.width = '40px';
+              el.style.height = '40px';
+              el.style.borderRadius = '50%';
+              el.style.backgroundColor = categoryColors[amenity.category as keyof typeof categoryColors];
+              el.style.display = 'flex';
+              el.style.alignItems = 'center';
+              el.style.justifyContent = 'center';
+              el.style.fontSize = '20px';
+              el.style.cursor = 'pointer';
+              el.style.border = '3px solid white';
+              el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+              el.textContent = amenity.icon;
+
+              const popupContent = document.createElement('div');
+              popupContent.style.padding = '8px';
+              popupContent.style.maxWidth = '250px';
+              
+              if (amenity.image) {
+                const img = document.createElement('img');
+                img.src = amenity.image;
+                img.alt = amenity.name;
+                img.style.width = '100%';
+                img.style.height = '120px';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '4px';
+                img.style.marginBottom = '8px';
+                popupContent.appendChild(img);
+              }
+              
+              const title = document.createElement('h3');
+              title.style.fontSize = '14px';
+              title.style.fontWeight = 'bold';
+              title.style.margin = '0 0 4px 0';
+              title.style.color = '#1a1a1a';
+              title.textContent = amenity.name;
+              popupContent.appendChild(title);
+              
+              const desc = document.createElement('p');
+              desc.style.fontSize = '12px';
+              desc.style.margin = '0 0 4px 0';
+              desc.style.color = '#666';
+              desc.textContent = amenity.description;
+              popupContent.appendChild(desc);
+              
+              if (amenity.distance) {
+                const dist = document.createElement('p');
+                dist.style.fontSize = '12px';
+                dist.style.fontWeight = '600';
+                dist.style.margin = '0';
+                dist.style.color = categoryColors[amenity.category as keyof typeof categoryColors];
+                dist.textContent = amenity.distance;
+                popupContent.appendChild(dist);
+              }
+
+              const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
+                .setDOMContent(popupContent);
+
+              new mapboxgl.Marker(el)
+                .setLngLat(amenity.coordinates as [number, number])
+                .setPopup(popup)
+                .addTo(map.current!);
+
+              el.addEventListener('mouseenter', () => popup.addTo(map.current!));
+              el.addEventListener('mouseleave', () => popup.remove());
+            } catch (markerError) {
+              console.error(`Error adding marker for ${amenity.name}:`, markerError);
+            }
+          });
+        });
+
+        map.current.on('error', (e) => {
+          console.error('Mapbox error:', e);
+          setError('Failed to load map. Please check your internet connection.');
+          setIsLoading(false);
+        });
+
+      } catch (error) {
+        console.error('Error initializing map:', error);
+        setError('Failed to initialize map. Please try refreshing the page.');
         setIsLoading(false);
-      });
+      }
+    };
 
-    } catch (error) {
-      console.error('Error initializing map:', error);
-      setError('Failed to initialize map. Please try refreshing the page.');
-      setIsLoading(false);
-    }
+    requestAnimationFrame(initMap);
 
     return () => {
       if (map.current) {
-        console.log('Cleaning up map...');
         map.current.remove();
         map.current = null;
         mapInitialized.current = false;
