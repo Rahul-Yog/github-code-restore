@@ -240,6 +240,7 @@ const StoneRoseLeadForm = () => {
                       <Label htmlFor="homeInterest">Home Interest (Optional)</Label>
                       <Select
                         name="homeInterest"
+                        value={formData.homeInterest}
                         onValueChange={(value) => handleSelectChange("homeInterest", value)}
                       >
                         <SelectTrigger>
@@ -257,6 +258,7 @@ const StoneRoseLeadForm = () => {
                       <Label htmlFor="budget">Budget (Optional)</Label>
                       <Select
                         name="budget"
+                        value={formData.budget}
                         onValueChange={(value) => handleSelectChange("budget", value)}
                       >
                         <SelectTrigger>
@@ -281,6 +283,7 @@ const StoneRoseLeadForm = () => {
                       <Label htmlFor="timeline">Purchase Timeline (Optional)</Label>
                       <Select
                         name="timeline"
+                        value={formData.timeline}
                         onValueChange={(value) => handleSelectChange("timeline", value)}
                       >
                         <SelectTrigger>
@@ -299,6 +302,7 @@ const StoneRoseLeadForm = () => {
                       <Label htmlFor="isRealtor">Are you a Realtor? *</Label>
                       <Select
                         name="isRealtor"
+                        value={formData.isRealtor}
                         required
                         onValueChange={(value) => handleSelectChange("isRealtor", value)}
                       >
