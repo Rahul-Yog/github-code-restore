@@ -38,7 +38,7 @@ const StoneRoseRelocationGuide = () => {
           form_type: "stonerose_relocation_guide",
           source: "stonerose_website",
           interested_in: "Stonerose - Healthcare Relocation Guide",
-          newsletter_consent: false,
+          newsletter_consent: true,  // Set to true for guide downloads
           phone_consent: false
         }
       });
