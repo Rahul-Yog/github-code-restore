@@ -94,7 +94,7 @@ const StoneRoseHealthcareSection = () => {
             </Card>
             <Card className="text-center border-2">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">Mid-$500K</div>
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-2">Mid-$500K</div>
                 <div className="text-sm text-muted-foreground">Starting Price</div>
               </CardContent>
             </Card>
