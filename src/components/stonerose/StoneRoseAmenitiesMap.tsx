@@ -120,18 +120,21 @@ const StoneRoseAmenitiesMap = () => {
     }
 
     const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
-    console.log('Mapbox token present:', !!MAPBOX_TOKEN);
+    console.log('=== MAPBOX DEBUG ===');
+    console.log('Token present:', !!MAPBOX_TOKEN);
+    console.log('Token value:', MAPBOX_TOKEN);
     console.log('Token starts with pk.:', MAPBOX_TOKEN?.startsWith('pk.'));
+    console.log('===================');
     
     if (!MAPBOX_TOKEN) {
-      console.error('Mapbox token is missing');
-      setError('Mapbox token is missing. Please add VITE_MAPBOX_TOKEN to your .env file.');
+      console.error('❌ Mapbox token is missing from environment');
+      setError('Mapbox token is missing. Please restart your development server after updating .env file.');
       setIsLoading(false);
       return;
     }
 
     if (!MAPBOX_TOKEN.startsWith('pk.')) {
-      console.error('Invalid Mapbox token format');
+      console.error('❌ Invalid Mapbox token format:', MAPBOX_TOKEN.substring(0, 10));
       setError('Invalid Mapbox token format. Token should start with "pk."');
       setIsLoading(false);
       return;
