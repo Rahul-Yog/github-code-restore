@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 const StoneRoseGoogleMap = () => {
   const propertyAddress = "3770 Montrose Rd, Niagara Falls, ON";
   const encodedAddress = encodeURIComponent(propertyAddress);
-  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dN1dTYvKEoYZvE&q=${encodedAddress}&zoom=13`;
+  // Using simple Google Maps embed URL without API key
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
   const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
 
   const nearbyAmenities = [
