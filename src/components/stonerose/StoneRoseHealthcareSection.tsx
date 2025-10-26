@@ -115,9 +115,7 @@ const StoneRoseHealthcareSection = () => {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <p className="text-lg text-foreground italic mb-4">
-                    "I'm securing my home at Stonerose now, ahead of my position at the new South Niagara Hospital. 
-                    The 11-minute commute will be perfect, and I'm locking in pre-construction pricing before the hospital 
-                    opens in 2028 and the market appreciates."
+                    "I've secured my home at Stonerose during the pre-construction phase, with the South Niagara Hospital set to open nearby in 2028. The 11-minute commute would be ideal. Locking in early gives me a head start on pricing before the market appreciates."
                   </p>
                   <p className="text-sm font-semibold text-primary">
                     — Future Resident, Healthcare Professional
