@@ -121,6 +121,7 @@ const StoneRoseAmenitiesMap = () => {
 
     const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
     console.log('Mapbox token present:', !!MAPBOX_TOKEN);
+    console.log('Token starts with pk.:', MAPBOX_TOKEN?.startsWith('pk.'));
     
     if (!MAPBOX_TOKEN) {
       console.error('Mapbox token is missing');
@@ -129,10 +130,45 @@ const StoneRoseAmenitiesMap = () => {
       return;
     }
 
+    if (!MAPBOX_TOKEN.startsWith('pk.')) {
+      console.error('Invalid Mapbox token format');
+      setError('Invalid Mapbox token format. Token should start with "pk."');
+      setIsLoading(false);
+      return;
+    }
+
+    // Validate token by making a test request
+    const validateToken = async () => {
+      try {
+        const response = await fetch(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/test.json?access_token=${MAPBOX_TOKEN}`
+        );
+        
+        if (!response.ok) {
+          console.error('Token validation failed:', response.status, response.statusText);
+          setError(`Invalid Mapbox token. Please check your VITE_MAPBOX_TOKEN. Status: ${response.status}`);
+          setIsLoading(false);
+          return false;
+        }
+        
+        console.log('Token validated successfully');
+        return true;
+      } catch (err) {
+        console.error('Token validation error:', err);
+        setError('Failed to validate Mapbox token. Please check your internet connection.');
+        setIsLoading(false);
+        return false;
+      }
+    };
+
     let retryCount = 0;
     const maxRetries = 20;
 
-    const initMap = () => {
+    const initMap = async () => {
+      // Validate token first
+      const isValid = await validateToken();
+      if (!isValid) return;
+
       if (!mapContainer.current) {
         console.log('Map container not ready');
         return;
@@ -156,7 +192,7 @@ const StoneRoseAmenitiesMap = () => {
       }
 
       try {
-        console.log('Initializing map with token');
+        console.log('Initializing map with validated token');
         mapboxgl.accessToken = MAPBOX_TOKEN;
 
         map.current = new mapboxgl.Map({
@@ -253,9 +289,19 @@ const StoneRoseAmenitiesMap = () => {
           });
         });
 
-        map.current.on('error', (e) => {
-          console.error('Mapbox error:', e);
-          setError('Failed to load map. Please check your internet connection.');
+        map.current.on('error', (e: any) => {
+          console.error('Mapbox error event:', e);
+          console.error('Error type:', e.error?.message || 'Unknown error');
+          
+          let errorMessage = 'Failed to load map.';
+          if (e.error?.message) {
+            errorMessage += ` ${e.error.message}`;
+          }
+          if (e.error?.message?.includes('token')) {
+            errorMessage = 'Invalid Mapbox token. Please check your VITE_MAPBOX_TOKEN in .env file.';
+          }
+          
+          setError(errorMessage);
           setIsLoading(false);
         });
 
