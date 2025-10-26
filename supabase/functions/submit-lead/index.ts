@@ -226,25 +226,15 @@ async function addToMailchimp(leadData: LeadData) {
   // Add tags for automation triggers and segmentation
   const tags = [];
   
-  // Add form type tag
-  if (leadData.form_type) tags.push(leadData.form_type);
+  // Add website identifier
+  tags.push("stonerose");
   
-  // Add source tag
-  if (leadData.source) tags.push(leadData.source);
-  
-  // Add realtor tag
-  if (leadData.is_realtor) tags.push("realtor");
-  
-  // CRITICAL: Add relocation_guide tag for Mailchimp automation trigger
-  // This tag triggers the automation to send the free guide PDF
+  // Add form identifier based on form type
   if (leadData.form_type === "stonerose_relocation_guide") {
     tags.push("relocation_guide");
-    tags.push("send_guide"); // Additional tag for automation
-  }
-  
-  // Add contact form tag
-  if (leadData.form_type === "stonerose_contact") {
-    tags.push("contact_inquiry");
+    tags.push("send_guide"); // CRITICAL: Triggers Mailchimp automation to send PDF
+  } else if (leadData.form_type === "stonerose_contact") {
+    tags.push("contact_form");
   }
   
   if (tags.length > 0) {
