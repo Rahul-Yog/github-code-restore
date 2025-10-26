@@ -80,7 +80,6 @@ export type Database = {
           first_name: string | null
           id: string
           last_name: string | null
-          role: Database["public"]["Enums"]["app_role"] | null
           updated_at: string | null
         }
         Insert: {
@@ -88,7 +87,6 @@ export type Database = {
           first_name?: string | null
           id: string
           last_name?: string | null
-          role?: Database["public"]["Enums"]["app_role"] | null
           updated_at?: string | null
         }
         Update: {
@@ -96,8 +94,28 @@ export type Database = {
           first_name?: string | null
           id?: string
           last_name?: string | null
-          role?: Database["public"]["Enums"]["app_role"] | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
         }
         Relationships: []
       }
@@ -107,7 +125,7 @@ export type Database = {
     }
     Functions: {
       get_current_user_role: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: Database["public"]["Enums"]["app_role"]
       }
       has_role: {
