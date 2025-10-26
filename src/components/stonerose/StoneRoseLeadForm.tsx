@@ -28,8 +28,7 @@ const StoneRoseLeadForm = () => {
     timeline: "",
     isRealtor: "",
     message: "",
-    newsletterConsent: false,
-    phoneConsent: false
+    emailPhoneConsent: false
   });
   const { toast } = useToast();
 
@@ -67,15 +66,15 @@ const StoneRoseLeadForm = () => {
           last_name: formData.lastName,
           email: formData.email,
           phone: formData.phone || null,
-          interested_in: formData.homeInterest,
-          price_range: formData.budget,
-          timeline: formData.timeline,
+          interested_in: formData.homeInterest || null,
+          price_range: formData.budget || null,
+          timeline: formData.timeline || null,
           is_realtor: formData.isRealtor === "Yes",
           message: formData.message,
           form_type: "stonerose_contact",
           source: "stonerose_website",
-          newsletter_consent: formData.newsletterConsent,
-          phone_consent: formData.phoneConsent
+          newsletter_consent: formData.emailPhoneConsent,
+          phone_consent: formData.emailPhoneConsent
         }
       });
 
@@ -97,8 +96,7 @@ const StoneRoseLeadForm = () => {
         timeline: "",
         isRealtor: "",
         message: "",
-        newsletterConsent: false,
-        phoneConsent: false
+        emailPhoneConsent: false
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -239,10 +237,9 @@ const StoneRoseLeadForm = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="homeInterest">Home Interest *</Label>
+                      <Label htmlFor="homeInterest">Home Interest (Optional)</Label>
                       <Select
                         name="homeInterest"
-                        required
                         onValueChange={(value) => handleSelectChange("homeInterest", value)}
                       >
                         <SelectTrigger>
@@ -257,10 +254,9 @@ const StoneRoseLeadForm = () => {
                       </Select>
                     </div>
                     <div>
-                      <Label htmlFor="budget">Budget *</Label>
+                      <Label htmlFor="budget">Budget (Optional)</Label>
                       <Select
                         name="budget"
-                        required
                         onValueChange={(value) => handleSelectChange("budget", value)}
                       >
                         <SelectTrigger>
@@ -282,10 +278,9 @@ const StoneRoseLeadForm = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="timeline">Purchase Timeline *</Label>
+                      <Label htmlFor="timeline">Purchase Timeline (Optional)</Label>
                       <Select
                         name="timeline"
-                        required
                         onValueChange={(value) => handleSelectChange("timeline", value)}
                       >
                         <SelectTrigger>
@@ -333,32 +328,17 @@ const StoneRoseLeadForm = () => {
                   <div className="space-y-3">
                     <div className="flex items-start space-x-2">
                       <Checkbox
-                        id="newsletterConsent"
-                        checked={formData.newsletterConsent}
+                        id="emailPhoneConsent"
+                        checked={formData.emailPhoneConsent}
                         onCheckedChange={(checked) =>
-                          handleCheckboxChange("newsletterConsent", checked as boolean)
+                          handleCheckboxChange("emailPhoneConsent", checked as boolean)
                         }
                       />
                       <Label
-                        htmlFor="newsletterConsent"
+                        htmlFor="emailPhoneConsent"
                         className="text-sm font-normal cursor-pointer"
                       >
-                        Yes, I'd like to receive email updates about Stonerose availability
-                      </Label>
-                    </div>
-                    <div className="flex items-start space-x-2">
-                      <Checkbox
-                        id="phoneConsent"
-                        checked={formData.phoneConsent}
-                        onCheckedChange={(checked) =>
-                          handleCheckboxChange("phoneConsent", checked as boolean)
-                        }
-                      />
-                      <Label
-                        htmlFor="phoneConsent"
-                        className="text-sm font-normal cursor-pointer"
-                      >
-                        I consent to being contacted by phone regarding Stonerose
+                        Yes, I'd like to receive email updates about Stonerose availability and healthcare relocation opportunities. I consent to being contacted by phone regarding Stonerose.
                       </Label>
                     </div>
                   </div>
