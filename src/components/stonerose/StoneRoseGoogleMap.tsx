@@ -1,6 +1,7 @@
 import { MapPin, ExternalLink, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import golfBackground from "@/assets/golf-course-background.jpg";
 
 const StoneRoseGoogleMap = () => {
   const propertyAddress = "3770 Montrose Rd, Niagara Falls, ON";
@@ -28,7 +29,10 @@ const StoneRoseGoogleMap = () => {
             className="relative w-full h-[400px] md:h-[500px] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center cursor-pointer group"
             onClick={() => window.open(openMapUrl, '_blank')}
           >
-            <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/-79.0849,43.0896,12,0/800x600@2x?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw')] bg-cover bg-center opacity-40" />
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-40" 
+              style={{ backgroundImage: `url(${golfBackground})` }}
+            />
             
             <div className="relative z-10 text-center space-y-4">
               <div className="w-20 h-20 mx-auto bg-primary rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
