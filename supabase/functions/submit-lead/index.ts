@@ -176,8 +176,9 @@ async function addToMailchimp(leadData: LeadData) {
 
   const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}`;
   
-  // Use only standard merge fields (FNAME, LNAME, PHONE)
-  // Custom merge fields need to be pre-created in Mailchimp audience settings
+  // Map all form fields to Mailchimp merge fields
+  // Note: Custom merge fields (INTEREST, BUDGET, TIMELINE, MESSAGE, CONSENT fields) 
+  // must be created in your Mailchimp audience settings first
   const memberData = {
     email_address: leadData.email,
     status_if_new: leadData.newsletter_consent ? "subscribed" : "transactional",
@@ -185,13 +186,22 @@ async function addToMailchimp(leadData: LeadData) {
       FNAME: leadData.first_name,
       LNAME: leadData.last_name,
       PHONE: leadData.phone || "",
+      INTEREST: leadData.interested_in || "",
+      BUDGET: leadData.price_range || "",
+      TIMELINE: leadData.timeline || "",
+      MESSAGE: leadData.message || "",
+      NEWSLETTER: leadData.newsletter_consent ? "Yes" : "No",
+      PHONECNST: leadData.phone_consent ? "Yes" : "No",
+      PRIVACY: leadData.privacy_consent ? "Yes" : "No",
+      REALTOR: leadData.is_realtor ? "Yes" : "No",
     },
   };
 
   console.log("Syncing to Mailchimp:", { 
     email: leadData.email, 
     status: memberData.status_if_new,
-    hash: subscriberHash 
+    hash: subscriberHash,
+    form_type: leadData.form_type
   });
 
   // Use PUT method which creates or updates
@@ -213,15 +223,33 @@ async function addToMailchimp(leadData: LeadData) {
   const result = await response.json();
   console.log("Successfully synced to Mailchimp:", result.status);
 
-  // Add tags in a separate call
-  if (leadData.form_type || leadData.source) {
-    const tags = [];
-    if (leadData.form_type) tags.push(leadData.form_type);
-    if (leadData.source) tags.push(leadData.source);
-    if (leadData.is_realtor) tags.push("realtor");
-    
+  // Add tags for automation triggers and segmentation
+  const tags = [];
+  
+  // Add form type tag
+  if (leadData.form_type) tags.push(leadData.form_type);
+  
+  // Add source tag
+  if (leadData.source) tags.push(leadData.source);
+  
+  // Add realtor tag
+  if (leadData.is_realtor) tags.push("realtor");
+  
+  // CRITICAL: Add relocation_guide tag for Mailchimp automation trigger
+  // This tag triggers the automation to send the free guide PDF
+  if (leadData.form_type === "stonerose_relocation_guide") {
+    tags.push("relocation_guide");
+    tags.push("send_guide"); // Additional tag for automation
+  }
+  
+  // Add contact form tag
+  if (leadData.form_type === "stonerose_contact") {
+    tags.push("contact_inquiry");
+  }
+  
+  if (tags.length > 0) {
     const tagsUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}/tags`;
-    await fetch(tagsUrl, {
+    const tagsResponse = await fetch(tagsUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -231,7 +259,12 @@ async function addToMailchimp(leadData: LeadData) {
         tags: tags.map(name => ({ name, status: "active" }))
       }),
     });
-    console.log("Added tags:", tags);
+    
+    if (tagsResponse.ok) {
+      console.log("Successfully added tags:", tags);
+    } else {
+      console.error("Failed to add tags:", await tagsResponse.text());
+    }
   }
 }
 
