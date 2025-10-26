@@ -28,7 +28,7 @@ const StoneRoseSitePlanSection = () => {
                 <img
                   src={sitePlanImage}
                   alt="Stonerose Site Plan - Community layout showing townhomes, green spaces, and amenities"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <MapIcon className="w-16 h-16 text-white" />

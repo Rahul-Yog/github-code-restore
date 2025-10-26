@@ -61,7 +61,7 @@ const StoneRoseLocationSection = () => {
           {/* Aerial Location Map */}
           <Card className="mb-12 overflow-hidden border-2">
             <CardContent className="p-0">
-              <div className="relative h-[500px]">
+              <div className="relative h-[300px] md:h-[500px]">
                 <img
                   src={aerialImage}
                   alt="Stonerose Location - Aerial View showing proximity to Niagara Falls, Hospital, and Highway QEW"
