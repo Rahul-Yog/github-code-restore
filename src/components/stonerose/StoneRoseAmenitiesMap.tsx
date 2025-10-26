@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -110,21 +110,46 @@ const StoneRoseAmenitiesMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const mapInitialized = useRef(false);
-  const MAPBOX_TOKEN = 'pk.eyJ1IjoicmFodWxqaW5kYWwiLCJhIjoiY21oNnB3NzF5MGpkZTJsb2F4cHExNmU0aiJ9.bIpRazr2WSjmPPHJA8ZF4Q';
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const initializeMap = () => {
-    if (!mapContainer.current || mapInitialized.current) return;
+  useEffect(() => {
+    // Validate Mapbox token
+    const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
+    
+    if (!MAPBOX_TOKEN) {
+      setError('Mapbox token is missing. Please add VITE_MAPBOX_TOKEN to your .env file.');
+      setIsLoading(false);
+      return;
+    }
+
+    // Ensure we don't reinitialize
+    if (mapInitialized.current || !mapContainer.current) {
+      return;
+    }
+
+    // Validate container has dimensions
+    const containerWidth = mapContainer.current.offsetWidth;
+    const containerHeight = mapContainer.current.offsetHeight;
+    
+    if (containerWidth === 0 || containerHeight === 0) {
+      console.error('Map container has no dimensions');
+      setError('Map container is not properly sized');
+      setIsLoading(false);
+      return;
+    }
 
     try {
       mapboxgl.accessToken = MAPBOX_TOKEN;
       mapInitialized.current = true;
 
+      console.log('Initializing Mapbox map...');
+
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v12',
         center: PROPERTY_LOCATION,
-        zoom: 12,
-        pitch: 45
+        zoom: 12
       });
 
       // Add navigation controls
@@ -135,55 +160,105 @@ const StoneRoseAmenitiesMap = () => {
         'top-right'
       );
 
-      // Wait for map to load before adding markers
+      // Handle map load event
       map.current.on('load', () => {
-        // Add markers with popups
+        console.log('Map loaded successfully');
+        setIsLoading(false);
+        
+        // Add markers after map is fully loaded
         amenities.forEach((amenity) => {
-          const el = document.createElement('div');
-          el.className = 'marker';
-          el.style.width = '40px';
-          el.style.height = '40px';
-          el.style.borderRadius = '50%';
-          el.style.backgroundColor = categoryColors[amenity.category as keyof typeof categoryColors];
-          el.style.display = 'flex';
-          el.style.alignItems = 'center';
-          el.style.justifyContent = 'center';
-          el.style.fontSize = '20px';
-          el.style.cursor = 'pointer';
-          el.style.border = '3px solid white';
-          el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-          el.innerHTML = amenity.icon;
+          try {
+            const el = document.createElement('div');
+            el.className = 'marker';
+            el.style.width = '40px';
+            el.style.height = '40px';
+            el.style.borderRadius = '50%';
+            el.style.backgroundColor = categoryColors[amenity.category as keyof typeof categoryColors];
+            el.style.display = 'flex';
+            el.style.alignItems = 'center';
+            el.style.justifyContent = 'center';
+            el.style.fontSize = '20px';
+            el.style.cursor = 'pointer';
+            el.style.border = '3px solid white';
+            el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+            el.textContent = amenity.icon;
 
-          const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
-            .setHTML(`
-              <div style="padding: 8px; max-width: 250px;">
-                ${amenity.image ? `<img src="${amenity.image}" alt="${amenity.name}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />` : ''}
-                <h3 style="font-size: 14px; font-weight: bold; margin: 0 0 4px 0; color: #1a1a1a;">${amenity.name}</h3>
-                <p style="font-size: 12px; margin: 0 0 4px 0; color: #666;">${amenity.description}</p>
-                ${amenity.distance ? `<p style="font-size: 12px; font-weight: 600; margin: 0; color: ${categoryColors[amenity.category as keyof typeof categoryColors]};">${amenity.distance}</p>` : ''}
-              </div>
-            `);
+            const popupContent = document.createElement('div');
+            popupContent.style.padding = '8px';
+            popupContent.style.maxWidth = '250px';
+            
+            if (amenity.image) {
+              const img = document.createElement('img');
+              img.src = amenity.image;
+              img.alt = amenity.name;
+              img.style.width = '100%';
+              img.style.height = '120px';
+              img.style.objectFit = 'cover';
+              img.style.borderRadius = '4px';
+              img.style.marginBottom = '8px';
+              popupContent.appendChild(img);
+            }
+            
+            const title = document.createElement('h3');
+            title.style.fontSize = '14px';
+            title.style.fontWeight = 'bold';
+            title.style.margin = '0 0 4px 0';
+            title.style.color = '#1a1a1a';
+            title.textContent = amenity.name;
+            popupContent.appendChild(title);
+            
+            const desc = document.createElement('p');
+            desc.style.fontSize = '12px';
+            desc.style.margin = '0 0 4px 0';
+            desc.style.color = '#666';
+            desc.textContent = amenity.description;
+            popupContent.appendChild(desc);
+            
+            if (amenity.distance) {
+              const dist = document.createElement('p');
+              dist.style.fontSize = '12px';
+              dist.style.fontWeight = '600';
+              dist.style.margin = '0';
+              dist.style.color = categoryColors[amenity.category as keyof typeof categoryColors];
+              dist.textContent = amenity.distance;
+              popupContent.appendChild(dist);
+            }
 
-          new mapboxgl.Marker(el)
-            .setLngLat(amenity.coordinates as [number, number])
-            .setPopup(popup)
-            .addTo(map.current!);
+            const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
+              .setDOMContent(popupContent);
 
-          // Show popup on hover
-          el.addEventListener('mouseenter', () => popup.addTo(map.current!));
-          el.addEventListener('mouseleave', () => popup.remove());
+            const marker = new mapboxgl.Marker(el)
+              .setLngLat(amenity.coordinates as [number, number])
+              .setPopup(popup)
+              .addTo(map.current!);
+
+            // Show popup on hover
+            el.addEventListener('mouseenter', () => popup.addTo(map.current!));
+            el.addEventListener('mouseleave', () => popup.remove());
+            
+            console.log(`Added marker for ${amenity.name}`);
+          } catch (markerError) {
+            console.error(`Error adding marker for ${amenity.name}:`, markerError);
+          }
         });
       });
+
+      // Handle map errors
+      map.current.on('error', (e) => {
+        console.error('Mapbox error:', e);
+        setError('Failed to load map. Please check your Mapbox token and internet connection.');
+        setIsLoading(false);
+      });
+
     } catch (error) {
       console.error('Error initializing map:', error);
+      setError('Failed to initialize map. Please try refreshing the page.');
+      setIsLoading(false);
     }
-  };
-
-  useEffect(() => {
-    initializeMap();
 
     return () => {
       if (map.current) {
+        console.log('Cleaning up map...');
         map.current.remove();
         map.current = null;
         mapInitialized.current = false;
@@ -191,9 +266,29 @@ const StoneRoseAmenitiesMap = () => {
     };
   }, []);
 
+  if (error) {
+    return (
+      <div className="relative w-full h-[500px] md:h-[600px] rounded-lg overflow-hidden shadow-xl bg-muted flex items-center justify-center">
+        <div className="text-center p-8">
+          <p className="text-destructive font-semibold mb-2">Map Error</p>
+          <p className="text-sm text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full h-[500px] md:h-[600px] rounded-lg overflow-hidden shadow-xl">
       <div ref={mapContainer} className="absolute inset-0" />
+      
+      {isLoading && (
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-sm text-muted-foreground">Loading interactive map...</p>
+          </div>
+        </div>
+      )}
       
       {/* Legend */}
       <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg">
