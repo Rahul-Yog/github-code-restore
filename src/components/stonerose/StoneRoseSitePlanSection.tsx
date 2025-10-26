@@ -27,8 +27,9 @@ const StoneRoseSitePlanSection = () => {
               <div className="relative cursor-pointer group overflow-hidden rounded-lg shadow-xl">
                 <img
                   src={sitePlanImage}
-                  alt="Stonerose Site Plan - Community layout showing townhomes, green spaces, and amenities"
+                  alt="Pre-construction homes Niagara Falls - Stonerose site plan showing townhome layout near South Niagara Hospital"
                   className="w-full h-auto object-contain"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <MapIcon className="w-16 h-16 text-white" />
@@ -41,8 +42,9 @@ const StoneRoseSitePlanSection = () => {
               </DialogHeader>
               <img
                 src={sitePlanImage}
-                alt="Stonerose Site Plan Full View"
+                alt="Homes for sale Niagara Falls - Full Stonerose site plan with 24 townhomes"
                 className="w-full h-auto"
+                loading="lazy"
               />
             </DialogContent>
           </Dialog>
@@ -91,8 +93,9 @@ const StoneRoseSitePlanSection = () => {
                   </DialogHeader>
                   <img
                     src={sitePlanImage}
-                    alt="Stonerose Site Plan Full View"
+                    alt="Homes for sale Niagara Falls - Full Stonerose site plan with 24 townhomes"
                     className="w-full h-auto"
+                    loading="lazy"
                   />
                 </DialogContent>
               </Dialog>

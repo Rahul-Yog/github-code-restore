@@ -64,8 +64,9 @@ const StoneRoseLocationSection = () => {
               <div className="relative h-[300px] md:h-[500px]">
                 <img
                   src={aerialImage}
-                  alt="Stonerose Location - Aerial View showing proximity to Niagara Falls, Hospital, and Highway QEW"
+                  alt="Pre-construction homes Niagara Falls location - Stonerose aerial view showing proximity to South Niagara Hospital and QEW highway"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm p-3 rounded-lg">
                   <p className="text-sm font-semibold text-foreground">

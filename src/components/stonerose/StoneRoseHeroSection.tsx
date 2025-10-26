@@ -17,8 +17,9 @@ const StoneRoseHeroSection = () => {
         <div className="absolute inset-0 stonerose-hero-gradient z-10" />
         <img
           src={heroImage}
-          alt="Stonerose Niagara Falls Townhomes - Panoramic view of Niagara Falls with cityscape"
+          alt="Pre-construction homes Niagara Falls - Stonerose townhomes for sale near South Niagara Hospital with Niagara Falls cityscape"
           className="w-full h-full object-cover"
+          loading="eager"
         />
       </div>
 
@@ -39,8 +40,8 @@ const StoneRoseHeroSection = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
-            Find Your New Home Minutes from{" "}
-            <span className="text-gradient">Niagara's New Hospital</span>
+            Pre-Construction Homes in Niagara Falls Near{" "}
+            <span className="text-gradient">South Niagara Hospital</span>
           </h1>
 
           {/* Subheadline */}
@@ -73,7 +74,7 @@ const StoneRoseHeroSection = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
               onClick={() => scrollToSection("relocation-guide")}
             >
-              Download Free Relocation Guide
+              Download Free Healthcare Relocation Guide
             </Button>
             <Button
               size="lg"
@@ -81,7 +82,7 @@ const StoneRoseHeroSection = () => {
               className="text-white border-white/50 hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 border-2"
               onClick={() => scrollToSection("contact")}
             >
-              Schedule Private Tour
+              Tour Niagara Falls Homes for Sale
             </Button>
           </div>
 

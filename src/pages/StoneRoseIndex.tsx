@@ -18,14 +18,14 @@ const StoneRoseIndex = () => {
 
   useEffect(() => {
     // Set page title and meta tags for SEO
-    document.title = "New Homes Near Niagara Hospital | Stonerose by Treasure Hill | Healthcare Relocation Specialist";
+    document.title = "Pre-Construction Homes Niagara Falls | Homes for Sale Near Hospital | Stonerose by Treasure Hill";
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "Move-in ready townhomes near South Niagara Hospital from $500Ks. Stonerose offers modern homes 8km from the new hospital. Perfect for healthcare professionals relocating to Niagara Falls."
+        "Pre-construction homes Niagara Falls from mid-$500Ks. New homes for sale 11 minutes from South Niagara Hospital. Modern townhomes perfect for healthcare professionals relocating to Niagara."
       );
     }
 
@@ -34,7 +34,7 @@ const StoneRoseIndex = () => {
     if (metaKeywords) {
       metaKeywords.setAttribute(
         "content",
-        "homes near Niagara hospital, Niagara Falls new homes, healthcare relocation Niagara, Stonerose Treasure Hill, South Niagara Hospital homes, medical professional housing, preconstruction homes Niagara Falls"
+        "pre-construction homes niagara falls, homes for sale in niagara falls, homes near Niagara hospital, new homes niagara falls, healthcare relocation Niagara, Stonerose Treasure Hill, South Niagara Hospital homes, preconstruction homes near me"
       );
     }
 
@@ -47,7 +47,7 @@ const StoneRoseIndex = () => {
     // Update canonical URL
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) {
-      canonicalLink.setAttribute("href", "https://crownofcaledon.ca/niagara-falls-homes-near-hospital");
+      canonicalLink.setAttribute("href", "https://caledonhome.ca/niagara-falls-homes-near-hospital");
     }
 
     // Add structured data for RealEstateAgent
@@ -55,7 +55,7 @@ const StoneRoseIndex = () => {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
       "name": "Stonerose by Treasure Hill",
-      "url": "https://crownofcaledon.ca/niagara-falls-homes-near-hospital",
+      "url": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
       "description": "Premium pre-construction townhomes near South Niagara Hospital designed for healthcare professionals and families.",
       "address": {
         "@type": "PostalAddress",
@@ -119,9 +119,9 @@ const StoneRoseIndex = () => {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Stonerose Niagara Falls - Healthcare Relocation Specialist",
-      "image": "https://crownofcaledon.ca/assets/stonerose-hero.jpg",
-      "@id": "https://crownofcaledon.ca/niagara-falls-homes-near-hospital",
-      "url": "https://crownofcaledon.ca/niagara-falls-homes-near-hospital",
+      "image": "https://caledonhome.ca/assets/stonerose-hero.jpg",
+      "@id": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
+      "url": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
       "telephone": "+1-905-555-1234",
       "priceRange": "$$",
       "address": {

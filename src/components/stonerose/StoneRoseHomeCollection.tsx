@@ -90,8 +90,9 @@ const StoneRoseHomeCollection = () => {
                   <div className="h-64 border-b overflow-hidden">
                     <img 
                       src={home.image} 
-                      alt={`${home.name} - ${home.type} exterior rendering`}
+                      alt={`${home.type} pre-construction homes Niagara Falls - ${home.name} townhome for sale near hospital from ${home.price}`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
 

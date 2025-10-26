@@ -1,6 +1,7 @@
 import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import streetscapeImage from "@/assets/stonerose-streetscape.jpg";
+import StoneRoseTimeline from "./StoneRoseTimeline";
 
 const StoneRoseOverviewSection = () => {
   const features = [
@@ -73,8 +74,9 @@ const StoneRoseOverviewSection = () => {
           <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl mb-12">
             <img
               src={streetscapeImage}
-              alt="Stonerose Townhomes - Modern Streetscape View"
+              alt="Pre-construction homes Niagara Falls - Stonerose modern townhomes streetscape rendering near hospital"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             <div className="absolute bottom-8 left-8 text-white">
@@ -83,31 +85,56 @@ const StoneRoseOverviewSection = () => {
             </div>
           </div>
 
+          {/* Hospital Development Timeline */}
+          <StoneRoseTimeline />
+
           {/* Why Now Section */}
-          <Card className="bg-primary/5 border-2 border-primary/20">
+          <Card className="bg-primary/5 border-2 border-primary/20 mt-12">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Why Choose Stonerose Now?
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                Why Pre-Construction Homes at Stonerose?
               </h3>
-              <div className="space-y-3 text-muted-foreground">
-                <p>
-                  ✓ <strong className="text-foreground">Pre-Construction Pricing:</strong> Secure your home at today's prices before completion
-                </p>
-                <p>
-                  ✓ <strong className="text-foreground">Hospital Proximity:</strong> Just 11 minutes from the $3.6B South Niagara Hospital (opening Summer 2028)
-                </p>
-                <p>
-                  ✓ <strong className="text-foreground">Award-Winning Builder:</strong> Treasure Hill Homes - 20+ years, 100% delivery record, 20,000 homes in pipeline
-                </p>
-                <p>
-                  ✓ <strong className="text-foreground">GTA Affordability:</strong> Save $200K-$300K compared to Mississauga, Brampton, or Oakville
-                </p>
-                <p>
-                  ✓ <strong className="text-foreground">Flexible Deposits:</strong> $60,000 total deposit spread over 300 days with attractive payment plans
-                </p>
-                <p>
-                  ✓ <strong className="text-foreground">Construction Starting:</strong> Summer 2026 with first occupancy Spring 2027
-                </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary font-bold text-xl flex-shrink-0">✓</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">Pre-Construction Pricing:</strong> Lock in today's prices before completion
+                    </span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary font-bold text-xl flex-shrink-0">✓</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">Hospital Proximity:</strong> 11 minutes to $3.6B hospital (opens 2028)
+                    </span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary font-bold text-xl flex-shrink-0">✓</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">Award-Winning Builder:</strong> Treasure Hill - 20+ years, 100% delivery
+                    </span>
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary font-bold text-xl flex-shrink-0">✓</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">GTA Affordability:</strong> Save $200K-$300K vs Mississauga/Brampton
+                    </span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary font-bold text-xl flex-shrink-0">✓</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">Flexible Deposits:</strong> $60K total spread over 300 days
+                    </span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary font-bold text-xl flex-shrink-0">✓</span>
+                    <span className="text-muted-foreground">
+                      <strong className="text-foreground">Move-In:</strong> Spring 2027 (before hospital opens!)
+                    </span>
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>

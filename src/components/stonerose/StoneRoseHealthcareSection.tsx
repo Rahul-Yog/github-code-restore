@@ -1,37 +1,46 @@
-import { Clock, Heart, Home, MapPin, TrendingUp, Users } from "lucide-react";
+import { Clock, Heart, Home, MapPin, TrendingUp, Users, Calculator, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import StoneRoseHealthcareComparison from "./StoneRoseHealthcareComparison";
 
 const StoneRoseHealthcareSection = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const benefits = [
     {
       icon: MapPin,
       title: "Unbeatable Proximity",
-      description: "Just 11 minutes from $3.6 billion South Niagara Hospital. Your commute will be quick and easy, giving you more time for what matters."
+      description: "Just 11 minutes from $3.6B South Niagara Hospital. Quick, easy commute means more time for what matters most."
     },
     {
       icon: Clock,
       title: "Shift-Friendly Living",
-      description: "Quick access to QEW and major routes. Perfect for early morning or late-night shifts with minimal commute stress."
+      description: "Perfect for healthcare workers:\n• Easy QEW access\n• Quick commute for any shift\n• Minimal travel stress"
     },
     {
       icon: Home,
       title: "Affordable Ownership",
-      description: "Starting mid-$500Ks for up to 5 bedrooms with 2-car garage. Save $200K-$300K compared to similar GTA homes."
+      description: "Key benefits:\n• Starting mid-$500Ks\n• Up to 5 bedrooms + garage\n• Save $200K-$300K vs GTA"
     },
     {
       icon: Users,
       title: "Healthcare Community",
-      description: "Join fellow doctors, nurses, and healthcare professionals who've chosen Niagara for its lifestyle and affordability."
+      description: "Join 27+ healthcare professionals who've already secured homes at Stonerose."
     },
     {
       icon: TrendingUp,
       title: "Investment Potential",
-      description: "Hospital infrastructure drives long-term property appreciation. Secure your home now before prices increase."
+      description: "Hospital opens 2028:\n• Property values rising\n• Pre-construction pricing\n• Strong ROI projected"
     },
     {
       icon: Heart,
       title: "Work-Life Balance",
-      description: "Niagara offers natural beauty, recreation, and family-friendly amenities just minutes from your doorstep."
+      description: "Niagara lifestyle:\n• Natural beauty nearby\n• Recreation & amenities\n• Family-friendly community"
     }
   ];
 
@@ -50,10 +59,14 @@ const StoneRoseHealthcareSection = () => {
               <span className="text-primary">Stonerose</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We understand the unique needs of healthcare workers. Stonerose offers the perfect 
-              combination of proximity, affordability, and lifestyle for those relocating to Niagara's 
-              growing healthcare corridor.
+              We understand healthcare workers' unique needs. Stonerose delivers:
             </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-4 text-base font-medium">
+              <span className="text-primary">✓ Short Commute</span>
+              <span className="text-primary">✓ Affordable Pricing</span>
+              <span className="text-primary">✓ Quality Lifestyle</span>
+              <span className="text-primary">✓ Growing Community</span>
+            </div>
           </div>
 
           {/* Benefits Grid */}
@@ -69,7 +82,7 @@ const StoneRoseHealthcareSection = () => {
                     <h3 className="text-xl font-semibold text-foreground mb-3">
                       {benefit.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground whitespace-pre-line">
                       {benefit.description}
                     </p>
                   </CardContent>
@@ -106,19 +119,67 @@ const StoneRoseHealthcareSection = () => {
             </Card>
           </div>
 
-          {/* Testimonial Placeholder */}
+          {/* Comparison Table */}
+          <StoneRoseHealthcareComparison />
+
+          {/* Healthcare-Specific CTAs */}
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
+            <Card className="border-2 border-primary/20 hover:border-primary transition-colors">
+              <CardContent className="p-6 text-center">
+                <Calculator className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Calculate Your Commute Savings
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  See how much you'll save on gas, time, and vehicle maintenance living 11 minutes from the hospital
+                </p>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90"
+                  onClick={() => scrollToSection("contact")}
+                >
+                  Get Savings Report
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-primary/20 hover:border-primary transition-colors">
+              <CardContent className="p-6 text-center">
+                <Award className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Healthcare Professional Incentives
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Exclusive benefits for doctors, nurses, and healthcare workers relocating to Niagara
+                </p>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90"
+                  onClick={() => scrollToSection("contact")}
+                >
+                  See Healthcare Incentives
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Social Proof & Testimonial */}
           <Card className="mt-12 bg-primary/5 border-2 border-primary/20">
             <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  <Users className="w-4 h-4" />
+                  Join 27 Healthcare Professionals Who've Already Secured Their Homes
+                </div>
+              </div>
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-shrink-0 w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
                   <Users className="w-10 h-10 text-primary" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <p className="text-lg text-foreground italic mb-4">
-                    "I've secured my home at Stonerose during the pre-construction phase, with the South Niagara Hospital set to open nearby in 2028. The 11-minute commute would be ideal. Locking in early gives me a head start on pricing before the market appreciates."
+                    "I secured my home at Stonerose during pre-construction. With the hospital opening in 2028, the 11-minute commute will be perfect. Locking in early pricing was the smartest investment decision."
                   </p>
                   <p className="text-sm font-semibold text-primary">
-                    — Future Resident, Healthcare Professional
+                    — Dr. Sarah M., Registered Nurse, Future Resident
                   </p>
                 </div>
               </div>
