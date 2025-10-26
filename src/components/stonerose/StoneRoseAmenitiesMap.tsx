@@ -109,37 +109,55 @@ const categoryColors = {
 const StoneRoseAmenitiesMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const mapInitialized = useRef(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Only initialize if map doesn't already exist
+    if (map.current) {
+      console.log('Map already initialized, skipping');
+      return;
+    }
+
     const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
+    console.log('Mapbox token present:', !!MAPBOX_TOKEN);
     
     if (!MAPBOX_TOKEN) {
+      console.error('Mapbox token is missing');
       setError('Mapbox token is missing. Please add VITE_MAPBOX_TOKEN to your .env file.');
       setIsLoading(false);
       return;
     }
 
-    if (mapInitialized.current || !mapContainer.current) {
-      return;
-    }
+    let retryCount = 0;
+    const maxRetries = 20;
 
     const initMap = () => {
-      if (!mapContainer.current) return;
+      if (!mapContainer.current) {
+        console.log('Map container not ready');
+        return;
+      }
 
       const containerWidth = mapContainer.current.offsetWidth;
       const containerHeight = mapContainer.current.offsetHeight;
       
+      console.log('Container dimensions:', { containerWidth, containerHeight, retryCount });
+      
       if (containerWidth === 0 || containerHeight === 0) {
-        setTimeout(initMap, 100);
+        retryCount++;
+        if (retryCount < maxRetries) {
+          setTimeout(initMap, 100);
+        } else {
+          console.error('Max retries reached - container has no dimensions');
+          setError('Failed to initialize map container. Please refresh the page.');
+          setIsLoading(false);
+        }
         return;
       }
 
       try {
+        console.log('Initializing map with token');
         mapboxgl.accessToken = MAPBOX_TOKEN;
-        mapInitialized.current = true;
 
         map.current = new mapboxgl.Map({
           container: mapContainer.current,
@@ -147,6 +165,8 @@ const StoneRoseAmenitiesMap = () => {
           center: PROPERTY_LOCATION,
           zoom: 12
         });
+
+        console.log('Map instance created');
 
         map.current.addControl(
           new mapboxgl.NavigationControl({
@@ -156,6 +176,7 @@ const StoneRoseAmenitiesMap = () => {
         );
 
         map.current.on('load', () => {
+          console.log('Map loaded successfully');
           setIsLoading(false);
           
           amenities.forEach((amenity) => {
@@ -245,13 +266,15 @@ const StoneRoseAmenitiesMap = () => {
       }
     };
 
-    requestAnimationFrame(initMap);
+    // Use a small delay to ensure container is rendered
+    const timeoutId = setTimeout(initMap, 50);
 
     return () => {
+      clearTimeout(timeoutId);
       if (map.current) {
+        console.log('Cleaning up map');
         map.current.remove();
         map.current = null;
-        mapInitialized.current = false;
       }
     };
   }, []);
