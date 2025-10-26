@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 const StoneRoseGoogleMap = () => {
   const propertyAddress = "3770 Montrose Rd, Niagara Falls, ON";
   const encodedAddress = encodeURIComponent(propertyAddress);
-  // Using simple Google Maps embed URL without API key
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+  // Using OpenStreetMap - latitude: 43.0896, longitude: -79.0849
+  const lat = 43.0896;
+  const lon = -79.0849;
+  const zoom = 13;
+  
   const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
 
   const nearbyAmenities = [
@@ -20,13 +23,11 @@ const StoneRoseGoogleMap = () => {
       <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden border-2 border-border shadow-lg">
         <iframe
           title="Stonerose Location Map"
-          src={mapEmbedUrl}
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${lon-0.05},${lat-0.05},${lon+0.05},${lat+0.05}&layer=mapnik&marker=${lat},${lon}`}
           width="100%"
           height="100%"
           style={{ border: 0 }}
-          allowFullScreen
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
           className="w-full h-full"
         />
       </div>
