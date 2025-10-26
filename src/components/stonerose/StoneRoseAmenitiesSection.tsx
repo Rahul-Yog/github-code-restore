@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Trophy, UtensilsCrossed, ShoppingBag, Home } from "lucide-react";
-import StoneRoseAmenitiesMap from "./StoneRoseAmenitiesMap";
+import StoneRoseGoogleMap from "./StoneRoseGoogleMap";
 
 const StoneRoseAmenitiesSection = () => {
   const scrollToContact = () => {
@@ -81,7 +81,7 @@ const StoneRoseAmenitiesSection = () => {
 
           {/* Interactive Map */}
           <div className="mb-16">
-            <StoneRoseAmenitiesMap />
+            <StoneRoseGoogleMap />
           </div>
 
           {/* Amenity Categories */}
