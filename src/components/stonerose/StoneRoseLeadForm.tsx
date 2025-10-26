@@ -23,9 +23,10 @@ const StoneRoseLeadForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    currentLocation: "",
+    homeInterest: "",
+    budget: "",
     timeline: "",
-    isHealthcareProfessional: false,
+    isRealtor: "",
     message: "",
     newsletterConsent: false,
     phoneConsent: false
@@ -66,15 +67,15 @@ const StoneRoseLeadForm = () => {
           last_name: formData.lastName,
           email: formData.email,
           phone: formData.phone || null,
+          interested_in: formData.homeInterest,
+          price_range: formData.budget,
           timeline: formData.timeline,
+          is_realtor: formData.isRealtor === "Yes",
           message: formData.message,
           form_type: "stonerose_contact",
           source: "stonerose_website",
-          interested_in: formData.isHealthcareProfessional 
-            ? `Stonerose - Healthcare Professional from ${formData.currentLocation}` 
-            : `Stonerose - ${formData.currentLocation}`,
           newsletter_consent: formData.newsletterConsent,
-          phone_consent: formData.newsletterConsent
+          phone_consent: formData.phoneConsent
         }
       });
 
@@ -91,9 +92,10 @@ const StoneRoseLeadForm = () => {
         lastName: "",
         email: "",
         phone: "",
-        currentLocation: "",
+        homeInterest: "",
+        budget: "",
         timeline: "",
-        isHealthcareProfessional: false,
+        isRealtor: "",
         message: "",
         newsletterConsent: false,
         phoneConsent: false
@@ -139,8 +141,8 @@ const StoneRoseLeadForm = () => {
                       <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <p className="text-sm font-semibold text-foreground">Phone</p>
-                        <a href="tel:+14169038026" className="text-sm text-primary hover:underline">
-                          416-903-8026
+                        <a href="tel:+19055181965" className="text-sm text-primary hover:underline">
+                          905-518-1965
                         </a>
                       </div>
                     </div>
@@ -148,19 +150,19 @@ const StoneRoseLeadForm = () => {
                       <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <p className="text-sm font-semibold text-foreground">Email</p>
-                        <a href="mailto:info@rahuljindal.ca" className="text-sm text-primary hover:underline">
-                          info@rahuljindal.ca
+                        <a href="mailto:rahuljindal82@gmail.com" className="text-sm text-primary hover:underline">
+                          rahuljindal82@gmail.com
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-sm font-semibold text-foreground">Agent</p>
+                        <p className="text-sm font-semibold text-foreground">Location</p>
                         <p className="text-sm text-muted-foreground">
-                          Rahul Jindal<br />
-                          Real Estate Salesperson<br />
-                          RE/MAX Skyway Realty Brokerage
+                          3770 Montrose Rd<br />
+                          Niagara Falls, ON<br />
+                          Canada
                         </p>
                       </div>
                     </div>
@@ -237,61 +239,83 @@ const StoneRoseLeadForm = () => {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="currentLocation">Current Location</Label>
+                      <Label htmlFor="homeInterest">Home Interest *</Label>
                       <Select
-                        name="currentLocation"
-                        onValueChange={(value) => handleSelectChange("currentLocation", value)}
+                        name="homeInterest"
+                        required
+                        onValueChange={(value) => handleSelectChange("homeInterest", value)}
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select your location" />
+                          <SelectValue placeholder="Select home type" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Mississauga">Mississauga</SelectItem>
-                          <SelectItem value="Brampton">Brampton</SelectItem>
-                          <SelectItem value="Oakville">Oakville</SelectItem>
-                          <SelectItem value="Hamilton">Hamilton</SelectItem>
-                          <SelectItem value="Waterloo">Waterloo</SelectItem>
-                          <SelectItem value="Toronto">Toronto</SelectItem>
-                          <SelectItem value="Other GTA">Other GTA</SelectItem>
-                          <SelectItem value="Niagara Region">Niagara Region</SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
+                          <SelectItem value="Townhome">Townhome</SelectItem>
+                          <SelectItem value="Bungalow">Bungalow</SelectItem>
+                          <SelectItem value="Detached Homes">Detached Homes</SelectItem>
+                          <SelectItem value="Condo">Condo</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div>
-                      <Label htmlFor="timeline">Purchase Timeline</Label>
+                      <Label htmlFor="budget">Budget *</Label>
+                      <Select
+                        name="budget"
+                        required
+                        onValueChange={(value) => handleSelectChange("budget", value)}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select budget range" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="$500K - $1M">$500K - $1M</SelectItem>
+                          <SelectItem value="$1M - $1.4M">$1M - $1.4M</SelectItem>
+                          <SelectItem value="$1.4M - $1.6M">$1.4M - $1.6M</SelectItem>
+                          <SelectItem value="$1.6M - $1.8M">$1.6M - $1.8M</SelectItem>
+                          <SelectItem value="$1.8M - $2M">$1.8M - $2M</SelectItem>
+                          <SelectItem value="$2M - $2.3M">$2M - $2.3M</SelectItem>
+                          <SelectItem value="$2.3M - $2.7M">$2.3M - $2.7M</SelectItem>
+                          <SelectItem value="Above $2.7M">Above $2.7M</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="timeline">Purchase Timeline *</Label>
                       <Select
                         name="timeline"
+                        required
                         onValueChange={(value) => handleSelectChange("timeline", value)}
                       >
                         <SelectTrigger>
                           <SelectValue placeholder="When are you looking?" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Immediate">Immediate (0-3 months)</SelectItem>
-                          <SelectItem value="Short-term">Short-term (3-6 months)</SelectItem>
-                          <SelectItem value="Medium-term">Medium-term (6-12 months)</SelectItem>
-                          <SelectItem value="Long-term">Long-term (1+ year)</SelectItem>
-                          <SelectItem value="Just-exploring">Just exploring</SelectItem>
+                          <SelectItem value="ASAP">ASAP</SelectItem>
+                          <SelectItem value="3-6 Months">3-6 Months</SelectItem>
+                          <SelectItem value="6-12 Months">6-12 Months</SelectItem>
+                          <SelectItem value="1-2 Years">1-2 Years</SelectItem>
+                          <SelectItem value="Just Researching">Just Researching</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="isHealthcareProfessional"
-                      checked={formData.isHealthcareProfessional}
-                      onCheckedChange={(checked) =>
-                        handleCheckboxChange("isHealthcareProfessional", checked as boolean)
-                      }
-                    />
-                    <Label
-                      htmlFor="isHealthcareProfessional"
-                      className="text-sm font-normal cursor-pointer"
-                    >
-                      I am a healthcare professional
-                    </Label>
+                    <div>
+                      <Label htmlFor="isRealtor">Are you a Realtor? *</Label>
+                      <Select
+                        name="isRealtor"
+                        required
+                        onValueChange={(value) => handleSelectChange("isRealtor", value)}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Yes">Yes</SelectItem>
+                          <SelectItem value="No">No</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
 
                   <div>
@@ -319,7 +343,22 @@ const StoneRoseLeadForm = () => {
                         htmlFor="newsletterConsent"
                         className="text-sm font-normal cursor-pointer"
                       >
-                        Yes, I'd like to receive email updates about Stonerose availability and healthcare relocation opportunities. I consent to being contacted by phone regarding Stonerose.
+                        Yes, I'd like to receive email updates about Stonerose availability
+                      </Label>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <Checkbox
+                        id="phoneConsent"
+                        checked={formData.phoneConsent}
+                        onCheckedChange={(checked) =>
+                          handleCheckboxChange("phoneConsent", checked as boolean)
+                        }
+                      />
+                      <Label
+                        htmlFor="phoneConsent"
+                        className="text-sm font-normal cursor-pointer"
+                      >
+                        I consent to being contacted by phone regarding Stonerose
                       </Label>
                     </div>
                   </div>

@@ -109,13 +109,15 @@ const categoryColors = {
 const StoneRoseAmenitiesMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
+  const mapInitialized = useRef(false);
   const MAPBOX_TOKEN = 'pk.eyJ1IjoicmFodWxqaW5kYWwiLCJhIjoiY21oNnB3NzF5MGpkZTJsb2F4cHExNmU0aiJ9.bIpRazr2WSjmPPHJA8ZF4Q';
 
-  const initializeMap = (token: string) => {
-    if (!mapContainer.current || !token) return;
+  const initializeMap = () => {
+    if (!mapContainer.current || mapInitialized.current) return;
 
     try {
-      mapboxgl.accessToken = token;
+      mapboxgl.accessToken = MAPBOX_TOKEN;
+      mapInitialized.current = true;
 
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
@@ -178,10 +180,14 @@ const StoneRoseAmenitiesMap = () => {
   };
 
   useEffect(() => {
-    initializeMap(MAPBOX_TOKEN);
+    initializeMap();
 
     return () => {
-      map.current?.remove();
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+        mapInitialized.current = false;
+      }
     };
   }, []);
 
