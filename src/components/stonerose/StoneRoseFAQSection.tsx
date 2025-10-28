@@ -47,6 +47,38 @@ const StoneRoseFAQSection = () => {
     {
       question: "How do I get started?",
       answer: "Getting started is easy! You can: 1) Download our free Healthcare Relocation Guide above, 2) Schedule a private tour to see the sales center and model homes, 3) Speak with our healthcare relocation specialist who understands your unique needs, or 4) Complete the contact form below and we'll reach out within 24 hours with all the information you need."
+    },
+    {
+      question: "What types of healthcare professionals are buying at Stonerose?",
+      answer: "We've helped a diverse range of healthcare professionals: registered nurses, physicians and specialists, medical residents, healthcare administrators, paramedics and emergency medical technicians, and allied health professionals (physiotherapists, respiratory therapists, etc.). All find the location and pricing ideal for their needs."
+    },
+    {
+      question: "Can I customize my Stonerose home for healthcare needs?",
+      answer: "Yes! During the pre-construction phase, you can work with our design center to customize features. Popular healthcare professional upgrades include: home office spaces for telehealth, enhanced soundproofing for shift workers, upgraded blackout window treatments, and additional parking for on-call vehicles. Our team can guide you through available customizations."
+    },
+    {
+      question: "How does the South Niagara Hospital opening affect property values?",
+      answer: "Historical data from similar hospital developments shows property values within 15km typically appreciate 15-22% within 3 years of opening. The $3.6B investment in South Niagara Hospital, combined with 3,500+ new jobs, creates sustained demand. By purchasing now at pre-construction pricing, you lock in today's rates before this appreciation occurs."
+    },
+    {
+      question: "Is public transit available to the hospital from Stonerose?",
+      answer: "Yes! Niagara Region Transit serves the area with multiple routes. Routes 113, 109, 213, and 60/65 provide connections throughout Niagara Falls. The Niagara Falls GO Station is 10-12 minutes away, offering connections to the broader GTA. New transit routes will likely be added to serve the hospital when it opens in 2028."
+    },
+    {
+      question: "What if I need to relocate before the hospital opens?",
+      answer: "Your Stonerose home maintains strong resale value thanks to pre-construction pricing and growing demand. If you need to relocate before occupancy, assignment sales are typically permitted (subject to builder approval and fees). Many buyers also choose to rent their homes to other healthcare professionals, creating rental income while building equity."
+    },
+    {
+      question: "Are there other hospitals near Stonerose for employment?",
+      answer: "Yes! While South Niagara Hospital is the closest (11 minutes), you're also near: Greater Niagara General Hospital (15 minutes), Niagara Health - St. Catharines Site (20 minutes), and Hamilton Health Sciences (45 minutes). This gives you flexibility for career opportunities throughout the region."
+    },
+    {
+      question: "What about parking for healthcare workers with multiple vehicles?",
+      answer: "Every Stonerose home includes a 2-car garage, with additional driveway parking. This is ideal for healthcare professionals who may have personal vehicles plus on-call vehicles, or households where both partners work in healthcare. Guest parking is also available throughout the community."
+    },
+    {
+      question: "How do Stonerose homes near hospital compare in energy efficiency?",
+      answer: "All Stonerose homes meet or exceed Ontario Building Code energy standards, featuring modern insulation, energy-efficient HVAC systems, and Energy Star appliances. This means lower utility bills—important for healthcare professionals managing variable income during residency or saving for the future."
     }
   ];
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, FileText, MapPin, TrendingUp, Users } from "lucide-react";
+import { Download, FileText, MapPin, TrendingUp, Users, Home } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,13 +82,23 @@ const StoneRoseRelocationGuide = () => {
     },
     {
       icon: Users,
-      title: "Healthcare Job Market",
-      description: "Employment opportunities and career growth in Niagara healthcare"
+      title: "Healthcare Job Market & Networking",
+      description: "Employment opportunities, networking groups, and professional associations"
     },
     {
       icon: FileText,
+      title: "Ontario License Transfer Guide",
+      description: "Step-by-step process for healthcare license registration in Ontario"
+    },
+    {
+      icon: Home,
       title: "Stonerose Home Features",
       description: "Complete floor plans, pricing, and deposit structure information"
+    },
+    {
+      icon: Download,
+      title: "Healthcare Relocation Checklist",
+      description: "Complete moving checklist specifically for healthcare professionals"
     }
   ];
 
@@ -143,12 +153,38 @@ const StoneRoseRelocationGuide = () => {
               })}
 
               <Card className="bg-primary/5 border-2 border-primary/20">
-                <CardContent className="p-6">
-                  <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">📧 Instant Delivery:</strong> Get the guide 
-                    sent directly to your email within minutes. Plus, receive exclusive updates about 
-                    Stonerose availability and healthcare relocation opportunities.
-                  </p>
+                <CardContent className="p-6 space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Ontario Healthcare License Transfer</h4>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Step-by-step guidance for registering with:
+                    </p>
+                    <ul className="text-xs text-muted-foreground space-y-1 ml-4">
+                      <li>• College of Nurses of Ontario (CNO)</li>
+                      <li>• College of Physicians and Surgeons of Ontario (CPSO)</li>
+                      <li>• Ontario College of Pharmacists</li>
+                      <li>• Other regulated healthcare professions</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Healthcare Professional Networking</h4>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Connect with local healthcare community:
+                    </p>
+                    <ul className="text-xs text-muted-foreground space-y-1 ml-4">
+                      <li>• Niagara Healthcare Professionals Network</li>
+                      <li>• South Niagara Hospital staff associations</li>
+                      <li>• Local medical society chapters</li>
+                      <li>• Professional development opportunities</li>
+                    </ul>
+                  </div>
+                  <div className="pt-3 border-t">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">📧 Instant Delivery:</strong> Get the guide 
+                      sent directly to your email within minutes. Plus, receive exclusive updates about 
+                      Stonerose availability and healthcare relocation opportunities.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </div>

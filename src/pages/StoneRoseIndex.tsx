@@ -5,13 +5,17 @@ import StoneRoseHeroSection from "@/components/stonerose/StoneRoseHeroSection";
 import StoneRoseOverviewSection from "@/components/stonerose/StoneRoseOverviewSection";
 import StoneRoseHealthcareSection from "@/components/stonerose/StoneRoseHealthcareSection";
 import StoneRoseHousingFeatures from "@/components/stonerose/StoneRoseHousingFeatures";
+import StoneRoseTestimonials from "@/components/stonerose/StoneRoseTestimonials";
+import StoneRoseInvestmentAnalysis from "@/components/stonerose/StoneRoseInvestmentAnalysis";
 import StoneRoseLocationSection from "@/components/stonerose/StoneRoseLocationSection";
 import StoneRoseSitePlanSection from "@/components/stonerose/StoneRoseSitePlanSection";
 import StoneRoseHomeCollection from "@/components/stonerose/StoneRoseHomeCollection";
 import StoneRoseAmenitiesSection from "@/components/stonerose/StoneRoseAmenitiesSection";
+import StoneRoseAgentBio from "@/components/stonerose/StoneRoseAgentBio";
 import StoneRoseRelocationGuide from "@/components/stonerose/StoneRoseRelocationGuide";
 import StoneRoseFAQSection from "@/components/stonerose/StoneRoseFAQSection";
 import StoneRoseLeadForm from "@/components/stonerose/StoneRoseLeadForm";
+import StoneRoseStickyForm from "@/components/stonerose/StoneRoseStickyForm";
 import StoneRoseFooter from "@/components/stonerose/StoneRoseFooter";
 
 const StoneRoseIndex = () => {
@@ -100,13 +104,16 @@ const StoneRoseIndex = () => {
       }
     });
 
-    // Add structured data for RealEstateAgent
-    const realEstateSchema = {
+    // Add structured data for RealEstateListing
+    const realEstateListingSchema = {
       "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "name": "Stonerose by Treasure Hill",
+      "@type": "RealEstateListing",
+      "name": "Stonerose Pre-Construction Townhomes - Homes Near Niagara Falls Hospital",
+      "description": "Pre-construction townhomes 11 minutes from South Niagara Hospital. Perfect for healthcare professionals. 3-5 bedrooms, 2-car garage, from mid-$500Ks.",
       "url": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
-      "description": "Premium pre-construction townhomes near South Niagara Hospital designed for healthcare professionals and families.",
+      "image": "https://caledonhome.ca/assets/stonerose-hero-niagara.jpg",
+      "datePosted": "2024-01-01",
+      "availableFrom": "2027-03-01",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Montrose Road",
@@ -115,13 +122,64 @@ const StoneRoseIndex = () => {
         "postalCode": "L2H",
         "addressCountry": "CA"
       },
-      "areaServed": ["Niagara Falls", "Brampton", "Mississauga", "Oakville", "Hamilton", "Waterloo"],
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 43.0896,
         "longitude": -79.0849
       },
-      "priceRange": "$500,000 - $600,000"
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "CAD",
+        "price": "550000",
+        "availability": "https://schema.org/PreOrder",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "550000",
+          "maxPrice": "600000",
+          "priceCurrency": "CAD"
+        }
+      },
+      "numberOfRooms": "3-5",
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": "1800-2400",
+        "unitCode": "FTK"
+      },
+      "numberOfBedrooms": "3-5",
+      "numberOfBathroomsTotal": "2-3",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "2-Car Garage"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "11 minutes to South Niagara Hospital"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "QEW Access"
+        }
+      ]
+    };
+
+    // Add structured data for RealEstateAgent
+    const realEstateAgentSchema = {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Rahul Jindal - Healthcare Relocation Specialist",
+      "url": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
+      "description": "Healthcare relocation specialist helping doctors, nurses, and medical professionals find homes near South Niagara Hospital.",
+      "email": "info@rahuljindal.ca",
+      "telephone": "+14169038026",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Niagara Falls",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "areaServed": ["Niagara Falls", "Niagara Region", "St. Catharines", "Hamilton"],
+      "priceRange": "$500,000 - $2,000,000"
     };
 
     // Add structured data for FAQPage
@@ -204,10 +262,15 @@ const StoneRoseIndex = () => {
     });
 
     // Add new structured data scripts
-    const realEstateScript = document.createElement("script");
-    realEstateScript.type = "application/ld+json";
-    realEstateScript.text = JSON.stringify(realEstateSchema);
-    document.head.appendChild(realEstateScript);
+    const realEstateListingScript = document.createElement("script");
+    realEstateListingScript.type = "application/ld+json";
+    realEstateListingScript.text = JSON.stringify(realEstateListingSchema);
+    document.head.appendChild(realEstateListingScript);
+
+    const realEstateAgentScript = document.createElement("script");
+    realEstateAgentScript.type = "application/ld+json";
+    realEstateAgentScript.text = JSON.stringify(realEstateAgentSchema);
+    document.head.appendChild(realEstateAgentScript);
 
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
@@ -221,7 +284,8 @@ const StoneRoseIndex = () => {
 
     // Cleanup function
     return () => {
-      realEstateScript.remove();
+      realEstateListingScript.remove();
+      realEstateAgentScript.remove();
       faqScript.remove();
       localBusinessScript.remove();
     };
@@ -235,13 +299,17 @@ const StoneRoseIndex = () => {
         <StoneRoseOverviewSection />
         <StoneRoseHealthcareSection />
         <StoneRoseHousingFeatures />
+        <StoneRoseTestimonials />
+        <StoneRoseInvestmentAnalysis />
         <StoneRoseLocationSection />
         <StoneRoseSitePlanSection />
         <StoneRoseHomeCollection />
         <StoneRoseAmenitiesSection />
+        <StoneRoseAgentBio />
         <StoneRoseRelocationGuide />
         <StoneRoseFAQSection />
         <StoneRoseLeadForm />
+        <StoneRoseStickyForm />
       </main>
       <StoneRoseFooter />
     </div>

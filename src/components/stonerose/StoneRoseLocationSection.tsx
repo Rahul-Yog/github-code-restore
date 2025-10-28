@@ -113,21 +113,36 @@ const StoneRoseLocationSection = () => {
             <Card className="bg-primary/5 border-2 border-primary/20">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Easy Commute for Healthcare Workers
+                  Transportation Infrastructure for Healthcare Workers
                 </h3>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>
-                    <strong className="text-foreground">Day Shifts:</strong> 11-minute drive via Montrose Road to hospital
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Night Shifts:</strong> Even faster with reduced traffic, under 10 minutes
-                  </p>
-                  <p>
-                    <strong className="text-foreground">GO Transit:</strong> 10-12 minutes to Niagara Falls GO Station
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Local Transit:</strong> Niagara Region Transit Routes 113, 109, 213, 60/65
-                  </p>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Driving Commute Options</h4>
+                    <ul className="space-y-2 text-muted-foreground text-sm">
+                      <li><strong className="text-foreground">Primary Route:</strong> Montrose Road to hospital - 11 min via direct route</li>
+                      <li><strong className="text-foreground">Day Shifts:</strong> Morning traffic averages 12-14 minutes (7-9am)</li>
+                      <li><strong className="text-foreground">Night Shifts:</strong> Under 10 minutes with minimal traffic</li>
+                      <li><strong className="text-foreground">Peak Times:</strong> QEW access in 3 min for alternate routing</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Public Transit Connections</h4>
+                    <ul className="space-y-2 text-muted-foreground text-sm">
+                      <li><strong className="text-foreground">Niagara Falls GO:</strong> 10-12 min drive, connects to GTA network</li>
+                      <li><strong className="text-foreground">Local Routes:</strong> NRT 113, 109, 213, 60/65 serve the area</li>
+                      <li><strong className="text-foreground">Future Service:</strong> New routes planned for hospital opening 2028</li>
+                      <li><strong className="text-foreground">Bike-Friendly:</strong> Dedicated cycling paths being developed</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Traffic Patterns Analysis</h4>
+                    <ul className="space-y-2 text-muted-foreground text-sm">
+                      <li><strong className="text-foreground">Low Congestion:</strong> Niagara Falls experiences less traffic than GTA</li>
+                      <li><strong className="text-foreground">Reliable Timing:</strong> Consistent commute times year-round</li>
+                      <li><strong className="text-foreground">Multiple Routes:</strong> Several route options for flexibility</li>
+                      <li><strong className="text-foreground">Winter Ready:</strong> Well-maintained roads prioritized for clearing</li>
+                    </ul>
+                  </div>
                 </div>
               </CardContent>
             </Card>
