@@ -55,18 +55,93 @@ const StoneRoseHealthcareSection = () => {
               Healthcare Professionals' Top Choice
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-              Why Healthcare Professionals Choose{" "}
-              <span className="text-primary">Stonerose</span>
+              South Niagara Hospital Homes:{" "}
+              <span className="text-primary">Your Smart Investment</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We understand healthcare workers' unique needs. Stonerose delivers:
+              Live 11 minutes from Ontario's newest healthcare facility. Secure your home now before the hospital opens in 2028.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-4 text-base font-medium">
-              <span className="text-primary">✓ Short Commute</span>
-              <span className="text-primary">✓ Affordable Pricing</span>
-              <span className="text-primary">✓ Quality Lifestyle</span>
-              <span className="text-primary">✓ Growing Community</span>
-            </div>
+          </div>
+
+          {/* Hospital Development Details - NEW SECTION */}
+          <Card className="mb-12 bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/20">
+            <CardContent className="p-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">
+                About South Niagara Hospital Development
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h4 className="text-xl font-semibold text-primary mb-3">Facility Specifications</h4>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold mt-1">•</span>
+                      <span><strong>1.3 million square feet</strong> of state-of-the-art healthcare space</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold mt-1">•</span>
+                      <span><strong>469 private patient beds</strong> for optimal care</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold mt-1">•</span>
+                      <span><strong>40+ specialized departments</strong> and clinical services</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold mt-1">•</span>
+                      <span><strong>$3.6 billion investment</strong> in healthcare infrastructure</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold mt-1">•</span>
+                      <span><strong>3,500+ new jobs</strong> created for healthcare professionals</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-xl font-semibold text-primary mb-3">Construction Timeline</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground">2023: Construction Began</p>
+                        <p className="text-sm text-muted-foreground">Groundbreaking and foundation work started</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground">2024-2027: Active Construction</p>
+                        <p className="text-sm text-muted-foreground">Major building phases and infrastructure</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-accent rounded-full mt-1.5 flex-shrink-0 animate-pulse"></div>
+                      <div>
+                        <p className="font-semibold text-foreground">Summer 2028: Grand Opening</p>
+                        <p className="text-sm text-muted-foreground">Hospital opens to serve the community</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h4 className="text-xl font-semibold text-primary mb-3 mt-6">Key Departments</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Emergency Care", "Cancer Treatment", "Surgical Services", "Mental Health", "Imaging & Diagnostics", "Maternal Care", "Pediatrics", "Intensive Care"].map((dept) => (
+                      <span key={dept} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        {dept}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Why Choose Stonerose */}
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Why Healthcare Workers Choose Stonerose
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Smart location. Affordable pricing. Quality lifestyle. Join 27+ healthcare professionals already living here.
+            </p>
           </div>
 
           {/* Benefits Grid */}

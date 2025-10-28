@@ -4,6 +4,7 @@ import StoneRoseNavigation from "@/components/stonerose/StoneRoseNavigation";
 import StoneRoseHeroSection from "@/components/stonerose/StoneRoseHeroSection";
 import StoneRoseOverviewSection from "@/components/stonerose/StoneRoseOverviewSection";
 import StoneRoseHealthcareSection from "@/components/stonerose/StoneRoseHealthcareSection";
+import StoneRoseHousingFeatures from "@/components/stonerose/StoneRoseHousingFeatures";
 import StoneRoseLocationSection from "@/components/stonerose/StoneRoseLocationSection";
 import StoneRoseSitePlanSection from "@/components/stonerose/StoneRoseSitePlanSection";
 import StoneRoseHomeCollection from "@/components/stonerose/StoneRoseHomeCollection";
@@ -17,38 +18,87 @@ const StoneRoseIndex = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Set page title and meta tags for SEO
-    document.title = "Pre-Construction Homes Niagara Falls | Homes for Sale Near Hospital | Stonerose by Treasure Hill";
+    // Set page title and meta tags for SEO - Optimized for target keywords
+    document.title = "Homes Near Niagara Falls Hospital - Healthcare Worker Housing | Pre-Construction from Mid-$500Ks";
     
-    // Update meta description
+    // Update meta description - Optimized for conversions
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "Pre-construction homes Niagara Falls from mid-$500Ks. New homes for sale 11 minutes from South Niagara Hospital. Modern townhomes perfect for healthcare professionals relocating to Niagara."
+        "Pre-construction homes near South Niagara Hospital from mid-$500Ks. 11-minute commute. Modern 3-5 bedroom townhomes perfect for healthcare professionals. First occupancy Spring 2027. Register now for exclusive pricing."
       );
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Pre-construction homes near South Niagara Hospital from mid-$500Ks. 11-minute commute. Modern 3-5 bedroom townhomes perfect for healthcare professionals. First occupancy Spring 2027. Register now for exclusive pricing.";
+      document.head.appendChild(meta);
     }
 
-    // Update meta keywords
+    // Update meta keywords - Primary and long-tail keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
       metaKeywords.setAttribute(
         "content",
-        "pre-construction homes niagara falls, homes for sale in niagara falls, homes near Niagara hospital, new homes niagara falls, healthcare relocation Niagara, Stonerose Treasure Hill, South Niagara Hospital homes, preconstruction homes near me"
+        "homes near Niagara Falls hospital, South Niagara Hospital homes, healthcare worker housing Niagara, pre-construction homes Niagara Falls, homes for sale Niagara Falls, new homes near hospital, healthcare relocation Niagara, Niagara Falls homes for sale near hospital, Stonerose Treasure Hill, homes for healthcare professionals"
       );
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "keywords";
+      meta.content = "homes near Niagara Falls hospital, South Niagara Hospital homes, healthcare worker housing Niagara, pre-construction homes Niagara Falls, homes for sale Niagara Falls, new homes near hospital, healthcare relocation Niagara, Niagara Falls homes for sale near hospital, Stonerose Treasure Hill, homes for healthcare professionals";
+      document.head.appendChild(meta);
     }
 
     // Update robots meta
     const metaRobots = document.querySelector('meta[name="robots"]');
     if (metaRobots) {
-      metaRobots.setAttribute("content", "index, follow, max-snippet:-1, max-image-preview:large");
+      metaRobots.setAttribute("content", "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "robots";
+      meta.content = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+      document.head.appendChild(meta);
     }
 
     // Update canonical URL
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) {
       canonicalLink.setAttribute("href", "https://caledonhome.ca/niagara-falls-homes-near-hospital");
+    } else {
+      const link = document.createElement('link');
+      link.rel = "canonical";
+      link.href = "https://caledonhome.ca/niagara-falls-homes-near-hospital";
+      document.head.appendChild(link);
     }
+
+    // Add Open Graph meta tags
+    const ogTags = [
+      { property: "og:title", content: "Homes Near Niagara Falls Hospital - Healthcare Worker Housing from Mid-$500Ks" },
+      { property: "og:description", content: "Pre-construction homes 11 minutes from South Niagara Hospital. Perfect for healthcare professionals. 3-5 bedrooms, 2-car garage. First occupancy 2027." },
+      { property: "og:url", content: "https://caledonhome.ca/niagara-falls-homes-near-hospital" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://caledonhome.ca/assets/stonerose-hero-niagara.jpg" },
+      { property: "og:locale", content: "en_CA" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Homes Near Niagara Falls Hospital - Healthcare Worker Housing" },
+      { name: "twitter:description", content: "Pre-construction homes 11 minutes from South Niagara Hospital from mid-$500Ks." }
+    ];
+
+    ogTags.forEach(tag => {
+      const existingTag = document.querySelector(`meta[${tag.property ? 'property' : 'name'}="${tag.property || tag.name}"]`);
+      if (existingTag) {
+        existingTag.setAttribute("content", tag.content);
+      } else {
+        const meta = document.createElement('meta');
+        if (tag.property) {
+          meta.setAttribute('property', tag.property);
+        } else {
+          meta.setAttribute('name', tag.name);
+        }
+        meta.content = tag.content;
+        document.head.appendChild(meta);
+      }
+    });
 
     // Add structured data for RealEstateAgent
     const realEstateSchema = {
@@ -184,6 +234,7 @@ const StoneRoseIndex = () => {
         <StoneRoseHeroSection />
         <StoneRoseOverviewSection />
         <StoneRoseHealthcareSection />
+        <StoneRoseHousingFeatures />
         <StoneRoseLocationSection />
         <StoneRoseSitePlanSection />
         <StoneRoseHomeCollection />
