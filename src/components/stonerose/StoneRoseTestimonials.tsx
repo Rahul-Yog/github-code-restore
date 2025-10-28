@@ -7,7 +7,7 @@ const StoneRoseTestimonials = () => {
       name: "Emergency Room Physician",
       role: "Planning for 2028 Hospital Opening",
       hospital: "Monitoring South Niagara Hospital Hiring",
-      quote: "I booked my Stonerose home in pre-construction as soon as I heard about the new hospital development. With hiring just beginning and the hospital opening in 2028, locking in today's pricing was strategic. The 11-minute commute will be perfect for ER shifts once I secure my position.",
+      quote: "I secured my home at Stonerose during pre-construction. With the hospital opening in 2028, the 11-minute commute will be perfect. Locking in early pricing was the smartest investment decision.",
       rating: 5,
       image: "👩‍⚕️"
     },
@@ -97,7 +97,7 @@ const StoneRoseTestimonials = () => {
             <CardContent className="p-8 text-center">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">27+</div>
+                  <div className="text-4xl font-bold text-primary mb-2">15+</div>
                   <div className="text-sm text-muted-foreground">Healthcare Professionals<br />Already Secured Homes</div>
                 </div>
                 <div className="hidden md:block w-px h-16 bg-border"></div>

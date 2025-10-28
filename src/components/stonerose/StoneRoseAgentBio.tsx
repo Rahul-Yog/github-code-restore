@@ -7,15 +7,15 @@ import remaxLogo from "@/assets/remax-logo.png";
 const StoneRoseAgentBio = () => {
   const credentials = [
     "Healthcare Relocation Specialist",
-    "15+ Years Real Estate Experience",
+    "7+ Years Real Estate Experience",
     "Certified Pre-Construction Expert",
     "Niagara Healthcare Market Expert"
   ];
 
   const achievements = [
-    { number: "150+", label: "Healthcare Professionals Helped" },
-    { number: "27+", label: "Stonerose Buyers Assisted" },
-    { number: "$45M+", label: "Healthcare Housing Facilitated" }
+    { number: "100+", label: "Healthcare Professionals Helped" },
+    { number: "15", label: "Stonerose Buyers Assisted" },
+    { number: "$20M+", label: "Healthcare Housing Facilitated" }
   ];
 
   return (
@@ -77,8 +77,8 @@ const StoneRoseAgentBio = () => {
                         Your Partner in Healthcare Housing
                       </h4>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        With over 15 years of real estate experience and specialized expertise in healthcare relocation, 
-                        Rahul has helped 150+ doctors, nurses, and medical professionals find their perfect homes in the 
+                        With over 7 years of real estate experience and specialized expertise in healthcare relocation, 
+                        Rahul has helped 100+ doctors, nurses, and medical professionals find their perfect homes in the 
                         Niagara region.
                       </p>
                       <p className="text-muted-foreground leading-relaxed">
