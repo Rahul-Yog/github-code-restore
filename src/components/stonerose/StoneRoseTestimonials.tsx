@@ -4,34 +4,34 @@ import { Users, Quote, Star } from "lucide-react";
 const StoneRoseTestimonials = () => {
   const testimonials = [
     {
-      name: "Dr. Sarah Mitchell",
-      role: "Emergency Room Physician",
-      hospital: "Future South Niagara Hospital Staff",
-      quote: "I secured my Stonerose home during pre-construction and I'm thrilled. The 11-minute commute will be perfect for ER shifts, and locking in pricing before the hospital opens was brilliant. The value compared to what I'd pay near Toronto hospitals is incredible.",
+      name: "Emergency Room Physician",
+      role: "Planning for 2028 Hospital Opening",
+      hospital: "Monitoring South Niagara Hospital Hiring",
+      quote: "I booked my Stonerose home in pre-construction as soon as I heard about the new hospital development. With hiring just beginning and the hospital opening in 2028, locking in today's pricing was strategic. The 11-minute commute will be perfect for ER shifts once I secure my position.",
       rating: 5,
       image: "👩‍⚕️"
     },
     {
-      name: "Michael Chen",
-      role: "Registered Nurse (ICU)",
-      hospital: "Relocating from Mississauga",
-      quote: "As an ICU nurse working rotating shifts, Stonerose's location is perfect. Short commute, quiet neighborhood for daytime sleep, and I'm saving over $250K compared to GTA. The soundproofing and blackout features were exactly what I needed.",
+      name: "Registered Nurse",
+      role: "ICU Specialist",
+      hospital: "Preparing to Apply When Hiring Opens",
+      quote: "As a nurse who will be applying when full hiring begins, securing a pre-construction home near the future hospital made perfect sense. I'm saving over $250K compared to GTA housing, and by the time the hospital is fully staffed in 2028, my home will be ready and appreciated in value.",
       rating: 5,
       image: "👨‍⚕️"
     },
     {
-      name: "Dr. Priya Patel",
-      role: "Medical Resident",
-      hospital: "Starting at South Niagara Hospital 2028",
-      quote: "Stonerose offered flexible deposits that work with my resident schedule. By 2028 when my residency at the new hospital starts, my home will be ready and I'll have built equity during construction. Smart investment for young physicians.",
+      name: "Medical Resident",
+      role: "Completing Residency",
+      hospital: "Targeting South Niagara for 2028",
+      quote: "I booked during pre-construction because the timeline aligns perfectly with my career. The hospital construction and my residency both complete around 2028. Flexible payment plans during construction let me build equity while I finish training. By opening day, I'll be debt-free and ready to apply.",
       rating: 5,
       image: "👩‍⚕️"
     },
     {
-      name: "James Rodriguez",
-      role: "Healthcare Administrator",
-      hospital: "Niagara Health System",
-      quote: "I researched extensively before choosing Stonerose. The combination of proximity to the new $3.6B hospital, quality construction by Treasure Hill, and affordability made it an easy decision. Our family loves the Niagara lifestyle and my work-life balance has never been better.",
+      name: "Healthcare Administrator",
+      role: "Relocating from GTA",
+      hospital: "Watching Hospital Development Progress",
+      quote: "I invested in pre-construction at Stonerose after researching the $3.6B hospital project. Even though hiring has just started and construction continues, locking in pricing now made financial sense. As more healthcare workers discover this opportunity and hiring ramps up, demand will only increase.",
       rating: 5,
       image: "👨‍💼"
     }
