@@ -6,58 +6,58 @@ const StoneRoseHousingFeatures = () => {
     {
       icon: Moon,
       title: "Soundproofing",
-      description: "Sleep soundly between shifts with enhanced wall insulation"
+      description: "Modern construction for better rest between shifts"
     },
     {
       icon: Moon,
-      title: "Blackout Features",
-      description: "Blackout blinds included for daytime rest after night shifts"
+      title: "Light Control",
+      description: "Window coverings can support daytime sleep needs"
     },
     {
       icon: Home,
-      title: "Quiet-Close Doors",
-      description: "Soft-close technology throughout to minimize noise"
+      title: "Quality Construction",
+      description: "Built with attention to comfort and livability"
     },
     {
       icon: Clock,
-      title: "Zoned HVAC",
-      description: "Individual climate control for personalized comfort"
+      title: "Climate Control",
+      description: "Modern HVAC systems for personalized comfort"
     }
   ];
 
   const telehealthFeatures = [
     {
       icon: Wifi,
-      title: "Pre-Wired Internet",
-      description: "High-speed fiber-ready for telehealth consultations"
+      title: "Internet Connectivity",
+      description: "Area offers high-speed internet options for telehealth"
     },
     {
       icon: Home,
-      title: "Home Office Ready",
-      description: "Flexible spaces perfect for virtual appointments"
+      title: "Flexible Layouts",
+      description: "Versatile spaces that can adapt to work-from-home needs"
     },
     {
       icon: Moon,
-      title: "Acoustic Design",
-      description: "Noise reduction features for professional video calls"
+      title: "Quiet Community",
+      description: "Peaceful neighborhood ideal for professional calls"
     }
   ];
 
   const specialPrograms = [
     {
       icon: DollarSign,
-      title: "Healthcare Professional Rates",
-      description: "Special mortgage rates for doctors, nurses, and medical staff"
+      title: "Professional Financing",
+      description: "Explore mortgage options tailored for healthcare professionals"
     },
     {
       icon: Shield,
-      title: "Reduced Down Payment",
-      description: "Lower down payment options for healthcare workers"
+      title: "Pre-Construction Benefits",
+      description: "Extended deposit structure during the construction period"
     },
     {
       icon: Clock,
-      title: "Flexible Closing",
-      description: "Closing dates that work with your hospital start date"
+      title: "Flexible Timeline",
+      description: "Pre-construction allows planning around your career transition"
     }
   ];
 
@@ -68,11 +68,11 @@ const StoneRoseHousingFeatures = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Healthcare-Specific Housing Features
+              Key Considerations for Healthcare Professionals
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Designed with the unique needs of healthcare professionals in mind. 
-              From shift work to telehealth, we've thought of everything.
+              What healthcare professionals look for when choosing a home near the new South Niagara Hospital. 
+              Modern features and flexible options for your unique lifestyle.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ const StoneRoseHousingFeatures = () => {
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
               <Moon className="w-6 h-6 text-primary" />
-              Features for Shift Workers
+              Considerations for Shift Workers
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {shiftWorkerFeatures.map((feature, index) => {
@@ -124,7 +124,7 @@ const StoneRoseHousingFeatures = () => {
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
               <DollarSign className="w-6 h-6 text-primary" />
-              Exclusive Healthcare Professional Programs
+              Potential Benefits to Explore
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {specialPrograms.map((program, index) => {
@@ -146,10 +146,10 @@ const StoneRoseHousingFeatures = () => {
           <Card className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/20">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold text-foreground mb-3">
-                Ready to Learn More About Healthcare Benefits?
+                Questions About Features and Options?
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Contact us to discover all the exclusive features and programs available for healthcare professionals at Stonerose.
+                Contact us to learn more about available features, floor plans, and financing options that may benefit healthcare professionals.
               </p>
               <a 
                 href="#contact" 
