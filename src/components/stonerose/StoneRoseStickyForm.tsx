@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Phone, Shield, Users, X, ChevronUp } from "lucide-react";
+import { Phone, Shield, Users, ChevronUp } from "lucide-react";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -16,7 +16,6 @@ const formSchema = z.object({
 
 const StoneRoseStickyForm = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isClosed, setIsClosed] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -99,7 +98,7 @@ const StoneRoseStickyForm = () => {
     }
   };
 
-  if (!isVisible || isClosed) return null;
+  if (!isVisible) return null;
 
   if (isMinimized) {
     return (
@@ -121,7 +120,7 @@ const StoneRoseStickyForm = () => {
     <div className="fixed bottom-4 right-4 left-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 sm:w-80 animate-in slide-in-from-right-4 fade-in duration-500">
       <Card className="border-2 border-primary shadow-2xl">
         <CardContent className="p-4 sm:p-6 relative">
-          <div className="absolute top-2 right-2 flex gap-1">
+          <div className="absolute top-2 right-2">
             <Button
               variant="ghost"
               size="icon"
@@ -129,14 +128,6 @@ const StoneRoseStickyForm = () => {
               onClick={() => setIsMinimized(true)}
             >
               <ChevronUp className="h-3 w-3 sm:h-4 sm:w-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-7 w-7 sm:h-6 sm:w-6"
-              onClick={() => setIsClosed(true)}
-            >
-              <X className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
           </div>
           <div className="text-center mb-3 sm:mb-4 mt-8 sm:mt-0">

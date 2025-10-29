@@ -228,10 +228,10 @@ const StoneRoseInvestmentAnalysis = () => {
               </p>
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90"
+                className="bg-primary hover:bg-primary/90 w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
                 onClick={scrollToContact}
               >
-                Request Your Personalized ROI Analysis
+                Request Personalized ROI Analysis
               </Button>
             </CardContent>
           </Card>

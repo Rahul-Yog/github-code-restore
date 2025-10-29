@@ -71,18 +71,18 @@ const StoneRoseHeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
               onClick={() => scrollToSection("relocation-guide")}
             >
-              Download Free Healthcare Relocation Guide
+              Download Relocation Guide
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-white border-white/50 hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 border-2"
+              className="text-white border-white/50 hover:bg-white/10 backdrop-blur-sm text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 w-full sm:w-auto"
               onClick={() => scrollToSection("contact")}
             >
-              Tour Niagara Falls Homes for Sale
+              Book a Tour
             </Button>
           </div>
 
