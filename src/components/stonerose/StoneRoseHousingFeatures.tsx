@@ -159,7 +159,7 @@ const StoneRoseHousingFeatures = () => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Contact Our Healthcare Specialist
+                Contact Our Relocation Specialist
               </a>
             </CardContent>
           </Card>
