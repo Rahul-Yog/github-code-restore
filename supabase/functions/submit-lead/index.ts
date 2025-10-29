@@ -245,8 +245,12 @@ async function addToMailchimp(leadData: LeadData) {
   // Add tags for automation triggers and segmentation
   const tags = [];
   
-  // Add website identifier
-  tags.push("stonerose");
+  // Add website identifier based on source
+  if (leadData.source === "stonerose_website") {
+    tags.push("stonerose");
+  } else if (leadData.source === "website") {
+    tags.push("crown_of_caledon");
+  }
   
   // Add form identifier based on form type
   if (leadData.form_type === "stonerose_relocation_guide") {
@@ -254,6 +258,13 @@ async function addToMailchimp(leadData: LeadData) {
     tags.push("send_guide"); // CRITICAL: Triggers Mailchimp automation to send PDF
   } else if (leadData.form_type === "stonerose_contact") {
     tags.push("contact_form");
+  } else if (leadData.form_type === "stonerose_sticky_form") {
+    tags.push("sticky_form");
+    tags.push("floor_plans_request");
+  } else if (leadData.form_type === "lead_form") {
+    tags.push("main_lead_form");
+  } else if (leadData.form_type === "multi_step_form") {
+    tags.push("multi_step_form");
   }
   
   if (tags.length > 0) {
