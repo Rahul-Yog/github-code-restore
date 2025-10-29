@@ -218,8 +218,10 @@ async function addToMailchimp(leadData: LeadData) {
   };
 
   // Match Mailchimp merge tags exactly as configured in audience
-  // For sticky form, leave HOMEINT empty as it sends quick inquiry value not in allowed list
+  // For sticky form and relocation guide, leave HOMEINT empty as they send values not in allowed list
+  // Mailchimp HOMEINT only accepts: Townhome, Bungalow, Detached Homes, Condo
   const homeInterest = (leadData.form_type === "stonerose_sticky_form" || 
+                        leadData.form_type === "stonerose_relocation_guide" ||
                         !leadData.interested_in ||
                         leadData.interested_in.includes("Quick Inquiry")) 
                        ? "" 
