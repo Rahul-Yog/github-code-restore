@@ -144,10 +144,10 @@ const StoneRoseStickyForm = () => {
               <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             </div>
             <h3 className="text-base sm:text-lg font-bold text-foreground mb-1">
-              Get Instant Floor Plans
+              Get Floor Plans
             </h3>
             <p className="text-xs text-muted-foreground">
-              Healthcare professional pricing included
+              Healthcare pricing included
             </p>
           </div>
 
@@ -201,7 +201,7 @@ const StoneRoseStickyForm = () => {
               disabled={isSubmitting}
               size="sm"
             >
-              {isSubmitting ? "Sending..." : "Get Floor Plans Now"}
+              {isSubmitting ? "Sending..." : "Get Plans"}
             </Button>
 
             <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
@@ -210,10 +210,10 @@ const StoneRoseStickyForm = () => {
             </div>
           </form>
 
-          <div className="mt-4 pt-4 border-t">
+          <div className="mt-3 pt-3 border-t">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Users className="w-4 h-4 text-primary" />
-              <span>27+ healthcare professionals secured homes</span>
+              <Users className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+              <span>15+ professionals secured homes</span>
             </div>
           </div>
         </CardContent>
