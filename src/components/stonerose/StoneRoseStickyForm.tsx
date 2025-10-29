@@ -117,7 +117,7 @@ const StoneRoseStickyForm = () => {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 left-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 sm:w-80 animate-in slide-in-from-right-4 fade-in duration-500">
+    <div className="fixed bottom-4 right-4 z-50 w-80 max-w-[calc(100vw-2rem)] animate-in slide-in-from-right-4 fade-in duration-500">
       <Card className="border-2 border-primary shadow-2xl">
         <CardContent className="p-4 sm:p-6 relative">
           <div className="absolute top-2 right-2">
