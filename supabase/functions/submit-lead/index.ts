@@ -85,11 +85,16 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Add to Mailchimp audience
     if (MAILCHIMP_API_KEY && MAILCHIMP_AUDIENCE_ID) {
+      console.log("=== MAILCHIMP SYNC START ===");
       console.log("Mailchimp credentials found, attempting sync...");
+      console.log("Form type:", leadData.form_type);
+      console.log("Source:", leadData.source);
+      console.log("Email:", leadData.email);
       try {
         await addToMailchimp(leadData);
-        console.log("Successfully synced to Mailchimp");
+        console.log("=== MAILCHIMP SYNC SUCCESS ===");
       } catch (mailchimpError) {
+        console.error("=== MAILCHIMP SYNC FAILED ===");
         console.error("Mailchimp sync failed (non-critical):", mailchimpError);
         console.error("Mailchimp error details:", JSON.stringify(mailchimpError, null, 2));
       }
@@ -176,10 +181,19 @@ async function addToMailchimp(leadData: LeadData) {
     return;
   }
 
+  console.log("--- Mailchimp Sync Details ---");
+  console.log("Datacenter:", datacenter);
+  console.log("Audience ID:", MAILCHIMP_AUDIENCE_ID);
+  console.log("Lead email:", leadData.email);
+  console.log("Form type:", leadData.form_type);
+  console.log("Source:", leadData.source);
+
   // Generate MD5 hash of email for subscriber hash
   const subscriberHash = md5(leadData.email.toLowerCase());
+  console.log("Subscriber hash:", subscriberHash);
 
   const url = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}`;
+  console.log("Mailchimp URL:", url);
   
   // Map price_range to Mailchimp's expected BUDGET values
   const mapPriceRangeToMailchimp = (priceRange?: string): string => {
@@ -228,12 +242,8 @@ async function addToMailchimp(leadData: LeadData) {
     },
   };
 
-  console.log("Syncing to Mailchimp:", { 
-    email: leadData.email, 
-    status: memberData.status_if_new,
-    hash: subscriberHash,
-    form_type: leadData.form_type
-  });
+  console.log("--- Request Body ---");
+  console.log(JSON.stringify(memberData, null, 2));
 
   // Use PUT method which creates or updates
   const response = await fetch(url, {
@@ -245,19 +255,24 @@ async function addToMailchimp(leadData: LeadData) {
     body: JSON.stringify(memberData),
   });
 
+  console.log("Mailchimp response status:", response.status);
+
   if (!response.ok) {
     const errorText = await response.text();
-    console.error("Mailchimp error:", errorText);
+    console.error("--- Mailchimp Error Response ---");
+    console.error(errorText);
     throw new Error(`Failed to sync to Mailchimp: ${errorText}`);
   }
 
   const result = await response.json();
-  console.log("Successfully synced to Mailchimp:", result.status);
+  console.log("--- Mailchimp Success Response ---");
+  console.log(JSON.stringify(result, null, 2));
+  console.log("Member status:", result.status);
 
   // Add tags for automation triggers and segmentation
   const tags = [];
   
-  // Add website identifier based on source
+  // Add website identifier based on source - ALL forms get stonerose_website tag
   if (leadData.source === "stonerose_website") {
     tags.push("stonerose");
     tags.push("stonerose_website");
@@ -265,10 +280,16 @@ async function addToMailchimp(leadData: LeadData) {
     tags.push("crown_of_caledon");
   }
   
+  // ALWAYS add stonerose_website tag to ALL forms
+  if (!tags.includes("stonerose_website")) {
+    tags.push("stonerose_website");
+  }
+  
   // Add form identifier based on form type
   if (leadData.form_type === "stonerose_relocation_guide") {
     tags.push("relocation_guide");
     tags.push("send_guide"); // CRITICAL: Triggers Mailchimp automation to send PDF
+    console.log("*** RELOCATION GUIDE FORM - Adding send_guide tag for automation ***");
   } else if (leadData.form_type === "stonerose_contact") {
     tags.push("contact_form");
   } else if (leadData.form_type === "stonerose_sticky_form") {
@@ -280,23 +301,39 @@ async function addToMailchimp(leadData: LeadData) {
     tags.push("multi_step_form");
   }
   
+  console.log("--- Tags to Add ---");
+  console.log(JSON.stringify(tags, null, 2));
+  
   if (tags.length > 0) {
     const tagsUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}/tags`;
+    console.log("Tags URL:", tagsUrl);
+    
+    const tagsBody = {
+      tags: tags.map(name => ({ name, status: "active" }))
+    };
+    console.log("--- Tags Request Body ---");
+    console.log(JSON.stringify(tagsBody, null, 2));
+    
     const tagsResponse = await fetch(tagsUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Basic ${btoa(`anystring:${MAILCHIMP_API_KEY}`)}`,
       },
-      body: JSON.stringify({
-        tags: tags.map(name => ({ name, status: "active" }))
-      }),
+      body: JSON.stringify(tagsBody),
     });
     
+    console.log("Tags response status:", tagsResponse.status);
+    
     if (tagsResponse.ok) {
+      const tagsResult = await tagsResponse.json();
+      console.log("--- Tags Success Response ---");
+      console.log(JSON.stringify(tagsResult, null, 2));
       console.log("Successfully added tags:", tags);
     } else {
-      console.error("Failed to add tags:", await tagsResponse.text());
+      const tagsError = await tagsResponse.text();
+      console.error("--- Tags Error Response ---");
+      console.error(tagsError);
     }
   }
 }
