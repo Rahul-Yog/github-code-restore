@@ -254,7 +254,7 @@ const StoneRoseHealthcareSection = () => {
                     "I secured my home at Stonerose during pre-construction. With the hospital opening in 2028, the 11-minute commute will be perfect. Locking in early pricing was the smartest investment decision."
                   </p>
                   <p className="text-sm font-semibold text-primary">
-                    — Dr. Sarah M., Registered Nurse, Future Resident
+                    — Registered Nurse, Future Resident
                   </p>
                 </div>
               </div>
