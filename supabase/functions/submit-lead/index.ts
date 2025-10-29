@@ -260,6 +260,7 @@ async function addToMailchimp(leadData: LeadData) {
   // Add website identifier based on source
   if (leadData.source === "stonerose_website") {
     tags.push("stonerose");
+    tags.push("stonerose_website");
   } else if (leadData.source === "website") {
     tags.push("crown_of_caledon");
   }
