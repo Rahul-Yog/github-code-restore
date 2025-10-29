@@ -204,6 +204,13 @@ async function addToMailchimp(leadData: LeadData) {
   };
 
   // Match Mailchimp merge tags exactly as configured in audience
+  // For sticky form, leave HOMEINT empty as it sends quick inquiry value not in allowed list
+  const homeInterest = (leadData.form_type === "stonerose_sticky_form" || 
+                        !leadData.interested_in ||
+                        leadData.interested_in.includes("Quick Inquiry")) 
+                       ? "" 
+                       : leadData.interested_in;
+  
   const memberData = {
     email_address: leadData.email,
     status_if_new: leadData.newsletter_consent ? "subscribed" : "transactional",
@@ -211,7 +218,7 @@ async function addToMailchimp(leadData: LeadData) {
       FNAME: leadData.first_name,
       LNAME: leadData.last_name,
       PHONE: leadData.phone || "",
-      HOMEINT: leadData.interested_in || "",
+      HOMEINT: homeInterest,
       REALTOR: leadData.is_realtor ? "Yes" : "No",
       BUDGET: mapPriceRangeToMailchimp(leadData.price_range),
       TIMELINE: leadData.timeline || "",
