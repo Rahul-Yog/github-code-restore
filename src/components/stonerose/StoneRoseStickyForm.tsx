@@ -63,7 +63,7 @@ const StoneRoseStickyForm = () => {
 
     try {
       const [firstName, ...lastNameParts] = formData.name.trim().split(" ");
-      const lastName = lastNameParts.join(" ") || firstName;
+      const lastName = lastNameParts.join(" ") || "";
 
       const { error } = await supabase.functions.invoke('submit-lead', {
         body: {
