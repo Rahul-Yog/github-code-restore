@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Phone, Shield, Users } from "lucide-react";
+import { Phone, Shield, Users, X, ChevronUp } from "lucide-react";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -16,6 +16,8 @@ const formSchema = z.object({
 
 const StoneRoseStickyForm = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -97,12 +99,44 @@ const StoneRoseStickyForm = () => {
     }
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || isClosed) return null;
+
+  if (isMinimized) {
+    return (
+      <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-right-4 fade-in duration-300">
+        <Button
+          onClick={() => setIsMinimized(false)}
+          className="shadow-2xl gap-2"
+          size="lg"
+        >
+          <Phone className="w-5 h-5" />
+          Get Floor Plans
+          <ChevronUp className="w-4 h-4" />
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-80 animate-in slide-in-from-right-4 fade-in duration-500">
       <Card className="border-2 border-primary shadow-2xl">
-        <CardContent className="p-6">
+        <CardContent className="p-6 relative">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-2 right-2 h-6 w-6"
+            onClick={() => setIsClosed(true)}
+          >
+            <X className="h-4 w-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-2 right-10 h-6 w-6"
+            onClick={() => setIsMinimized(true)}
+          >
+            <ChevronUp className="h-4 w-4" />
+          </Button>
           <div className="text-center mb-4">
             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
               <Phone className="w-6 h-6 text-primary" />
