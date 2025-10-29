@@ -85,11 +85,16 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Add to Mailchimp audience
     if (MAILCHIMP_API_KEY && MAILCHIMP_AUDIENCE_ID) {
-      EdgeRuntime.waitUntil(
-        addToMailchimp(leadData).catch((error) => {
-          console.error("Mailchimp sync failed (non-critical):", error);
-        })
-      );
+      console.log("Mailchimp credentials found, attempting sync...");
+      try {
+        await addToMailchimp(leadData);
+        console.log("Successfully synced to Mailchimp");
+      } catch (mailchimpError) {
+        console.error("Mailchimp sync failed (non-critical):", mailchimpError);
+        console.error("Mailchimp error details:", JSON.stringify(mailchimpError, null, 2));
+      }
+    } else {
+      console.log("Mailchimp not configured - missing API key or Audience ID");
     }
 
     // Send email notification
