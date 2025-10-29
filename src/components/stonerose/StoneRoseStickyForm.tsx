@@ -103,45 +103,47 @@ const StoneRoseStickyForm = () => {
 
   if (isMinimized) {
     return (
-      <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-right-4 fade-in duration-300">
+      <div className="fixed bottom-4 right-4 z-50 animate-in slide-in-from-right-4 fade-in duration-300">
         <Button
           onClick={() => setIsMinimized(false)}
           className="shadow-2xl gap-2"
           size="lg"
         >
-          <Phone className="w-5 h-5" />
-          Get Floor Plans
-          <ChevronUp className="w-4 h-4" />
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span className="text-sm sm:text-base">Get Floor Plans</span>
+          <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4" />
         </Button>
       </div>
     );
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-80 animate-in slide-in-from-right-4 fade-in duration-500">
+    <div className="fixed bottom-4 right-4 left-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 sm:w-80 animate-in slide-in-from-right-4 fade-in duration-500">
       <Card className="border-2 border-primary shadow-2xl">
-        <CardContent className="p-6 relative">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-2 right-2 h-6 w-6"
-            onClick={() => setIsClosed(true)}
-          >
-            <X className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-2 right-10 h-6 w-6"
-            onClick={() => setIsMinimized(true)}
-          >
-            <ChevronUp className="h-4 w-4" />
-          </Button>
-          <div className="text-center mb-4">
-            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Phone className="w-6 h-6 text-primary" />
+        <CardContent className="p-4 sm:p-6 relative">
+          <div className="absolute top-2 right-2 flex gap-1">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-7 w-7 sm:h-6 sm:w-6"
+              onClick={() => setIsMinimized(true)}
+            >
+              <ChevronUp className="h-3 w-3 sm:h-4 sm:w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-7 w-7 sm:h-6 sm:w-6"
+              onClick={() => setIsClosed(true)}
+            >
+              <X className="h-3 w-3 sm:h-4 sm:w-4" />
+            </Button>
+          </div>
+          <div className="text-center mb-3 sm:mb-4 mt-8 sm:mt-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             </div>
-            <h3 className="text-lg font-bold text-foreground mb-1">
+            <h3 className="text-base sm:text-lg font-bold text-foreground mb-1">
               Get Instant Floor Plans
             </h3>
             <p className="text-xs text-muted-foreground">
