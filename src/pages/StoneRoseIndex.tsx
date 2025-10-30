@@ -18,6 +18,7 @@ import StoneRoseHSTRebateSection from "@/components/stonerose/StoneRoseHSTRebate
 import StoneRoseLeadForm from "@/components/stonerose/StoneRoseLeadForm";
 import StoneRoseStickyForm from "@/components/stonerose/StoneRoseStickyForm";
 import StoneRoseFooter from "@/components/stonerose/StoneRoseFooter";
+import StoneRoseWhatsAppButton from "@/components/stonerose/StoneRoseWhatsAppButton";
 
 const StoneRoseIndex = () => {
   const location = useLocation();
@@ -313,6 +314,7 @@ const StoneRoseIndex = () => {
         <StoneRoseLeadForm />
         <StoneRoseStickyForm />
       </main>
+      <StoneRoseWhatsAppButton />
       <StoneRoseFooter />
     </div>
   );
