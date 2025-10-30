@@ -24,19 +24,19 @@ const StoneRoseIndex = () => {
 
   useEffect(() => {
     // Set page title and meta tags for SEO - Optimized for target keywords
-    document.title = "Homes Near Niagara Falls Hospital - Healthcare Worker Housing | Pre-Construction from Mid-$500Ks";
+    document.title = "First-Time Buyers Save $74K+ HST | Homes Near Niagara Falls Hospital | New Home Rebate 2025";
     
     // Update meta description - Optimized for conversions
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "Pre-construction homes near South Niagara Hospital from mid-$500Ks. 11-minute commute. Modern 3-5 bedroom townhomes perfect for healthcare professionals. First occupancy Spring 2027. Register now for exclusive pricing."
+        "NEW 2025 Ontario HST Rebate: First-time home buyers save up to $74K (13% GST/HST relief) on new homes near South Niagara Hospital. Pre-construction townhomes from mid-$500Ks, effective price from $495K after rebate. Perfect for healthcare professionals. May 27, 2025 policy. Spring 2027 occupancy."
       );
     } else {
       const meta = document.createElement('meta');
       meta.name = "description";
-      meta.content = "Pre-construction homes near South Niagara Hospital from mid-$500Ks. 11-minute commute. Modern 3-5 bedroom townhomes perfect for healthcare professionals. First occupancy Spring 2027. Register now for exclusive pricing.";
+      meta.content = "NEW 2025 Ontario HST Rebate: First-time home buyers save up to $74K (13% GST/HST relief) on new homes near South Niagara Hospital. Pre-construction townhomes from mid-$500Ks, effective price from $495K after rebate. Perfect for healthcare professionals. May 27, 2025 policy. Spring 2027 occupancy.";
       document.head.appendChild(meta);
     }
 
@@ -45,12 +45,12 @@ const StoneRoseIndex = () => {
     if (metaKeywords) {
       metaKeywords.setAttribute(
         "content",
-        "homes near Niagara Falls hospital, South Niagara Hospital homes, healthcare worker housing Niagara, pre-construction homes Niagara Falls, homes for sale Niagara Falls, new homes near hospital, healthcare relocation Niagara, Niagara Falls homes for sale near hospital, Stonerose Treasure Hill, homes for healthcare professionals"
+        "first-time home buyers Ontario HST rebate, Ontario first time buyer HST rebate 2025, GST HST relief new homes, new home tax savings Ontario, first time home buyer incentives Ontario, GST relief first time buyers, Ontario housing affordability, $130000 first time buyer savings, save 13% HST new homes, new home HST rebate calculator, May 27 2025 HST rebate, homes near Niagara Falls hospital, pre-construction townhomes Niagara Falls, new homes South Niagara Hospital, healthcare professional housing, first time buyer new construction, Treasure Hill Homes pre-construction"
       );
     } else {
       const meta = document.createElement('meta');
       meta.name = "keywords";
-      meta.content = "homes near Niagara Falls hospital, South Niagara Hospital homes, healthcare worker housing Niagara, pre-construction homes Niagara Falls, homes for sale Niagara Falls, new homes near hospital, healthcare relocation Niagara, Niagara Falls homes for sale near hospital, Stonerose Treasure Hill, homes for healthcare professionals";
+      meta.content = "first-time home buyers Ontario HST rebate, Ontario first time buyer HST rebate 2025, GST HST relief new homes, new home tax savings Ontario, first time home buyer incentives Ontario, GST relief first time buyers, Ontario housing affordability, $130000 first time buyer savings, save 13% HST new homes, new home HST rebate calculator, May 27 2025 HST rebate, homes near Niagara Falls hospital, pre-construction townhomes Niagara Falls, new homes South Niagara Hospital, healthcare professional housing, first time buyer new construction, Treasure Hill Homes pre-construction";
       document.head.appendChild(meta);
     }
 
@@ -78,15 +78,15 @@ const StoneRoseIndex = () => {
 
     // Add Open Graph meta tags
     const ogTags = [
-      { property: "og:title", content: "Homes Near Niagara Falls Hospital - Healthcare Worker Housing from Mid-$500Ks" },
-      { property: "og:description", content: "Pre-construction homes 11 minutes from South Niagara Hospital. Perfect for healthcare professionals. 3-5 bedrooms, 2-car garage. First occupancy 2027." },
+      { property: "og:title", content: "First-Time Buyers Save $74K+ HST | New Homes Near Niagara Falls Hospital 2025" },
+      { property: "og:description", content: "NEW Ontario HST Rebate: Save up to $74K on pre-construction homes near South Niagara Hospital. 13% GST/HST relief for first-time buyers. From mid-$500Ks." },
       { property: "og:url", content: "https://caledonhome.ca/niagara-falls-homes-near-hospital" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://caledonhome.ca/assets/stonerose-hero-niagara.jpg" },
       { property: "og:locale", content: "en_CA" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Homes Near Niagara Falls Hospital - Healthcare Worker Housing" },
-      { name: "twitter:description", content: "Pre-construction homes 11 minutes from South Niagara Hospital from mid-$500Ks." }
+      { name: "twitter:title", content: "First-Time Buyers Save $74K+ HST | New Homes Niagara Falls 2025" },
+      { name: "twitter:description", content: "NEW Ontario HST Rebate: Save up to $74K on homes near South Niagara Hospital. 13% GST/HST relief." }
     ];
 
     ogTags.forEach(tag => {
@@ -109,8 +109,8 @@ const StoneRoseIndex = () => {
     const realEstateListingSchema = {
       "@context": "https://schema.org",
       "@type": "RealEstateListing",
-      "name": "Stonerose Pre-Construction Townhomes - Homes Near Niagara Falls Hospital",
-      "description": "Pre-construction townhomes 11 minutes from South Niagara Hospital. Perfect for healthcare professionals. 3-5 bedrooms, 2-car garage, from mid-$500Ks.",
+      "name": "Stonerose Pre-Construction Townhomes - First-Time Buyers Save $74K+ HST",
+      "description": "NEW 2025 Ontario HST Rebate: First-time home buyers save up to $74,087 in combined federal GST and provincial HST rebates on pre-construction townhomes near South Niagara Hospital. Modern 3-5 bedroom homes from mid-$500Ks with effective pricing from $495K after rebate. Perfect for healthcare professionals and first-time buyers. Agreements signed on/after May 27, 2025 qualify. Spring 2027 occupancy.",
       "url": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
       "image": "https://caledonhome.ca/assets/stonerose-hero-niagara.jpg",
       "datePosted": "2024-01-01",

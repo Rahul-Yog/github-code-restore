@@ -36,9 +36,9 @@ const StoneRoseHeroSection = () => {
               <BadgeCheck className="w-6 h-6" />
               First-Time Buyers Save up to $74K HST
             </div>
-            <div className="inline-flex items-center gap-3 bg-secondary/90 backdrop-blur-md text-white px-8 py-4 rounded-full text-base md:text-lg font-bold border-2 border-white/30 shadow-2xl">
-              <Home className="w-6 h-6" />
-              Phase 1 - 24 Homes
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-md text-white px-8 py-4 rounded-full text-base md:text-lg font-bold border-2 border-green-300 shadow-2xl">
+              <Home className="w-6 h-6 stroke-white" />
+              Phase 1 - 24 Homes Available
             </div>
           </div>
 
