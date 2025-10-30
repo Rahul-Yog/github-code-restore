@@ -9,6 +9,26 @@ import { Card } from "@/components/ui/card";
 const StoneRoseFAQSection = () => {
   const faqs = [
     {
+      question: "What is the 2025 Ontario HST rebate for first-time home buyers?",
+      answer: "Ontario's new HST rebate policy provides first-time home buyers purchasing NEW homes with a full rebate of both provincial (8%) and federal (5%) HST—totaling 13% savings. This means up to $130,000 in savings on eligible homes. The rebate applies to newly constructed homes valued up to $1 million. Agreements signed on or after May 27, 2025 qualify. The property must be your primary residence. Resale homes do NOT qualify since HST doesn't apply to resale transactions."
+    },
+    {
+      question: "How much can I save with the HST rebate on a Stonerose home?",
+      answer: "Stonerose first-time buyers save substantial amounts through the HST rebate: R2-INT ($569,900): Save $74,087 → Effective price $495,813. R2-END ($589,900): Save $76,687 → Effective price $513,213. R2-COR ($599,900): Save $77,987 → Effective price $521,913. This is a MASSIVE advantage over resale homes, where buyers save $0 in HST rebates."
+    },
+    {
+      question: "When does the Ontario HST rebate take effect?",
+      answer: "The HST rebate applies to purchase agreements signed on or after May 27, 2025. Stonerose is PERFECTLY timed—with Spring 2027 occupancy, your purchase qualifies for the full rebate. You'll move in before the South Niagara Hospital opens in Summer 2028."
+    },
+    {
+      question: "Do I qualify as a first-time home buyer for the HST rebate?",
+      answer: "You're considered a first-time home buyer if you haven't owned a home in the past 4 years. Both you and your spouse must meet this requirement if purchasing jointly. You'll need to complete CRA forms to claim the rebate. The property must be your primary residence."
+    },
+    {
+      question: "Why is buying new at Stonerose better than resale for first-time buyers?",
+      answer: "New homes at Stonerose offer overwhelming advantages: 1) HST REBATE: Save $74K-$78K through 13% HST rebate. Resale buyers save $0. 2) PRE-CONSTRUCTION PRICING: Lock in today's prices. 3) HOSPITAL PROXIMITY: 11 minutes to hospital opening 2028. 4) MODERN FEATURES: Brand new construction with warranties. 5) FLEXIBLE DEPOSITS: $60K over 300 days."
+    },
+    {
       question: "How far is Stonerose from South Niagara Hospital?",
       answer: "Stonerose townhomes are located approximately 11 minutes from the $3.6 billion South Niagara Hospital, offering a short and convenient commute. This proximity is ideal for healthcare professionals working various shifts at the state-of-the-art facility opening Summer 2028."
     },

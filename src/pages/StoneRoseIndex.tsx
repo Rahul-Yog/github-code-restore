@@ -14,6 +14,7 @@ import StoneRoseAmenitiesSection from "@/components/stonerose/StoneRoseAmenities
 import StoneRoseAgentBio from "@/components/stonerose/StoneRoseAgentBio";
 import StoneRoseRelocationGuide from "@/components/stonerose/StoneRoseRelocationGuide";
 import StoneRoseFAQSection from "@/components/stonerose/StoneRoseFAQSection";
+import StoneRoseHSTRebateSection from "@/components/stonerose/StoneRoseHSTRebateSection";
 import StoneRoseLeadForm from "@/components/stonerose/StoneRoseLeadForm";
 import StoneRoseStickyForm from "@/components/stonerose/StoneRoseStickyForm";
 import StoneRoseFooter from "@/components/stonerose/StoneRoseFooter";
@@ -295,9 +296,10 @@ const StoneRoseIndex = () => {
     <div className="min-h-screen bg-background">
       <StoneRoseNavigation />
       <main>
-        <StoneRoseHeroSection />
-        <StoneRoseOverviewSection />
-        <StoneRoseHealthcareSection />
+      <StoneRoseHeroSection />
+      <StoneRoseOverviewSection />
+      <StoneRoseHSTRebateSection />
+      <StoneRoseHealthcareSection />
         <StoneRoseHousingFeatures />
         <StoneRoseTestimonials />
         <StoneRoseInvestmentAnalysis />

@@ -13,6 +13,8 @@ const StoneRoseHomeCollection = () => {
       sqft: "1,750",
       bedrooms: "Up to 5",
       price: "$569,900",
+      hstRebate: "$74,087",
+      effectivePrice: "$495,813",
       image: townhomeInt,
       features: [
         "Kitchen appliance package (plus washer & dryer)",
@@ -29,6 +31,8 @@ const StoneRoseHomeCollection = () => {
       sqft: "1,800",
       bedrooms: "Up to 5",
       price: "$589,900",
+      hstRebate: "$76,687",
+      effectivePrice: "$513,213",
       image: townhomeEnd,
       features: [
         "Extra windows with end unit location",
@@ -45,6 +49,8 @@ const StoneRoseHomeCollection = () => {
       sqft: "1,800",
       bedrooms: "Up to 5",
       price: "$599,900",
+      hstRebate: "$77,987",
+      effectivePrice: "$521,913",
       image: townhomeCor,
       features: [
         "Premium corner lot location",
@@ -117,10 +123,20 @@ const StoneRoseHomeCollection = () => {
                       </div>
                     </div>
 
-                    {/* Price */}
-                    <div className="flex items-center gap-2 py-3 border-y">
-                      <DollarSign className="w-5 h-5 text-primary" />
-                      <span className="text-xl font-bold text-primary">{home.price}</span>
+                    {/* HST Rebate Pricing */}
+                    <div className="bg-primary/10 p-4 rounded-lg border border-primary/20 space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">List Price:</span>
+                        <span className="font-semibold">{home.price}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-primary font-semibold">HST Rebate:</span>
+                        <span className="text-primary font-bold">-{home.hstRebate}</span>
+                      </div>
+                      <div className="pt-2 border-t border-primary/20 flex justify-between">
+                        <span className="font-bold">Effective Price:</span>
+                        <span className="text-xl font-bold text-primary">{home.effectivePrice}</span>
+                      </div>
                     </div>
 
                     {/* Features */}

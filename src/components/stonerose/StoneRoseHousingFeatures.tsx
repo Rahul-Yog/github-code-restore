@@ -46,6 +46,12 @@ const StoneRoseHousingFeatures = () => {
   const specialPrograms = [
     {
       icon: DollarSign,
+      title: "NEW: 2025 HST Rebate",
+      description: "First-time buyers save up to $74,087 (13% HST) on Stonerose homes. Resale buyers save $0.",
+      highlight: true
+    },
+    {
+      icon: DollarSign,
       title: "Professional Financing",
       description: "Explore mortgage options tailored for healthcare professionals"
     },

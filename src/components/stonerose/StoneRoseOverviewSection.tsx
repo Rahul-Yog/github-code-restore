@@ -1,10 +1,16 @@
-import { Building2, Shield, TrendingUp, Users } from "lucide-react";
+import { Building2, Shield, TrendingUp, Users, DollarSign } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import streetscapeImage from "@/assets/stonerose-streetscape.jpg";
 import StoneRoseTimeline from "./StoneRoseTimeline";
 
 const StoneRoseOverviewSection = () => {
   const features = [
+    {
+      icon: DollarSign,
+      title: "Massive HST Savings",
+      description: "NEW 2025: First-time buyers save $74K-$78K through 13% HST rebate (8% provincial + 5% federal). Resale buyers save $0.",
+      highlight: true
+    },
     {
       icon: Building2,
       title: "Premium Pre-Construction",
@@ -49,15 +55,27 @@ const StoneRoseOverviewSection = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="border-2 hover:border-primary transition-colors">
+                <Card 
+                  key={index} 
+                  className={`border-2 hover:border-primary transition-colors ${
+                    feature.highlight ? 'bg-primary/5 border-primary shadow-lg' : ''
+                  }`}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-primary" />
+                      <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
+                        feature.highlight ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
+                      }`}>
+                        <Icon className={`w-6 h-6 ${feature.highlight ? 'text-primary-foreground' : 'text-primary'}`} />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold text-foreground mb-2">
                           {feature.title}
+                          {feature.highlight && (
+                            <span className="ml-2 text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full">
+                              NEW
+                            </span>
+                          )}
                         </h3>
                         <p className="text-muted-foreground">
                           {feature.description}
