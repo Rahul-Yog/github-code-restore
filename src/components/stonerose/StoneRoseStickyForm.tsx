@@ -5,8 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Phone, Shield, Users, ChevronUp } from "lucide-react";
+import { Phone, Shield, Users, ChevronUp, X } from "lucide-react";
 import { z } from "zod";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -17,6 +18,7 @@ const formSchema = z.object({
 const StoneRoseStickyForm = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -24,16 +26,31 @@ const StoneRoseStickyForm = () => {
     phone: ""
   });
   const { toast } = useToast();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show form after scrolling 300px
-      setIsVisible(window.scrollY > 300);
+      if (isMobile) {
+        // On mobile/tablet, show after scrolling past hero section (introduction)
+        // Hero section is typically ~100vh, so check if scrolled past it
+        const heroSection = document.querySelector('section');
+        if (heroSection) {
+          const heroHeight = heroSection.offsetHeight;
+          setIsVisible(window.scrollY > heroHeight - 100);
+        } else {
+          setIsVisible(window.scrollY > 600);
+        }
+      } else {
+        // On desktop, show after 300px
+        setIsVisible(window.scrollY > 300);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobile]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -98,7 +115,7 @@ const StoneRoseStickyForm = () => {
     }
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || isClosed) return null;
 
   if (isMinimized) {
     return (
@@ -120,14 +137,24 @@ const StoneRoseStickyForm = () => {
     <div className="fixed bottom-4 right-4 z-50 w-80 max-w-[calc(100vw-2rem)] animate-in slide-in-from-right-4 fade-in duration-500">
       <Card className="border-2 border-primary shadow-2xl">
         <CardContent className="p-4 sm:p-6 relative">
-          <div className="absolute top-2 right-2">
+          <div className="absolute top-2 right-2 flex gap-1">
             <Button
               variant="ghost"
               size="icon"
-              className="h-7 w-7 sm:h-6 sm:w-6"
+              className="h-7 w-7 sm:h-6 sm:w-6 hover:bg-muted"
               onClick={() => setIsMinimized(true)}
+              aria-label="Minimize form"
             >
               <ChevronUp className="h-3 w-3 sm:h-4 sm:w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-7 w-7 sm:h-6 sm:w-6 hover:bg-destructive hover:text-destructive-foreground"
+              onClick={() => setIsClosed(true)}
+              aria-label="Close form"
+            >
+              <X className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
           </div>
           <div className="text-center mb-3 sm:mb-4 mt-8 sm:mt-0">
