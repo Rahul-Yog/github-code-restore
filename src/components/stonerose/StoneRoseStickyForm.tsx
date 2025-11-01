@@ -31,14 +31,16 @@ const StoneRoseStickyForm = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (isMobile) {
-        // On mobile/tablet, show after scrolling past hero section (introduction)
-        // Hero section is typically ~100vh, so check if scrolled past it
-        const heroSection = document.querySelector('section');
-        if (heroSection) {
-          const heroHeight = heroSection.offsetHeight;
-          setIsVisible(window.scrollY > heroHeight - 100);
+        // On mobile/tablet, show after scrolling past the overview section (Introducing Stonerose)
+        const overviewSection = document.getElementById('overview');
+        if (overviewSection) {
+          const overviewTop = overviewSection.offsetTop;
+          const overviewHeight = overviewSection.offsetHeight;
+          // Show after scrolling past the overview section
+          setIsVisible(window.scrollY > overviewTop + overviewHeight - 100);
         } else {
-          setIsVisible(window.scrollY > 600);
+          // Fallback: show after scrolling past typical hero + overview height
+          setIsVisible(window.scrollY > 1200);
         }
       } else {
         // On desktop, show after 300px
@@ -47,8 +49,7 @@ const StoneRoseStickyForm = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Initial check
-    handleScroll();
+    // Don't run initial check - wait for scroll
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
