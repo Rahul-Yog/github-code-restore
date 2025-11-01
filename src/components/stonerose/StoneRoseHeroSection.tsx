@@ -27,17 +27,17 @@ const StoneRoseHeroSection = () => {
       <div className="relative z-20 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Badges */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-accent/90 backdrop-blur-md text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-bold border-2 border-white/30 shadow-2xl animate-pulse">
-              <Heart className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 fill-white flex-shrink-0" />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+            <div className="inline-flex items-center gap-2 sm:gap-2.5 lg:gap-3 bg-accent/90 backdrop-blur-md text-white px-4 py-2.5 sm:px-5 sm:py-2.5 lg:px-8 lg:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-bold border-2 border-white/30 shadow-2xl animate-pulse">
+              <Heart className="w-4 h-4 sm:w-4 sm:h-4 lg:w-6 lg:h-6 fill-white flex-shrink-0" />
               <span className="whitespace-nowrap">Preferred by Healthcare Professionals</span>
             </div>
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-primary/90 backdrop-blur-md text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-bold border-2 border-white/30 shadow-2xl">
-              <BadgeCheck className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 flex-shrink-0" />
+            <div className="inline-flex items-center gap-2 sm:gap-2.5 lg:gap-3 bg-primary/90 backdrop-blur-md text-white px-4 py-2.5 sm:px-5 sm:py-2.5 lg:px-8 lg:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-bold border-2 border-white/30 shadow-2xl">
+              <BadgeCheck className="w-4 h-4 sm:w-4 sm:h-4 lg:w-6 lg:h-6 flex-shrink-0" />
               <span className="whitespace-nowrap">First-Time Buyers Save up to $74K HST</span>
             </div>
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-md text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-bold border-2 border-green-300 shadow-2xl">
-              <Home className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 flex-shrink-0" />
+            <div className="inline-flex items-center gap-2 sm:gap-2.5 lg:gap-3 bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-md text-white px-4 py-2.5 sm:px-5 sm:py-2.5 lg:px-8 lg:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-bold border-2 border-green-300 shadow-2xl">
+              <Home className="w-4 h-4 sm:w-4 sm:h-4 lg:w-6 lg:h-6 flex-shrink-0" />
               <span className="whitespace-nowrap">Phase 1 - 24 Homes Available</span>
             </div>
           </div>
