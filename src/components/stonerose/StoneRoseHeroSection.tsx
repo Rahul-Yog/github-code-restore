@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Heart, Home, BadgeCheck } from "lucide-react";
-import heroImage from "@/assets/stonerose-hero-niagara.jpg";
+import heroImage from "@/assets/stonerose-hero-lifestyle.jpg";
 
 const StoneRoseHeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -11,20 +11,20 @@ const StoneRoseHeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
+    <section className="relative min-h-screen flex items-end justify-center pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 stonerose-hero-gradient z-10" />
         <img
           src={heroImage}
-          alt="Pre-construction homes Niagara Falls - Stonerose townhomes for sale near South Niagara Hospital with Niagara Falls cityscape"
+          alt="Stonerose Niagara Falls - Modern family-friendly townhomes in wine country near South Niagara Hospital"
           className="w-full h-full object-cover"
           loading="eager"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 py-20">
+      <div className="relative z-20 container mx-auto px-4 pb-16 md:pb-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Builder Highlight */}
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent/90 to-accent/80 backdrop-blur-md text-white px-6 py-3 rounded-full text-base sm:text-lg lg:text-xl font-bold border-2 border-white/40 shadow-2xl">
