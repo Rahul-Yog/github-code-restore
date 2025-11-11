@@ -50,10 +50,10 @@ const StoneRoseHeroSection = () => {
                 <span className="whitespace-nowrap">Save up to $74K</span>
               </div>
               
-              {/* Availability Badge */}
+              {/* Phase Badge */}
               <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-md text-white px-2.5 py-1.5 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-bold border border-green-300 shadow-lg">
                 <Home className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
-                <span className="whitespace-nowrap">24 Homes Available</span>
+                <span className="whitespace-nowrap">Selling Phase 2 Now</span>
               </div>
             </div>
           </div>
