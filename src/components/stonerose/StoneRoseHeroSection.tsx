@@ -14,7 +14,7 @@ const StoneRoseHeroSection = () => {
   return (
     <>
       {/* Hero Image Section */}
-      <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] flex items-center justify-center pt-16">
+      <section className="relative h-[75vh] sm:h-[80vh] md:h-[85vh] flex items-center justify-center pt-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 z-10" />
@@ -28,7 +28,7 @@ const StoneRoseHeroSection = () => {
             <img
               src={heroImage}
               alt="Stonerose Niagara Falls - Modern family-friendly townhomes in wine country near South Niagara Hospital"
-              className="w-full h-full object-cover object-[50%_35%] sm:object-center"
+              className="w-full h-full object-cover object-[50%_20%] sm:object-center"
               loading="eager"
             />
           </picture>
@@ -68,7 +68,7 @@ const StoneRoseHeroSection = () => {
       </section>
 
       {/* Content Bar Below Hero */}
-      <section className="bg-background py-8 sm:py-12 md:py-16 border-b border-border">
+      <section className="bg-background py-6 sm:py-8 md:py-12 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center space-y-4 sm:space-y-6">
             {/* Main Headline */}
