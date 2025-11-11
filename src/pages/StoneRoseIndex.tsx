@@ -24,34 +24,34 @@ const StoneRoseIndex = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Set page title and meta tags for SEO - Optimized for target keywords
-    document.title = "First-Time Buyers Save $74K+ HST | Homes Near Niagara Falls Hospital | New Home Rebate 2025";
+    // Set page title and meta tags for SEO - Optimized for broad Niagara Falls keywords
+    document.title = "New Homes for Sale Niagara Falls | Pre-Construction from Mid-$500Ks | Stonerose by Treasure Hill";
     
-    // Update meta description - Optimized for conversions
+    // Update meta description - Broad appeal with keyword optimization
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "NEW 2025 Ontario HST Rebate: First-time home buyers save up to $74K (13% GST/HST relief) on new homes near South Niagara Hospital. Pre-construction townhomes from mid-$500Ks, effective price from $495K after rebate. Perfect for healthcare professionals. May 27, 2025 policy. Spring 2027 occupancy."
+        "New homes for sale in Niagara Falls - 24 pre-construction townhomes from mid-$500Ks. 3-5 bedrooms, 2-car garage, minutes to QEW. First-time buyers save up to $74K HST. Healthcare professionals preferred location near South Niagara Hospital. Spring 2027 occupancy."
       );
     } else {
       const meta = document.createElement('meta');
       meta.name = "description";
-      meta.content = "NEW 2025 Ontario HST Rebate: First-time home buyers save up to $74K (13% GST/HST relief) on new homes near South Niagara Hospital. Pre-construction townhomes from mid-$500Ks, effective price from $495K after rebate. Perfect for healthcare professionals. May 27, 2025 policy. Spring 2027 occupancy.";
+      meta.content = "New homes for sale in Niagara Falls - 24 pre-construction townhomes from mid-$500Ks. 3-5 bedrooms, 2-car garage, minutes to QEW. First-time buyers save up to $74K HST. Healthcare professionals preferred location near South Niagara Hospital. Spring 2027 occupancy.";
       document.head.appendChild(meta);
     }
 
-    // Update meta keywords - Primary and long-tail keywords
+    // Update meta keywords - High-volume primary keywords + niche keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
       metaKeywords.setAttribute(
         "content",
-        "first-time home buyers Ontario HST rebate, Ontario first time buyer HST rebate 2025, GST HST relief new homes, new home tax savings Ontario, first time home buyer incentives Ontario, GST relief first time buyers, Ontario housing affordability, $130000 first time buyer savings, save 13% HST new homes, new home HST rebate calculator, May 27 2025 HST rebate, homes near Niagara Falls hospital, pre-construction townhomes Niagara Falls, new homes South Niagara Hospital, healthcare professional housing, first time buyer new construction, Treasure Hill Homes pre-construction"
+        "homes for sale niagara falls, houses for sale niagara falls, niagara falls real estate, new homes niagara falls, pre construction homes niagara, townhomes for sale niagara, new construction niagara falls, niagara falls townhomes, pre-construction townhomes Niagara Falls, first-time home buyers Ontario HST rebate, homes near Niagara Falls hospital, new homes South Niagara Hospital, healthcare professional housing, Treasure Hill Homes, niagara real estate listings, niagara new builds"
       );
     } else {
       const meta = document.createElement('meta');
       meta.name = "keywords";
-      meta.content = "first-time home buyers Ontario HST rebate, Ontario first time buyer HST rebate 2025, GST HST relief new homes, new home tax savings Ontario, first time home buyer incentives Ontario, GST relief first time buyers, Ontario housing affordability, $130000 first time buyer savings, save 13% HST new homes, new home HST rebate calculator, May 27 2025 HST rebate, homes near Niagara Falls hospital, pre-construction townhomes Niagara Falls, new homes South Niagara Hospital, healthcare professional housing, first time buyer new construction, Treasure Hill Homes pre-construction";
+      meta.content = "homes for sale niagara falls, houses for sale niagara falls, niagara falls real estate, new homes niagara falls, pre construction homes niagara, townhomes for sale niagara, new construction niagara falls, niagara falls townhomes, pre-construction townhomes Niagara Falls, first-time home buyers Ontario HST rebate, homes near Niagara Falls hospital, new homes South Niagara Hospital, healthcare professional housing, Treasure Hill Homes, niagara real estate listings, niagara new builds";
       document.head.appendChild(meta);
     }
 
@@ -79,15 +79,15 @@ const StoneRoseIndex = () => {
 
     // Add Open Graph meta tags
     const ogTags = [
-      { property: "og:title", content: "First-Time Buyers Save $74K+ HST | New Homes Near Niagara Falls Hospital 2025" },
-      { property: "og:description", content: "NEW Ontario HST Rebate: Save up to $74K on pre-construction homes near South Niagara Hospital. 13% GST/HST relief for first-time buyers. From mid-$500Ks." },
+      { property: "og:title", content: "New Homes for Sale Niagara Falls | Pre-Construction from Mid-$500Ks" },
+      { property: "og:description", content: "24 pre-construction townhomes in Niagara Falls from mid-$500Ks. 3-5 bedrooms, 2-car garage. First-time buyers save up to $74K HST. Near South Niagara Hospital." },
       { property: "og:url", content: "https://caledonhome.ca/niagara-falls-homes-near-hospital" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://caledonhome.ca/assets/stonerose-hero-niagara.jpg" },
       { property: "og:locale", content: "en_CA" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "First-Time Buyers Save $74K+ HST | New Homes Niagara Falls 2025" },
-      { name: "twitter:description", content: "NEW Ontario HST Rebate: Save up to $74K on homes near South Niagara Hospital. 13% GST/HST relief." }
+      { name: "twitter:title", content: "New Homes for Sale Niagara Falls | Pre-Construction Townhomes" },
+      { name: "twitter:description", content: "24 pre-construction townhomes from mid-$500Ks. 3-5 bedrooms, 2-car garage. First-time buyers save up to $74K HST." }
     ];
 
     ogTags.forEach(tag => {
@@ -106,12 +106,12 @@ const StoneRoseIndex = () => {
       }
     });
 
-    // Add structured data for RealEstateListing
+    // Add structured data for RealEstateListing - Enhanced with more details
     const realEstateListingSchema = {
       "@context": "https://schema.org",
       "@type": "RealEstateListing",
-      "name": "Stonerose Pre-Construction Townhomes - First-Time Buyers Save $74K+ HST",
-      "description": "NEW 2025 Ontario HST Rebate: First-time home buyers save up to $74,087 in combined federal GST and provincial HST rebates on pre-construction townhomes near South Niagara Hospital. Modern 3-5 bedroom homes from mid-$500Ks with effective pricing from $495K after rebate. Perfect for healthcare professionals and first-time buyers. Agreements signed on/after May 27, 2025 qualify. Spring 2027 occupancy.",
+      "name": "Stonerose - New Pre-Construction Townhomes in Niagara Falls",
+      "description": "New homes for sale in Niagara Falls by Treasure Hill Homes. 24 pre-construction townhomes from mid-$500Ks featuring 3-5 bedrooms, 2-car garage, modern design. Located minutes to QEW and South Niagara Hospital. First-time buyers save up to $74K in HST rebates. Perfect for healthcare professionals, families, and investors. Spring 2027 occupancy.",
       "url": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
       "image": "https://caledonhome.ca/assets/stonerose-hero-niagara.jpg",
       "datePosted": "2024-01-01",
@@ -156,11 +156,44 @@ const StoneRoseIndex = () => {
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "11 minutes to South Niagara Hospital"
+          "name": "Modern Design"
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "QEW Access"
+          "name": "3 Minutes to QEW Highway Access"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "11 Minutes to South Niagara Hospital"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Award-Winning Builder - Treasure Hill Homes"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "First-Time Buyer HST Rebate Eligible - Save up to $74K"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Near Schools, Shopping, and Recreation"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Easy Access to Toronto, Hamilton, and Buffalo"
+        }
+      ],
+      "potentialAction": [
+        {
+          "@type": "BuyAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://caledonhome.ca/niagara-falls-homes-near-hospital",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
         }
       ]
     };

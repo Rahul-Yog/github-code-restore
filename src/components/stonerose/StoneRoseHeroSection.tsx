@@ -42,18 +42,17 @@ const StoneRoseHeroSection = () => {
             </div>
           </div>
 
-          {/* Main Headline - Optimized for "Homes Near Niagara Falls Hospital" keyword */}
+          {/* Main Headline - Optimized for broad "Homes for Sale Niagara Falls" keyword */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
-            Homes Near Niagara Falls Hospital:{" "}
+            New Homes for Sale in Niagara Falls:{" "}
             <span className="text-gradient">Pre-Construction from Mid-$500Ks</span>
           </h1>
 
-          {/* Subheadline - Keyword-rich and benefit-focused */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
-            New homes for sale 11 minutes from South Niagara Hospital. 
-            Modern 3-5 bedroom townhomes with 2-car garage. 
-            Perfect for healthcare professionals.
-          </p>
+          {/* Subheadline - Balancing broad appeal with niche positioning */}
+          <h2 className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md font-semibold">
+            Modern 3-5 bedroom townhomes near South Niagara Hospital. 
+            Perfect for healthcare professionals, families, and investors.
+          </h2>
 
           {/* Key Features */}
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
