@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Heart, Home, BadgeCheck } from "lucide-react";
 import heroImage from "@/assets/stonerose-hero-lifestyle.jpg";
+import heroImageMobile from "@/assets/stonerose-hero-lifestyle-mobile.jpg";
 
 const StoneRoseHeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -17,12 +18,20 @@ const StoneRoseHeroSection = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 z-10" />
-          <img
-            src={heroImage}
-            alt="Stonerose Niagara Falls - Modern family-friendly townhomes in wine country near South Niagara Hospital"
-            className="w-full h-full object-cover object-top sm:object-center"
-            loading="eager"
-          />
+          <picture>
+            {/* Mobile image - loads on screens smaller than 768px */}
+            <source 
+              media="(max-width: 767px)" 
+              srcSet={heroImageMobile}
+            />
+            {/* Desktop image - default for larger screens */}
+            <img
+              src={heroImage}
+              alt="Stonerose Niagara Falls - Modern family-friendly townhomes in wine country near South Niagara Hospital"
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+            />
+          </picture>
         </div>
 
         {/* Trust Badges - Positioned at top of image */}
