@@ -34,25 +34,25 @@ const StoneRoseHeroSection = () => {
           </picture>
         </div>
 
-        {/* Trust Badges - Positioned at top of image */}
-        <div className="absolute top-20 sm:top-24 left-0 right-0 z-20 px-3 sm:px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col gap-1.5 sm:flex-row sm:gap-2 justify-center items-center">
+        {/* Trust Badges - Positioned below Stonerose text */}
+        <div className="absolute top-32 sm:top-36 md:top-40 left-0 right-0 z-20 px-3 sm:px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-row flex-wrap gap-1.5 sm:gap-2 justify-center items-center">
               {/* Builder Highlight */}
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-accent/95 to-accent/85 backdrop-blur-md text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-bold border border-white/40 shadow-lg">
-                <span className="text-sm sm:text-lg">👑</span>
+              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-gradient-to-r from-accent/95 to-accent/85 backdrop-blur-md text-white px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[9px] sm:text-xs md:text-sm font-bold border border-white/40 shadow-lg">
+                <span className="text-xs sm:text-base">👑</span>
                 <span>Treasure Hill Homes</span>
               </div>
               
               {/* HST Badge */}
-              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-primary/95 backdrop-blur-md text-white px-2.5 py-1.5 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-bold border border-white/30 shadow-lg">
-                <BadgeCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
+              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-primary/95 backdrop-blur-md text-white px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[9px] sm:text-xs md:text-sm font-bold border border-white/30 shadow-lg">
+                <BadgeCheck className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
                 <span className="whitespace-nowrap">Save up to $74K</span>
               </div>
               
               {/* Phase Badge */}
-              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-md text-white px-2.5 py-1.5 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-bold border border-green-300 shadow-lg">
-                <Home className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
+              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-md text-white px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[9px] sm:text-xs md:text-sm font-bold border border-green-300 shadow-lg">
+                <Home className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
                 <span className="whitespace-nowrap">Selling Phase 2 Now</span>
               </div>
             </div>
