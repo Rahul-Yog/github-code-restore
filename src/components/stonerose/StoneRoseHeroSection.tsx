@@ -13,14 +13,14 @@ const StoneRoseHeroSection = () => {
   return (
     <>
       {/* Hero Image Section */}
-      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center pt-16">
+      <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] flex items-center justify-center pt-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40 z-10" />
           <img
             src={heroImage}
             alt="Stonerose Niagara Falls - Modern family-friendly townhomes in wine country near South Niagara Hospital"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
             loading="eager"
           />
         </div>
