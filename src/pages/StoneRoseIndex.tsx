@@ -332,20 +332,20 @@ const StoneRoseIndex = () => {
       <main>
       <StoneRoseHeroSection />
       <StoneRoseOverviewSection />
-      <StoneRoseHSTRebateSection />
+      <StoneRoseLocationSection />
+      <StoneRoseSitePlanSection />
+      <StoneRoseHomeCollection />
       <StoneRoseHealthcareSection />
-        <StoneRoseHousingFeatures />
-        <StoneRoseTestimonials />
-        <StoneRoseInvestmentAnalysis />
-        <StoneRoseLocationSection />
-        <StoneRoseSitePlanSection />
-        <StoneRoseHomeCollection />
-        <StoneRoseAmenitiesSection />
-        <StoneRoseAgentBio />
-        <StoneRoseRelocationGuide />
-        <StoneRoseFAQSection />
-        <StoneRoseLeadForm />
-        <StoneRoseStickyForm />
+      <StoneRoseRelocationGuide />
+      <StoneRoseHSTRebateSection />
+      <StoneRoseHousingFeatures />
+      <StoneRoseAmenitiesSection />
+      <StoneRoseTestimonials />
+      <StoneRoseInvestmentAnalysis />
+      <StoneRoseAgentBio />
+      <StoneRoseFAQSection />
+      <StoneRoseLeadForm />
+      <StoneRoseStickyForm />
       </main>
       <StoneRoseWhatsAppButton />
       <StoneRoseFooter />
