@@ -20,7 +20,7 @@ const StoneRoseHeroSection = () => {
           <img
             src={heroImage}
             alt="Stonerose Niagara Falls - Modern family-friendly townhomes in wine country near South Niagara Hospital"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top sm:object-center"
             loading="eager"
           />
         </div>
