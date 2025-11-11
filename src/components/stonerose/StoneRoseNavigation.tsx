@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import stoneroseLogo from "@/assets/stonerose-logo-black.png";
 
 const StoneRoseNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/niagara-falls-homes-near-hospital";
 
   const scrollToSection = (id: string) => {
+    if (!isHomePage) {
+      window.location.href = `/niagara-falls-homes-near-hospital#${id}`;
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -63,6 +70,9 @@ const StoneRoseNavigation = () => {
             >
               Relocation Guide
             </button>
+            <Link to="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              Blog
+            </Link>
             <Button
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90"
@@ -124,6 +134,13 @@ const StoneRoseNavigation = () => {
             >
               Relocation Guide
             </button>
+            <Link 
+              to="/blog"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link>
             <div className="px-4">
               <Button
                 onClick={() => scrollToSection("contact")}
