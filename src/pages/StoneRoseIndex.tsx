@@ -12,7 +12,6 @@ import StoneRoseSitePlanSection from "@/components/stonerose/StoneRoseSitePlanSe
 import StoneRoseHomeCollection from "@/components/stonerose/StoneRoseHomeCollection";
 import StoneRoseAmenitiesSection from "@/components/stonerose/StoneRoseAmenitiesSection";
 import StoneRoseAgentBio from "@/components/stonerose/StoneRoseAgentBio";
-import StoneRoseRelocationGuide from "@/components/stonerose/StoneRoseRelocationGuide";
 import StoneRoseFAQSection from "@/components/stonerose/StoneRoseFAQSection";
 import StoneRoseHSTRebateSection from "@/components/stonerose/StoneRoseHSTRebateSection";
 import StoneRoseLeadForm from "@/components/stonerose/StoneRoseLeadForm";
@@ -336,7 +335,6 @@ const StoneRoseIndex = () => {
       <StoneRoseSitePlanSection />
       <StoneRoseHomeCollection />
       <StoneRoseHealthcareSection />
-      <StoneRoseRelocationGuide />
       <StoneRoseHSTRebateSection />
       <StoneRoseHousingFeatures />
       <StoneRoseAmenitiesSection />

@@ -1,7 +1,6 @@
 import { Building2, Shield, TrendingUp, Users, DollarSign } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import streetscapeImage from "@/assets/stonerose-streetscape.jpg";
-import StoneRoseTimeline from "./StoneRoseTimeline";
 
 const StoneRoseOverviewSection = () => {
   const features = [
@@ -102,9 +101,6 @@ const StoneRoseOverviewSection = () => {
               <h3 className="text-3xl font-bold">Your New Home Awaits</h3>
             </div>
           </div>
-
-          {/* Hospital Development Timeline */}
-          <StoneRoseTimeline />
 
           {/* Why Now Section */}
           <Card className="bg-primary/5 border-2 border-primary/20 mt-12">

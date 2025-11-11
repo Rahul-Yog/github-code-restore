@@ -2,6 +2,7 @@ import { Clock, Heart, Home, MapPin, TrendingUp, Users, Calculator, Award } from
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import StoneRoseHealthcareComparison from "./StoneRoseHealthcareComparison";
+import StoneRoseTimeline from "./StoneRoseTimeline";
 
 const StoneRoseHealthcareSection = () => {
   const scrollToSection = (id: string) => {
@@ -134,8 +135,11 @@ const StoneRoseHealthcareSection = () => {
             </CardContent>
           </Card>
 
+          {/* Hospital Timeline */}
+          <StoneRoseTimeline />
+
           {/* Why Choose Stonerose */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 mt-16">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Why Healthcare Workers Choose Stonerose
             </h3>

@@ -41,12 +41,6 @@ const StoneRoseNavigation = () => {
               Overview
             </button>
             <button
-              onClick={() => scrollToSection("healthcare")}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Healthcare Benefits
-            </button>
-            <button
               onClick={() => scrollToSection("location")}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
@@ -65,10 +59,10 @@ const StoneRoseNavigation = () => {
               Homes & Floor Plans
             </button>
             <button
-              onClick={() => scrollToSection("relocation-guide")}
+              onClick={() => scrollToSection("healthcare")}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Relocation Guide
+              Healthcare Benefits
             </button>
             <Link to="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Blog
@@ -77,7 +71,7 @@ const StoneRoseNavigation = () => {
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90"
             >
-              Schedule Tour
+              Register Now
             </Button>
           </div>
 
@@ -105,12 +99,6 @@ const StoneRoseNavigation = () => {
               Overview
             </button>
             <button
-              onClick={() => scrollToSection("healthcare")}
-              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md"
-            >
-              Healthcare Benefits
-            </button>
-            <button
               onClick={() => scrollToSection("location")}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md"
             >
@@ -129,10 +117,10 @@ const StoneRoseNavigation = () => {
               Homes & Floor Plans
             </button>
             <button
-              onClick={() => scrollToSection("relocation-guide")}
+              onClick={() => scrollToSection("healthcare")}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-accent rounded-md"
             >
-              Relocation Guide
+              Healthcare Benefits
             </button>
             <Link 
               to="/blog"
@@ -146,7 +134,7 @@ const StoneRoseNavigation = () => {
                 onClick={() => scrollToSection("contact")}
                 className="w-full bg-primary hover:bg-primary/90"
               >
-                Schedule Tour
+                Register Now
               </Button>
             </div>
           </div>

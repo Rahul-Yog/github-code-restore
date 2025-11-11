@@ -2,7 +2,6 @@ import { MapPin, Navigation, School, ShoppingBag, Coffee, Trees } from "lucide-r
 import { Card, CardContent } from "@/components/ui/card";
 import aerialImage from "@/assets/stonerose-aerial.jpg";
 import NearbyCommunities from "./NearbyCommunities";
-import CommuteCalculator from "./CommuteCalculator";
 
 const StoneRoseLocationSection = () => {
   const proximityPoints = [
@@ -194,9 +193,6 @@ const StoneRoseLocationSection = () => {
 
       {/* Nearby Communities Section */}
       <NearbyCommunities />
-
-      {/* Commute Calculator Section */}
-      <CommuteCalculator />
     </section>
   );
 };
